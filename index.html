@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>The OomBam Archive</title>
 
     <style>
+
         * {
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             background: #f6fbff;
             color: #243447;
         }
@@ -27,12 +28,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background: #ffffff;
+            background: white;
             border-bottom: 1px solid #dcecf7;
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
             color: #4b9bd3;
         }
@@ -43,86 +44,94 @@
         }
 
         .nav-links a {
-            color: #243447;
             text-decoration: none;
+            color: #243447;
             font-weight: bold;
         }
 
+        .nav-links a:hover {
+            color: #4b9bd3;
+        }
+
         .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px 20px;
             text-align: center;
+            padding: 100px 20px;
             background: linear-gradient(135deg, #dff4ff, #ffffff);
         }
 
-        .hero-content {
-            max-width: 850px;
-        }
-
         .hero h1 {
-            margin: 0 0 20px;
             font-size: 56px;
-            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            margin: 0 auto 32px;
-            max-width: 650px;
             font-size: 20px;
-            line-height: 1.6;
-            color: #5f6f7d;
+            color: #657582;
+            margin-bottom: 30px;
         }
 
         .button {
             display: inline-block;
-            padding: 15px 30px;
-            border-radius: 999px;
             background: #4b9bd3;
-            color: #ffffff;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
         }
 
+        .button:hover {
+            background: #3b87bd;
+        }
+
         .explore {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 20px;
-        }
-
-        .section-title {
             text-align: center;
-            margin-bottom: 36px;
+            padding: 80px 8%;
         }
 
-        .section-title h2 {
+        .explore h2 {
+            font-size: 48px;
             margin-bottom: 10px;
-            font-size: 36px;
         }
 
-        .section-title p {
+        .explore-subtitle {
             color: #657582;
+            margin-bottom: 40px;
         }
 
         .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
             gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
         }
 
         .card {
-            padding: 28px;
-            background: #ffffff;
-            border: 1px solid #e1edf5;
+            background: white;
+            padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(36, 52, 71, 0.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .card h3 {
-            margin-top: 0;
-            font-size: 24px;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #243447;
         }
 
         .card p {
@@ -131,21 +140,21 @@
         }
 
         footer {
-            padding: 32px 20px;
             text-align: center;
+            padding: 30px;
             background: #eaf6fd;
-            color: #5f6f7d;
-            line-height: 1.6;
+            color: #657582;
+            margin-top: 60px;
         }
 
-        @media (max-width: 760px) {
+        @media (max-width: 768px) {
+
             .navbar {
                 flex-direction: column;
                 gap: 16px;
             }
 
             .nav-links {
-                gap: 16px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
@@ -154,101 +163,109 @@
                 font-size: 40px;
             }
 
-            .cards {
-                grid-template-columns: 1fr;
+            .explore h2 {
+                font-size: 36px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
     <nav class="navbar">
+
         <div class="logo">🩵 The OomBam Archive</div>
 
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#explore">Explore</a>
-            <a href="#about">About</a>
+
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="news.html">News</a>
+
         </div>
+
     </nav>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h1>Oomeisaya × Bamsaralee</h1>
+    <header class="hero">
 
-                <p>
-                    Every moment. Every milestone. Every memory.
-                    An unofficial fan archive celebrating Oom and Bam.
-                </p>
+        <h1>Oomeisaya × Bamsaralee</h1>
 
-                <a class="button" href="gallery.html">Explore the Archive</a>
-            </div>
-        </section>
-        
-        <section class="explore">
+        <p>
+            Every moment. Every milestone. Every memory.
+            An unofficial fan archive celebrating Oom and Bam.
+        </p>
 
-    <div class="section-title">
+        <a class="button" href="gallery.html">Explore the Archive</a>
+
+    </header>
+
+    <section class="explore">
 
         <h2>Explore the Archive</h2>
 
-        <p>Discover photos, events, and updates.</p>
-
-    </div>
-
-    <div class="cards">
-
-        <a href="gallery.html" class="card-link">
-
-    <div class="card">
-
-        <h3>📸 Gallery</h3>
-
-        <p>
-            Photos from fansigns, events, and memorable moments.
+        <p class="explore-subtitle">
+            Discover photos, events, and updates.
         </p>
 
-    </div>
+        <div class="cards">
 
-</a>
+            <a href="gallery.html" class="card-link">
 
-        <a href="timeline.html" class="card-link">
+                <div class="card">
 
-    <div class="card">
+                    <h3>📸 Gallery</h3>
 
-        <h3>🗓️ Timeline</h3>
+                    <p>
+                        Photos from fansigns, events, and memorable moments.
+                    </p>
 
-        <p>
-            Follow Oom and Bam's journey and milestones.
-        </p>
+                </div>
 
-    </div>
+            </a>
 
-</a>
+            <a href="timeline.html" class="card-link">
 
-        <a href="news.html" class="card-link">
+                <div class="card">
 
-    <div class="card">
+                    <h3>🗓️ Timeline</h3>
 
-        <h3>📰 News</h3>
+                    <p>
+                        Follow Oom and Bam's journey and milestones.
+                    </p>
 
-        <p>
-            Stay updated with interviews and announcements.
-        </p>
+                </div>
 
-    </div>
+            </a>
 
-</a>
-        
-</section>
-    </main>
+            <a href="news.html" class="card-link">
 
-    <footer id="about">
+                <div class="card">
+
+                    <h3>📰 News</h3>
+
+                    <p>
+                        Stay updated with interviews and announcements.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
         Made with 🩵 by PenguinxSeal.<br>
-        This is an unofficial, non-commercial fan project and is not affiliated
-        with Oomeisaya, Bamsaralee, or their management.
+        This is an unofficial fan project.
+
     </footer>
 
 </body>
+
 </html>
