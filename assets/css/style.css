@@ -136,6 +136,16 @@
             border-color 0.3s ease;
     }
 
+   .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+   }
+
+   .card-link:hover {
+    color: inherit;
+   }
+
     .card:hover {
         transform: translateY(-10px);
         border-color: #bcdff5;
