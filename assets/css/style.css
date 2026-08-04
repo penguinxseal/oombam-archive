@@ -1,121 +1,155 @@
-/* ---------- Reset ---------- */
+/* Reset */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
-
-/* ---------- Body ---------- */
 
 body{
 
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 
-    background:linear-gradient(180deg,#f8fcff,#eef8ff);
+background:linear-gradient(135deg,#dff5ff,#f9fdff);
 
-    color:#243447;
+color:#243447;
 
 }
 
-/* ---------- Navigation ---------- */
+/* Navigation */
 
-nav{
+.navbar{
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    align-items:center;
+align-items:center;
 
-    padding:22px 8%;
+padding:24px 8%;
 
-    background:white;
+position:absolute;
 
-    box-shadow:0 4px 20px rgba(0,0,0,.05);
+width:100%;
+
+top:0;
+
+left:0;
 
 }
 
 .logo{
 
-    font-size:26px;
+font-size:24px;
 
-    font-weight:700;
+font-weight:700;
 
-    color:#5AA9E6;
+color:#5aa9e6;
+
+}
+
+.menu{
+
+display:flex;
+
+list-style:none;
+
+gap:30px;
 
 }
 
 .menu a{
 
-    text-decoration:none;
+text-decoration:none;
 
-    color:#444;
+color:#243447;
 
-    margin-left:28px;
-
-    font-weight:600;
+font-weight:600;
 
 }
 
-.menu a:hover{
+/* Hero */
 
-    color:#5AA9E6;
+.hero{
 
-}
+height:100vh;
 
-/* ---------- Hero ---------- */
+display:flex;
 
-header{
+justify-content:center;
 
-    text-align:center;
+align-items:center;
 
-    padding:120px 30px;
+text-align:center;
 
-}
-
-header h1{
-
-    font-size:60px;
-
-    margin-bottom:20px;
+padding:30px;
 
 }
 
-header p{
+.hero h1{
 
-    font-size:22px;
+font-size:72px;
 
-    color:#666;
+line-height:1.1;
 
-    max-width:700px;
-
-    margin:auto;
+margin-bottom:25px;
 
 }
 
-button{
+.hero p{
 
-    margin-top:40px;
+font-size:22px;
 
-    background:#5AA9E6;
+max-width:700px;
 
-    color:white;
+margin:auto;
 
-    border:none;
-
-    padding:18px 42px;
-
-    border-radius:50px;
-
-    font-size:18px;
-
-    cursor:pointer;
+color:#666;
 
 }
 
-button:hover{
+.buttons{
 
-    background:#3D90D9;
+margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.primary{
+
+background:#5aa9e6;
+
+color:white;
+
+padding:18px 36px;
+
+border-radius:40px;
+
+text-decoration:none;
+
+font-weight:700;
+
+}
+
+.secondary{
+
+border:2px solid #5aa9e6;
+
+padding:18px 36px;
+
+border-radius:40px;
+
+text-decoration:none;
+
+color:#5aa9e6;
+
+font-weight:700;
 
 }
