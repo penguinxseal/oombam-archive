@@ -23,6 +23,8 @@
             color: #243447;
         }
 
+        /* Navigation */
+
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -53,9 +55,11 @@
             color: #4b9bd3;
         }
 
+        /* Hero Section */
+
         .hero {
             text-align: center;
-            padding: 100px 20px;
+            padding: 70px 20px 50px;
             background: linear-gradient(135deg, #dff4ff, #ffffff);
         }
 
@@ -68,25 +72,29 @@
             font-size: 20px;
             color: #657582;
             margin-bottom: 30px;
+            line-height: 1.5;
         }
 
         .button {
             display: inline-block;
+            padding: 14px 28px;
+            border-radius: 999px;
             background: #4b9bd3;
             color: white;
-            padding: 14px 28px;
-            border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
+            transition: background 0.3s ease;
         }
 
         .button:hover {
             background: #3b87bd;
         }
 
+        /* Explore Section */
+
         .explore {
             text-align: center;
-            padding: 80px 8%;
+            padding: 50px 8%;
         }
 
         .explore h2 {
@@ -99,10 +107,12 @@
             margin-bottom: 40px;
         }
 
+        /* Cards */
+
         .cards {
             display: flex;
-            gap: 24px;
             justify-content: center;
+            gap: 24px;
             flex-wrap: wrap;
         }
 
@@ -110,18 +120,22 @@
             text-decoration: none;
             color: inherit;
             flex: 1;
-            min-width: 300px;
+            min-width: 280px;
             max-width: 350px;
+        }
+
+        .card-link:hover {
+            text-decoration: none;
         }
 
         .card {
             background: white;
-            padding: 30px;
             border-radius: 20px;
+            padding: 30px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
-            height: 100%;
             text-align: left;
+            height: 100%;
         }
 
         .card:hover {
@@ -130,8 +144,8 @@
 
         .card h3 {
             font-size: 28px;
-            margin-bottom: 20px;
             color: #243447;
+            margin-bottom: 20px;
         }
 
         .card p {
@@ -139,13 +153,17 @@
             line-height: 1.6;
         }
 
+        /* Footer */
+
         footer {
-            text-align: center;
+            margin-top: 60px;
             padding: 30px;
+            text-align: center;
             background: #eaf6fd;
             color: #657582;
-            margin-top: 60px;
         }
+
+        /* Mobile */
 
         @media (max-width: 768px) {
 
@@ -159,8 +177,16 @@
                 justify-content: center;
             }
 
+            .hero {
+                padding: 50px 20px 40px;
+            }
+
             .hero h1 {
                 font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
             }
 
             .explore h2 {
@@ -180,12 +206,10 @@
         <div class="logo">🩵 The OomBam Archive</div>
 
         <div class="nav-links">
-
             <a href="index.html">Home</a>
             <a href="gallery.html">Gallery</a>
             <a href="timeline.html">Timeline</a>
             <a href="news.html">News</a>
-
         </div>
 
     </nav>
@@ -199,7 +223,7 @@
             An unofficial fan archive celebrating Oom and Bam.
         </p>
 
-        <a class="button" href="gallery.html">Explore the Archive</a>
+        <a href="gallery.html" class="button">Explore the Archive</a>
 
     </header>
 
