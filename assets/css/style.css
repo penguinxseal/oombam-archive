@@ -1,155 +1,121 @@
-/* Reset */
+/* ---------- Reset ---------- */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+/* ---------- Body ---------- */
 
 body{
 
-font-family:-apple-system,BlinkMacSystemFont,"Poppins",sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 
-background:linear-gradient(135deg,#dff5ff,#f9fdff);
+    background:linear-gradient(180deg,#f8fcff,#eef8ff);
 
-color:#243447;
+    color:#243447;
 
 }
 
-/* Navigation */
+/* ---------- Navigation ---------- */
 
-.navbar{
+nav{
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-align-items:center;
+    align-items:center;
 
-padding:24px 8%;
+    padding:22px 8%;
 
-position:absolute;
+    background:white;
 
-width:100%;
-
-top:0;
-
-left:0;
+    box-shadow:0 4px 20px rgba(0,0,0,.05);
 
 }
 
 .logo{
 
-font-size:24px;
+    font-size:26px;
 
-font-weight:700;
+    font-weight:700;
 
-color:#5aa9e6;
-
-}
-
-.menu{
-
-display:flex;
-
-list-style:none;
-
-gap:30px;
+    color:#5AA9E6;
 
 }
 
 .menu a{
 
-text-decoration:none;
+    text-decoration:none;
 
-color:#243447;
+    color:#444;
 
-font-weight:600;
+    margin-left:28px;
 
-}
-
-/* Hero */
-
-.hero{
-
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-padding:30px;
+    font-weight:600;
 
 }
 
-.hero h1{
+.menu a:hover{
 
-font-size:72px;
-
-line-height:1.1;
-
-margin-bottom:25px;
+    color:#5AA9E6;
 
 }
 
-.hero p{
+/* ---------- Hero ---------- */
 
-font-size:22px;
+header{
 
-max-width:700px;
+    text-align:center;
 
-margin:auto;
-
-color:#666;
+    padding:120px 30px;
 
 }
 
-.buttons{
+header h1{
 
-margin-top:45px;
+    font-size:60px;
 
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
+    margin-bottom:20px;
 
 }
 
-.primary{
+header p{
 
-background:#5aa9e6;
+    font-size:22px;
 
-color:white;
+    color:#666;
 
-padding:18px 36px;
+    max-width:700px;
 
-border-radius:40px;
-
-text-decoration:none;
-
-font-weight:700;
+    margin:auto;
 
 }
 
-.secondary{
+button{
 
-border:2px solid #5aa9e6;
+    margin-top:40px;
 
-padding:18px 36px;
+    background:#5AA9E6;
 
-border-radius:40px;
+    color:white;
 
-text-decoration:none;
+    border:none;
 
-color:#5aa9e6;
+    padding:18px 42px;
 
-font-weight:700;
+    border-radius:50px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#3D90D9;
 
 }
