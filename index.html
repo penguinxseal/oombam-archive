@@ -1,769 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="OomBam Fansite — an unofficial fan website dedicated to Oom Eisaya and Bam Saralee."
-    >
+    <title>OomBam • Forever Together</title>
 
-    <title>OomBam Fansite</title>
+    <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    <!-- NAVBAR -->
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
+    <header class="navbar">
 
-            <a href="./index.html" class="site-logo">
-                <span class="logo-title">
-                    OOMBAM
-                    <span class="logo-flower">🌸</span>
-                </span>
+        <div class="logo">
 
-                <span class="logo-subtitle">
-                    forever together
-                </span>
-            </a>
+            🐧∞🦭 OOMBAM
 
-            <button
-                class="menu-button"
-                id="menuButton"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-                <span></span>
-            </button>
-
-            <div class="nav-links" id="navLinks">
-                <a href="./index.html" class="active">Home</a>
-                <a href="#story">About</a>
-                <a href="./oom.html">Oom</a>
-                <a href="./bam.html">Bam</a>
-                <a href="#moments">Moments</a>
-                <a href="./gallery.html">Gallery</a>
-                <a href="#media">Media</a>
-                <a href="./news.html">Updates</a>
-            </div>
-
-        </div>
-    </nav>
-
-    <!-- Hero -->
-
-    <header class="hero" id="home">
-
-        <div class="hero-overlay"></div>
-
-        <div class="hero-container">
-
-            <div class="hero-copy">
-
-                <p class="hero-eyebrow">
-                    The OomBam Fansite
-                </p>
-
-                <h1 class="hero-title">
-                    OomBam
-                    <span>♡</span>
-                </h1>
-
-                <p class="hero-tagline">
-                    Two souls. One bond.<br>
-                    A million reasons to support.
-                </p>
-
-                <p class="hero-hashtags">
-                    #OomBam &nbsp; #อุ้มแบม
-                </p>
-
-                <div class="hero-buttons">
-                    <a
-                        href="#story"
-                        class="button button-primary"
-                    >
-                        Explore Our Story 🌸
-                    </a>
-
-                    <a
-                        href="./gallery.html"
-                        class="button button-outline"
-                    >
-                        View Gallery
-                    </a>
-                </div>
-
-            </div>
+            <span>forever together 🌸</span>
 
         </div>
 
-        <div class="social-links">
-            <a href="#" aria-label="X">𝕏</a>
-            <a href="#" aria-label="Instagram">◎</a>
-            <a href="#" aria-label="YouTube">▶</a>
-            <a href="#" aria-label="TikTok">♪</a>
-        </div>
+        <nav>
 
-        <a href="#story" class="scroll-link">
-            Scroll
-            <span>↓</span>
-        </a>
+            <a href="#home">Home</a>
+
+            <a href="#story">Story</a>
+
+            <a href="#timeline">Timeline</a>
+
+            <a href="#gallery">Gallery</a>
+
+            <a href="#updates">Updates</a>
+
+        </nav>
 
     </header>
 
-    <main>
+    <!-- HERO -->
 
-        <!-- Story and Upcoming -->
+    <section class="hero" id="home">
 
-        <section class="story-section" id="story">
-            <div class="page-container">
+        <img src="/root/images/hero-banner.jpg" alt="OomBam Hero Banner">
 
-                <div class="story-layout">
+        <div class="hero-overlay"></div>
 
-                    <article class="story-card">
+        <div class="hero-content">
 
-                        <div class="story-text">
+            <h1>Oom<span>Bam</span></h1>
 
-                            <p class="section-label">
-                                Our Story
-                            </p>
+            <p>
 
-                            <h2 class="section-title">
-                                Our Journey,<br>
-                                Our Memories
-                            </h2>
+                Two souls. One bond.
 
-                            <p class="section-description">
-                                From their first moments together to
-                                every milestone shared today, this
-                                fansite celebrates Oom and Bam’s
-                                journey, friendship, partnership,
-                                and the memories cherished by
-                                Blossoms around the world.
-                            </p>
+                <br>
 
-                            <a
-                                href="./timeline.html"
-                                class="button button-blue"
-                            >
-                                Read Their Story
-                            </a>
+                A million reasons to support.
 
-                        </div>
+            </p>
 
-                        <div class="story-photo-frame">
+            <a href="#story" class="button">
 
-                            <img
-                                src="./images/journey-photo.jpeg"
-                                alt="Oom and Bam together"
-                                class="story-photo"
-                            >
+                Explore Our Story 🌸
 
-                            <div class="story-badge">
-                                OOM<br>
-                                &amp; BAM
-                            </div>
+            </a>
 
-                        </div>
+        </div>
 
-                    </article>
+    </section>
 
-                    <article class="upcoming-card">
+    <!-- STORY -->
 
-                        <div class="upcoming-overlay"></div>
+    <section class="story" id="story">
 
-                        <div class="upcoming-content">
+        <div class="story-text">
 
-                            <p class="section-label section-label-light">
-                                Upcoming
-                            </p>
+            <h2>Our Journey,<br>Our Memories</h2>
 
-                            <h2 class="upcoming-title">
-                                What’s Next?
-                            </h2>
+            <p>
 
-                            <p class="upcoming-description">
-                                Stay tuned for more OomBam moments,
-                                appearances, projects, and special
-                                events.
-                            </p>
+                From the very first moment we met, to all the beautiful
 
-                            <div
-                                class="countdown"
-                                aria-label="Countdown to the next event"
-                            >
+                memories we share today—this is our story.
 
-                                <div class="countdown-box">
-                                    <span id="days">00</span>
-                                    <small>Days</small>
-                                </div>
+            </p>
 
-                                <div class="countdown-box">
-                                    <span id="hours">00</span>
-                                    <small>Hours</small>
-                                </div>
+            <a href="#" class="secondary-button">
 
-                                <div class="countdown-box">
-                                    <span id="minutes">00</span>
-                                    <small>Minutes</small>
-                                </div>
+                Read More
 
-                                <div class="countdown-box">
-                                    <span id="seconds">00</span>
-                                    <small>Seconds</small>
-                                </div>
+            </a>
 
-                            </div>
+        </div>
 
-                            <a
-                                href="./news.html"
-                                class="button button-primary"
-                            >
-                                View Schedule
-                            </a>
+        <div class="story-image">
 
-                        </div>
+            <img src="/root/images/journey-photo.jpg" alt="Journey Photo">
 
-                    </article>
+        </div>
 
-                </div>
+    </section>
+
+    <!-- TIMELINE -->
+
+    <section class="timeline" id="timeline">
+
+        <h2>Timeline</h2>
+
+        <div class="timeline-items">
+
+            <div>
+
+                <h3>2021</h3>
+
+                <p>The Beginning</p>
 
             </div>
-        </section>
 
-        <!-- Moments -->
+            <div>
 
-        <section class="moments-section" id="moments">
-            <div class="page-container">
+                <h3>2022</h3>
 
-                <div class="section-heading">
-
-                    <div>
-                        <p class="section-label">
-                            Moments
-                        </p>
-
-                        <h2 class="section-title">
-                            Beautiful Moments<br>
-                            We Cherish
-                        </h2>
-                    </div>
-
-                    <a
-                        href="./gallery.html"
-                        class="section-link"
-                    >
-                        View All Moments →
-                    </a>
-
-                </div>
-
-                <div class="moments-grid">
-
-                    <a
-                        href="./gallery.html"
-                        class="moment-card"
-                    >
-                        <div class="moment-photo-wrap">
-                            <img
-                                src="./images/moment-01.jpg"
-                                alt="Oom and Bam moment"
-                                class="moment-photo"
-                                loading="lazy"
-                            >
-                        </div>
-
-                        <h3>Just the Two of Us</h3>
-
-                        <p>A cherished memory</p>
-                    </a>
-
-                    <a
-                        href="./gallery.html"
-                        class="moment-card"
-                    >
-                        <div class="moment-photo-wrap">
-                            <img
-                                src="./images/moment-02.jpg"
-                                alt="Oom and Bam event moment"
-                                class="moment-photo"
-                                loading="lazy"
-                            >
-                        </div>
-
-                        <h3>Behind the Moments</h3>
-
-                        <p>Through the fans’ eyes</p>
-                    </a>
-
-                    <a
-                        href="./gallery.html"
-                        class="moment-card"
-                    >
-                        <div class="moment-photo-wrap">
-                            <img
-                                src="./images/moment-03.jpg"
-                                alt="Memorable OomBam moment"
-                                class="moment-photo"
-                                loading="lazy"
-                            >
-                        </div>
-
-                        <h3>Always With You</h3>
-
-                        <p>Moments worth keeping</p>
-                    </a>
-
-                    <a
-                        href="./gallery.html"
-                        class="moment-card"
-                    >
-                        <div class="moment-photo-wrap">
-                            <img
-                                src="./images/moment-04.jpg"
-                                alt="OomBam smiling moment"
-                                class="moment-photo"
-                                loading="lazy"
-                            >
-                        </div>
-
-                        <h3>The Little Things</h3>
-
-                        <p>Memories in every smile</p>
-                    </a>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- News and Fan Corner -->
-
-        <section class="community-wrapper" id="media">
-            <div class="page-container">
-
-                <div class="community-layout">
-
-                    <div class="news-panel">
-
-                        <div class="panel-heading">
-
-                            <div>
-                                <p class="section-label section-label-light">
-                                    Latest Updates
-                                </p>
-
-                                <h2 class="panel-title">
-                                    News &amp; Updates
-                                </h2>
-                            </div>
-
-                            <a
-                                href="./news.html"
-                                class="panel-link"
-                            >
-                                View All →
-                            </a>
-
-                        </div>
-
-                        <div class="news-grid">
-
-                            <a
-                                href="./news.html"
-                                class="news-card"
-                            >
-                                <img
-                                    src="./images/news-01.jpg"
-                                    alt="OomBam fansign"
-                                    loading="lazy"
-                                >
-
-                                <div class="news-card-content">
-
-                                    <span class="news-category">
-                                        Event
-                                    </span>
-
-                                    <h3>
-                                        OomBam First Fansign
-                                    </h3>
-
-                                    <p>
-                                        Celebrating an unforgettable
-                                        day with Oom and Bam.
-                                    </p>
-
-                                    <small>
-                                        July 11, 2026
-                                    </small>
-
-                                </div>
-                            </a>
-
-                            <a
-                                href="./gallery.html"
-                                class="news-card"
-                            >
-                                <img
-                                    src="./images/news-02.jpg"
-                                    alt="OomBam photo collection"
-                                    loading="lazy"
-                                >
-
-                                <div class="news-card-content">
-
-                                    <span class="news-category">
-                                        Photos
-                                    </span>
-
-                                    <h3>
-                                        Behind the Moments
-                                    </h3>
-
-                                    <p>
-                                        A collection of smiles,
-                                        laughter, and memories.
-                                    </p>
-
-                                    <small>
-                                        Photo collection
-                                    </small>
-
-                                </div>
-                            </a>
-
-                            <a
-                                href="./news.html"
-                                class="news-card"
-                            >
-                                <img
-                                    src="./images/news-03.jpg"
-                                    alt="OomBam fan video"
-                                    loading="lazy"
-                                >
-
-                                <div class="news-card-content">
-
-                                    <span class="news-category">
-                                        Video
-                                    </span>
-
-                                    <h3>
-                                        Through My Eyes
-                                    </h3>
-
-                                    <p>
-                                        A fan-made video dedicated
-                                        to Oom and Bam.
-                                    </p>
-
-                                    <small>
-                                        Fan feature
-                                    </small>
-
-                                </div>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <div class="fan-panel">
-
-                        <div class="fan-text">
-
-                            <p class="section-label">
-                                Fan Corner
-                            </p>
-
-                            <h2 class="panel-title dark-title">
-                                For the Fans,<br>
-                                By the Fans
-                            </h2>
-
-                            <p class="fan-description">
-                                Share your creativity and love for
-                                OomBam through photographs, fan art,
-                                letters, videos, edits, and cherished
-                                stories.
-                            </p>
-
-                            <a
-                                href="#"
-                                class="button button-primary"
-                            >
-                                Submit Your Work
-                            </a>
-
-                        </div>
-
-                        <div class="polaroid-area">
-
-                            <div class="polaroid polaroid-one">
-                                <img
-                                    src="./images/fan-01.jpg"
-                                    alt="OomBam fan photo"
-                                    loading="lazy"
-                                >
-                            </div>
-
-                            <div class="polaroid polaroid-two">
-                                <img
-                                    src="./images/fan-02.jpg"
-                                    alt="OomBam fan creation"
-                                    loading="lazy"
-                                >
-                            </div>
-
-                            <div class="polaroid polaroid-three">
-                                <img
-                                    src="./images/fan-03.jpg"
-                                    alt="OomBam fan memory"
-                                    loading="lazy"
-                                >
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-
-    <footer class="footer">
-        <div class="page-container">
-
-            <div class="footer-grid">
-
-                <div class="footer-intro">
-
-                    <div class="footer-logo">
-                        OOMBAM
-                    </div>
-
-                    <div class="footer-script">
-                        forever together 🌸
-                    </div>
-
-                    <p>
-                        An unofficial fan website dedicated to
-                        Oom Eisaya and Bam Saralee, their beautiful
-                        journey, and the Blossoms who support them.
-                    </p>
-
-                </div>
-
-                <div class="footer-column">
-                    <h3>Site</h3>
-
-                    <a href="./index.html">Home</a>
-                    <a href="#story">About</a>
-                    <a href="#moments">Moments</a>
-                    <a href="./gallery.html">Gallery</a>
-                    <a href="./timeline.html">Timeline</a>
-                    <a href="./news.html">Updates</a>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Oom Eisaya</h3>
-
-                    <a href="./oom.html">Profile</a>
-                    <a href="./gallery.html">Gallery</a>
-                    <a href="./timeline.html">Milestones</a>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Bam Saralee</h3>
-
-                    <a href="./bam.html">Profile</a>
-                    <a href="./gallery.html">Gallery</a>
-                    <a href="./timeline.html">Milestones</a>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Information</h3>
-
-                    <a href="#">Credits</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Contact</a>
-                </div>
+                <p>Growing Together</p>
 
             </div>
 
-            <div class="footer-bottom">
+            <div>
 
-                <p>
-                    © 2026 OomBam Fansite.
-                </p>
+                <h3>2023</h3>
 
-                <p>
-                    Made with 🌸 and 🩵 by PenguinxSeal.
-                </p>
+                <p>Stronger Every Day</p>
 
-                <p>
-                    Unofficial, non-commercial fan project.
-                </p>
+            </div>
+
+            <div>
+
+                <h3>2024</h3>
+
+                <p>Beautiful Moments</p>
+
+            </div>
+
+            <div>
+
+                <h3>2025</h3>
+
+                <p>The Story Continues</p>
 
             </div>
 
         </div>
+
+    </section>
+
+    <!-- GALLERY -->
+
+    <section class="gallery" id="gallery">
+
+        <h2>Beautiful Moments</h2>
+
+        <div class="gallery-grid">
+
+            <img src="/root/images/hero-banner.jpg">
+
+            <img src="/root/images/journey-photo.jpg">
+
+            <img src="/root/images/hero-banner.jpg">
+
+        </div>
+
+    </section>
+
+    <!-- UPDATES -->
+
+    <section class="updates" id="updates">
+
+        <h2>News & Updates</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Fansign in Bangkok</h3>
+
+                <p>July 11, 2026</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Behind the Moments</h3>
+
+                <p>July 12, 2026</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Through My Eyes</h3>
+
+                <p>July 12, 2026</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>🐧∞🦭 OOMBAM</h2>
+
+        <p>
+
+            Made with ❤️ for OomBam
+
+        </p>
+
     </footer>
 
-    <script>
-        const menuButton =
-            document.getElementById("menuButton");
-
-        const navLinks =
-            document.getElementById("navLinks");
-
-        const navbar =
-            document.getElementById("navbar");
-
-        menuButton.addEventListener("click", function () {
-            const menuIsOpen =
-                navLinks.classList.toggle("open");
-
-            menuButton.classList.toggle(
-                "open",
-                menuIsOpen
-            );
-
-            document.body.classList.toggle(
-                "menu-open",
-                menuIsOpen
-            );
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                String(menuIsOpen)
-            );
-        });
-
-        navLinks.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                navLinks.classList.remove("open");
-                menuButton.classList.remove("open");
-                document.body.classList.remove("menu-open");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-            });
-        });
-
-        function updateNavbar() {
-            navbar.classList.toggle(
-                "scrolled",
-                window.scrollY > 70
-            );
-        }
-
-        window.addEventListener("scroll", updateNavbar);
-        updateNavbar();
-
-        /*
-            Replace this date whenever an upcoming
-            OomBam event is announced.
-        */
-
-        const eventDate = new Date(
-            "September 5, 2026 12:00:00 GMT+0800"
-        ).getTime();
-
-        const daysElement =
-            document.getElementById("days");
-
-        const hoursElement =
-            document.getElementById("hours");
-
-        const minutesElement =
-            document.getElementById("minutes");
-
-        const secondsElement =
-            document.getElementById("seconds");
-
-        function twoDigits(number) {
-            return String(number).padStart(2, "0");
-        }
-
-        function updateCountdown() {
-            const currentTime = new Date().getTime();
-            const remainingTime = eventDate - currentTime;
-
-            if (remainingTime <= 0) {
-                daysElement.textContent = "00";
-                hoursElement.textContent = "00";
-                minutesElement.textContent = "00";
-                secondsElement.textContent = "00";
-                return;
-            }
-
-            const days = Math.floor(
-                remainingTime /
-                (1000 * 60 * 60 * 24)
-            );
-
-            const hours = Math.floor(
-                (
-                    remainingTime %
-                    (1000 * 60 * 60 * 24)
-                ) /
-                (1000 * 60 * 60)
-            );
-
-            const minutes = Math.floor(
-                (
-                    remainingTime %
-                    (1000 * 60 * 60)
-                ) /
-                (1000 * 60)
-            );
-
-            const seconds = Math.floor(
-                (
-                    remainingTime %
-                    (1000 * 60)
-                ) /
-                1000
-            );
-
-            daysElement.textContent = twoDigits(days);
-            hoursElement.textContent = twoDigits(hours);
-            minutesElement.textContent = twoDigits(minutes);
-            secondsElement.textContent = twoDigits(seconds);
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    </script>
-
 </body>
+
 </html>
