@@ -2,7 +2,13 @@
 
 
 /* =========================================================
-   ELEMENTS
+   OOMBAM FANSITE
+   MAIN JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL ELEMENTS
 ========================================================= */
 
 const body =
@@ -31,9 +37,12 @@ function updateHeader() {
     return;
   }
 
+  const shouldStick =
+    window.scrollY > 40;
+
   siteHeader.classList.toggle(
     "is-scrolled",
-    window.scrollY > 40
+    shouldStick
   );
 
 }
@@ -152,13 +161,13 @@ function toggleMenu() {
   }
 
 
-  const menuIsOpen =
+  const isOpen =
     mobileMenu.classList.contains(
       "is-open"
     );
 
 
-  if (menuIsOpen) {
+  if (isOpen) {
 
     closeMenu();
 
@@ -188,8 +197,8 @@ if (menuToggle) {
 if (mobileMenu) {
 
   /*
-    Close when clicking outside
-    the navigation panel.
+    Close when user clicks
+    outside the menu panel.
   */
 
   mobileMenu.addEventListener(
@@ -209,8 +218,8 @@ if (mobileMenu) {
 
 
   /*
-    Close when a navigation
-    link is selected.
+    Close after selecting
+    a mobile navigation link.
   */
 
   mobileMenu
@@ -228,7 +237,7 @@ if (mobileMenu) {
 
 
 /* =========================================================
-   ESCAPE KEY
+   ESC KEY CLOSE
 ========================================================= */
 
 document.addEventListener(
@@ -268,7 +277,7 @@ document
 
 
         /*
-          Ignore empty links.
+          Ignore placeholder links.
         */
 
         if (
@@ -293,18 +302,13 @@ document
         event.preventDefault();
 
 
-        /*
-          Compensate for the
-          fixed navigation header.
-        */
-
         const headerHeight =
           siteHeader
             ? siteHeader.offsetHeight
             : 0;
 
 
-        const targetPosition =
+        const destination =
           targetSection
             .getBoundingClientRect()
             .top
@@ -316,11 +320,9 @@ document
 
         window.scrollTo({
 
-          top:
-            targetPosition,
+          top: destination,
 
-          behavior:
-            "smooth"
+          behavior: "smooth"
 
         });
 
@@ -385,10 +387,21 @@ function loadTheme() {
 
     }
 
+
+    if (
+      savedTheme === "light"
+    ) {
+
+      body.classList.remove(
+        "dark-theme"
+      );
+
+    }
+
   } catch (error) {
 
     console.warn(
-      "Unable to load theme preference.",
+      "Unable to load saved theme.",
       error
     );
 
@@ -416,16 +429,19 @@ function toggleTheme() {
   try {
 
     localStorage.setItem(
+
       themeStorageKey,
+
       darkMode
         ? "dark"
         : "light"
+
     );
 
   } catch (error) {
 
     console.warn(
-      "Unable to save theme preference.",
+      "Unable to save theme.",
       error
     );
 
@@ -451,12 +467,104 @@ loadTheme();
 
 
 /* =========================================================
-   RESPONSIVE MENU RESET
+   UPCOMING PHOTO POSITION FIX
+========================================================= */
+
+const upcomingPhoto =
+  document.querySelector(
+    ".upcoming-photo"
+  );
+
+const upcomingPhotoWrap =
+  document.querySelector(
+    ".upcoming-photo-wrap"
+  );
+
+
+function updateUpcomingPhotoLayout() {
+
+  if (
+    !upcomingPhoto ||
+    !upcomingPhotoWrap
+  ) {
+    return;
+  }
+
+
+  /*
+    Always use cover so the
+    photo fills the card.
+  */
+
+  upcomingPhoto.style.objectFit =
+    "cover";
+
+
+  /*
+    Position the photo higher
+    so Oom and Bam's faces stay
+    visible instead of being
+    cropped off.
+  */
+
+  if (
+    window.innerWidth <= 430
+  ) {
+
+    upcomingPhoto.style.objectPosition =
+      "center 12%";
+
+    upcomingPhotoWrap.style.height =
+      "235px";
+
+  } else if (
+    window.innerWidth <= 768
+  ) {
+
+    upcomingPhoto.style.objectPosition =
+      "center 14%";
+
+    upcomingPhotoWrap.style.height =
+      "270px";
+
+  } else if (
+    window.innerWidth <= 1180
+  ) {
+
+    upcomingPhoto.style.objectPosition =
+      "center 16%";
+
+    upcomingPhotoWrap.style.height =
+      "320px";
+
+  } else {
+
+    upcomingPhoto.style.objectPosition =
+      "center 18%";
+
+    upcomingPhotoWrap.style.height =
+      "290px";
+
+  }
+
+}
+
+
+updateUpcomingPhotoLayout();
+
+
+/* =========================================================
+   RESPONSIVE HANDLING
 ========================================================= */
 
 window.addEventListener(
   "resize",
   () => {
+
+    /*
+      Reset mobile navigation
+      when returning to desktop.
+    */
 
     if (
       window.innerWidth > 1100
@@ -466,29 +574,45 @@ window.addEventListener(
 
     }
 
+
+    /*
+      Recalculate upcoming
+      image framing.
+    */
+
+    updateUpcomingPhotoLayout();
+
   }
 );
 
 
 /* =========================================================
-   WEIBO GALA 2026
-   LIVE EVENT COUNTDOWN
+   OOMBAM WEIBO GALA 2026
 ========================================================= */
 
 /*
-  EVENT
+
+  EVENT:
 
   OOMBAM
   Weibo Gala 2026
   Weibo Cultural Communication Night
 
+  DATE:
   Saturday, August 8, 2026
-  Main Show: 6:00 PM Thailand Time
 
-  Thailand timezone:
+  MAIN SHOW:
+  6:00 PM Thailand local time
+
+  TIMEZONE:
   UTC +07:00
+
 */
 
+
+/* =========================================================
+   COUNTDOWN ELEMENTS
+========================================================= */
 
 const eventCountdown =
   document.getElementById(
@@ -526,11 +650,56 @@ const countdownStatus =
   );
 
 
-let countdownInterval = null;
+/* =========================================================
+   AUTHORITATIVE EVENT TIME
+========================================================= */
+
+/*
+
+  IMPORTANT:
+
+  We deliberately define the
+  correct target here instead
+  of relying only on HTML.
+
+  This prevents an old cached
+  data-event-date value from
+  accidentally counting down
+  to midnight.
+
+*/
+
+
+const WEIBO_GALA_TARGET =
+  "2026-08-08T18:00:00+07:00";
+
+
+const WEIBO_GALA_TIME =
+  new Date(
+    WEIBO_GALA_TARGET
+  ).getTime();
+
+
+let countdownInterval =
+  null;
 
 
 /* =========================================================
-   NUMBER FORMAT
+   FORCE HTML TO CORRECT DATE
+========================================================= */
+
+if (eventCountdown) {
+
+  eventCountdown.setAttribute(
+    "data-event-date",
+    WEIBO_GALA_TARGET
+  );
+
+}
+
+
+/* =========================================================
+   FORMAT COUNTDOWN NUMBER
 ========================================================= */
 
 function formatCountdownNumber(
@@ -548,7 +717,7 @@ function formatCountdownNumber(
 
 
 /* =========================================================
-   DISPLAY VALUES
+   UPDATE COUNTDOWN VALUES
 ========================================================= */
 
 function displayCountdown(
@@ -601,66 +770,31 @@ function displayCountdown(
 
 
 /* =========================================================
-   COUNTDOWN
+   COUNTDOWN CALCULATION
 ========================================================= */
 
 function updateEventCountdown() {
 
-  if (!eventCountdown) {
-    return;
-  }
-
-
-  /*
-    Read target date from HTML.
-
-    Required value:
-
-    2026-08-08T18:00:00+07:00
-  */
-
-  const eventDateString =
-    eventCountdown.getAttribute(
-      "data-event-date"
-    );
-
-
-  if (!eventDateString) {
-
-    displayCountdown(
-      0,
-      0,
-      0,
-      0
-    );
-
-
-    if (countdownStatus) {
-
-      countdownStatus.textContent =
-        "Event date unavailable";
-
-    }
-
+  if (
+    !eventCountdown ||
+    !countdownDays ||
+    !countdownHours ||
+    !countdownMinutes ||
+    !countdownSeconds
+  ) {
 
     return;
 
   }
 
 
-  const eventTime =
-    new Date(
-      eventDateString
-    ).getTime();
-
-
   /*
-    Validate date.
+    Validate target.
   */
 
   if (
     Number.isNaN(
-      eventTime
+      WEIBO_GALA_TIME
     )
   ) {
 
@@ -675,7 +809,7 @@ function updateEventCountdown() {
     if (countdownStatus) {
 
       countdownStatus.textContent =
-        "Event date unavailable";
+        "Event time unavailable";
 
     }
 
@@ -685,21 +819,21 @@ function updateEventCountdown() {
   }
 
 
-  const currentTime =
+  const now =
     Date.now();
 
 
-  const remainingTime =
-    eventTime -
-    currentTime;
+  const remaining =
+    WEIBO_GALA_TIME -
+    now;
 
 
   /* =======================================================
-     EVENT HAS STARTED
+     EVENT HAS ARRIVED
   ======================================================= */
 
   if (
-    remainingTime <= 0
+    remaining <= 0
   ) {
 
     displayCountdown(
@@ -713,16 +847,14 @@ function updateEventCountdown() {
     if (countdownStatus) {
 
       countdownStatus.textContent =
-        "OOMBAM • Weibo Gala 2026 is happening now ✨";
+        "OOMBAM • Weibo Gala 2026 ✨";
 
     }
 
 
-    if (
-      countdownInterval
-    ) {
+    if (countdownInterval) {
 
-      clearInterval(
+      window.clearInterval(
         countdownInterval
       );
 
@@ -739,71 +871,83 @@ function updateEventCountdown() {
 
 
   /* =======================================================
-     TIME UNITS
+     TIME CONSTANTS
   ======================================================= */
 
-  const second =
+  const SECOND =
     1000;
 
 
-  const minute =
-    second * 60;
+  const MINUTE =
+    SECOND * 60;
 
 
-  const hour =
-    minute * 60;
+  const HOUR =
+    MINUTE * 60;
 
 
-  const day =
-    hour * 24;
+  const DAY =
+    HOUR * 24;
 
 
   /* =======================================================
-     CALCULATE REMAINING TIME
+     CALCULATE DAYS
   ======================================================= */
 
   const days =
     Math.floor(
-      remainingTime /
-      day
-    );
-
-
-  const hours =
-    Math.floor(
-      (
-        remainingTime %
-        day
-      )
-      /
-      hour
-    );
-
-
-  const minutes =
-    Math.floor(
-      (
-        remainingTime %
-        hour
-      )
-      /
-      minute
-    );
-
-
-  const seconds =
-    Math.floor(
-      (
-        remainingTime %
-        minute
-      )
-      /
-      second
+      remaining /
+      DAY
     );
 
 
   /* =======================================================
-     UPDATE PAGE
+     CALCULATE HOURS
+  ======================================================= */
+
+  const hours =
+    Math.floor(
+      (
+        remaining %
+        DAY
+      )
+      /
+      HOUR
+    );
+
+
+  /* =======================================================
+     CALCULATE MINUTES
+  ======================================================= */
+
+  const minutes =
+    Math.floor(
+      (
+        remaining %
+        HOUR
+      )
+      /
+      MINUTE
+    );
+
+
+  /* =======================================================
+     CALCULATE SECONDS
+  ======================================================= */
+
+  const seconds =
+    Math.floor(
+      (
+        remaining %
+        MINUTE
+      )
+      /
+      SECOND
+    );
+
+
+  /* =======================================================
+     DISPLAY
   ======================================================= */
 
   displayCountdown(
@@ -825,32 +969,29 @@ function updateEventCountdown() {
 
 
 /* =========================================================
-   START COUNTDOWN
+   START LIVE COUNTDOWN
 ========================================================= */
 
 if (eventCountdown) {
 
   /*
-    Render immediately so the
-    user does not briefly see
-    00 00 00 00.
+    Calculate immediately.
+
+    This replaces the -- values
+    as soon as JS loads.
   */
 
   updateEventCountdown();
 
 
   /*
-    Then update once every
-    second.
+    Recalculate every second.
   */
 
   countdownInterval =
     window.setInterval(
-
       updateEventCountdown,
-
       1000
-
     );
 
 }
