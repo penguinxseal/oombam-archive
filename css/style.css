@@ -617,6 +617,26 @@ button {
   transform: translateY(-2px);
 }
 
+.social-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+
+    transition: transform 0.25s ease;
+}
+
+.social-icon:hover svg {
+    transform: scale(1.15);
+}
+
 .social-line {
   width: 1px;
   height: 72px;
