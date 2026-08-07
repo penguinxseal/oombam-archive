@@ -682,7 +682,7 @@ button {
 
 
 /* =========================
-   SECOND SECTION
+   STORY / UPCOMING SECTION
 ========================= */
 
 .story-section {
@@ -702,7 +702,7 @@ button {
 
   grid-template-columns:
     minmax(0, 2fr)
-    minmax(330px, 0.95fr);
+    minmax(360px, 0.95fr);
 
   width: min(1500px, 100%);
 
@@ -726,7 +726,7 @@ button {
 
   align-items: center;
 
-  min-height: 540px;
+  min-height: 560px;
 
   gap:
     clamp(45px, 4vw, 70px);
@@ -858,7 +858,7 @@ button {
   align-items: center;
   justify-content: center;
 
-  min-height: 400px;
+  min-height: 410px;
 }
 
 .story-photo-frame {
@@ -1003,7 +1003,7 @@ button {
   display: flex;
   flex-direction: column;
 
-  min-height: 540px;
+  min-height: 560px;
 
   overflow: hidden;
 
@@ -1027,9 +1027,9 @@ button {
   z-index: 2;
 
   padding:
-    48px
+    46px
     34px
-    30px;
+    28px;
 }
 
 .upcoming-label {
@@ -1062,7 +1062,7 @@ button {
 }
 
 .upcoming-panel h3 {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 
   font-family:
     "Cormorant Garamond",
@@ -1082,11 +1082,11 @@ button {
 
 
 /* =========================
-   WEIBO GALA EVENT
+   EVENT DETAILS
 ========================= */
 
 .upcoming-event {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .event-date {
@@ -1132,7 +1132,7 @@ button {
 
   margin: 4px 0 0;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.8);
 
   font-size: 0.72rem;
 
@@ -1142,7 +1142,7 @@ button {
 .event-time {
   margin: 8px 0 0;
 
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
 
   font-size: 0.7rem;
   font-weight: 600;
@@ -1159,13 +1159,14 @@ button {
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(4, minmax(0, 1fr));
 
-  gap: 6px;
+  gap: 7px;
 
-  max-width: 340px;
+  width: 100%;
+  max-width: 390px;
 
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .countdown-box {
@@ -1174,54 +1175,63 @@ button {
   align-items: center;
   justify-content: center;
 
-  min-height: 76px;
+  min-width: 0;
+  min-height: 84px;
 
   padding:
-    10px
-    5px;
+    12px
+    6px;
 
   background:
-    rgba(255, 255, 255, 0.05);
+    rgba(255, 255, 255, 0.055);
 
   border:
-    1px solid rgba(255, 255, 255, 0.38);
+    1px solid rgba(255, 255, 255, 0.4);
 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
 
 .countdown-box strong {
+  display: block;
+
+  min-width: 2ch;
+
+  color: #ffffff;
+
   font-family:
     "Cormorant Garamond",
     serif;
 
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 500;
 
   line-height: 1;
+
+  text-align: center;
 }
 
 .countdown-box span {
-  margin-top: 6px;
+  margin-top: 7px;
 
   color: rgba(255, 255, 255, 0.82);
 
-  font-size: 0.54rem;
+  font-size: 0.53rem;
 
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .countdown-status {
-  margin: 0 0 22px;
+  margin: 0 0 20px;
 
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 255, 255, 0.76);
 
   font-size: 0.64rem;
 
   line-height: 1.5;
 
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 
@@ -1272,11 +1282,27 @@ button {
 .upcoming-photo-wrap {
   position: relative;
 
-  height: 205px;
+  width: 100%;
+  height: 290px;
 
   margin-top: auto;
 
   overflow: hidden;
+
+  background: #8fb8d1;
+}
+
+.upcoming-photo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /*
+    Pulls the crop upward so
+    both faces remain visible.
+  */
+  object-position: center 18%;
 }
 
 .upcoming-photo-wrap::before {
@@ -1286,9 +1312,9 @@ button {
   right: 0;
   left: 0;
 
-  z-index: 1;
+  z-index: 2;
 
-  height: 50px;
+  height: 42px;
 
   content: "";
 
@@ -1297,7 +1323,7 @@ button {
   background:
     linear-gradient(
       to bottom,
-      rgba(120, 169, 200, 0.65),
+      rgba(120, 169, 200, 0.32),
       transparent
     );
 }
@@ -1306,6 +1332,8 @@ button {
   position: absolute;
   inset: 0;
 
+  z-index: 2;
+
   content: "";
 
   pointer-events: none;
@@ -1313,18 +1341,9 @@ button {
   background:
     linear-gradient(
       to bottom,
-      rgba(121, 169, 200, 0.05),
-      rgba(78, 125, 155, 0.13)
+      rgba(93, 146, 179, 0.01),
+      rgba(69, 111, 139, 0.07)
     );
-}
-
-.upcoming-photo {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: center 18%;
 }
 
 
@@ -1428,6 +1447,10 @@ body.dark-theme
       minmax(330px, 1fr)
       minmax(330px, 1fr);
   }
+
+  .countdown-grid {
+    max-width: 360px;
+  }
 }
 
 
@@ -1458,12 +1481,16 @@ body.dark-theme
       30px;
   }
 
-  .upcoming-photo-wrap {
-    height: 250px;
+  .countdown-grid {
+    max-width: 390px;
   }
 
-  .countdown-grid {
-    max-width: 360px;
+  .upcoming-photo-wrap {
+    height: 320px;
+  }
+
+  .upcoming-photo {
+    object-position: center 16%;
   }
 }
 
@@ -1628,7 +1655,11 @@ body.dark-theme
   }
 
   .upcoming-photo-wrap {
-    height: 220px;
+    height: 270px;
+  }
+
+  .upcoming-photo {
+    object-position: center 14%;
   }
 }
 
@@ -1704,15 +1735,31 @@ body.dark-theme
     font-size: 0.66rem;
   }
 
+  .countdown-grid {
+    gap: 5px;
+  }
+
   .countdown-box {
     min-height: 68px;
+
+    padding:
+      9px
+      3px;
   }
 
   .countdown-box strong {
-    font-size: 1.55rem;
+    font-size: 1.5rem;
   }
 
   .countdown-box span {
-    font-size: 0.5rem;
+    font-size: 0.48rem;
+  }
+
+  .upcoming-photo-wrap {
+    height: 235px;
+  }
+
+  .upcoming-photo {
+    object-position: center 12%;
   }
 }
