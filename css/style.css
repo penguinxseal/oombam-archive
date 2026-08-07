@@ -616,7 +616,35 @@ button {
   color: var(--soft-pink-light);
   transform: translateY(-2px);
 }
+.social-icon {
 
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+}
+
+
+.social-icon svg {
+
+  width: 24px;
+  height: 24px;
+
+  fill: currentColor;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+.social-icon:hover svg {
+
+  transform: scale(1.15);
+}
 .social-icon {
     width: 36px;
     height: 36px;
@@ -1946,7 +1974,22 @@ body.dark-theme
       70px;
 
     text-align: center;
-  }
+  }.hero-content {
+
+  width: 100%;
+
+  margin-left: 0;
+
+  padding:
+    calc(
+      var(--header-height)
+      + 200px
+    )
+    24px
+    115px;
+
+  text-align: center;
+}
 
   .hero-title {
     font-size:
@@ -1962,10 +2005,78 @@ body.dark-theme
     margin-left: auto;
   }
 
-  .hero-socials,
-  .scroll-indicator {
-    display: none;
-  }
+  /* Hide only the scroll indicator on mobile */
+
+.scroll-indicator {
+  display: none;
+}
+
+
+/* Mobile social links */
+
+.hero-socials {
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+  top: auto;
+
+  z-index: 20;
+
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  transform: translateX(-50%);
+}
+
+
+/* Hide vertical line */
+
+.hero-socials .social-line {
+  display: none;
+}
+
+
+/* Social icon wrapper */
+
+.hero-socials .social-icon {
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* SVG size */
+
+.hero-socials .social-icon svg {
+
+  width: 24px;
+  height: 24px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+/* Hover effect */
+
+.hero-socials .social-icon:hover svg {
+
+  transform: scale(1.15);
+}
 
   .story-panel {
     grid-template-columns: 1fr;
@@ -2183,5 +2294,24 @@ body.dark-theme
 
   .moment-meta p {
     font-size: 0.73rem;
-  }
+  }.hero-socials {
+
+  bottom: 16px;
+
+  gap: 14px;
+}
+
+
+.hero-socials .social-icon {
+
+  width: 36px;
+  height: 36px;
+}
+
+
+.hero-socials .social-icon svg {
+
+  width: 21px;
+  height: 21px;
+}
 }
