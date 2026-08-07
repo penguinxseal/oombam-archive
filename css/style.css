@@ -1961,20 +1961,30 @@ body.dark-theme
   }
 
   .hero-content {
-    width: 100%;
+  width: 100%;
 
-    margin-left: 0;
+  margin-left: 0;
 
-    padding:
-      calc(
-        var(--header-height)
-        + 200px
-      )
-      24px
-      70px;
+  padding:
+    calc(var(--header-height) + 320px)
+    24px
+    115px;
 
-    text-align: center;
-  }.hero-content {
+  text-align: center;
+}
+   .hero-title {
+  margin-top: 40px;
+
+  font-size:
+    clamp(
+      4.6rem,
+      20vw,
+      6.4rem
+    );
+
+  line-height: 0.95;
+}
+   .hero-content {
 
   width: 100%;
 
@@ -2313,5 +2323,15 @@ body.dark-theme
 
   width: 21px;
   height: 21px;
+}
+   .hero-content {
+  padding-top:
+    calc(var(--header-height) + 350px);
+}
+
+.hero-title {
+  margin-top: 25px;
+
+  font-size: 4.8rem;
 }
 }
