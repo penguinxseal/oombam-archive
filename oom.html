@@ -5,162 +5,566 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <title>Oom Eisaya | OomBam</title>
+  <meta
+    name="description"
+    content="An unofficial fan profile dedicated to Oom Eisaya."
+  >
 
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+  <title>Oom Eisaya | OomBam Fansite</title>
 
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
-        rel="stylesheet">
+  <!-- =========================================
+       GOOGLE FONTS
+  ========================================== -->
 
-  <link rel="stylesheet"
-        href="./css/oom.css">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =========================================
+       OOM PROFILE STYLESHEET
+  ========================================== -->
+
+  <link
+    rel="stylesheet"
+    href="./css/oom.css?v=5"
+  >
 
 </head>
 
+
 <body>
 
-  <div class="profile-card">
+  <!-- =========================================
+       MAIN PROFILE CARD
+  ========================================== -->
 
-    <!-- NAVIGATION -->
+  <main class="profile-card">
 
-    <nav class="top-nav">
 
-      <img src="assets/images/logo-icon-v2.png"
-           class="logo">
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <nav
+      class="top-nav"
+      aria-label="Main navigation"
+    >
+
+      <a
+        href="index.html"
+        aria-label="Return to OomBam homepage"
+      >
+
+        <img
+          src="assets/images/logo-icon-v2.png"
+          alt="OomBam Forever Together"
+          class="logo"
+        >
+
+      </a>
+
 
       <div class="nav-links">
 
-        <a href="index.html">HOME</a>
+        <a href="index.html">
+          Home
+        </a>
 
-        <a href="index.html#story">ABOUT</a>
+        <a href="index.html#story">
+          About
+        </a>
 
-        <a class="active"
-           href="oom.html">OOM</a>
+        <a
+          href="oom.html"
+          class="active"
+          aria-current="page"
+        >
+          Oom
+        </a>
 
-        <a href="bam.html">BAM</a>
+        <a href="bam.html">
+          Bam
+        </a>
 
-        <a href="index.html#moments">MOMENTS</a>
+        <a href="index.html#moments">
+          Moments
+        </a>
 
-        <a href="index.html#gallery">GALLERY</a>
+        <a href="index.html#gallery">
+          Gallery
+        </a>
 
-        <a href="index.html#updates">UPDATES</a>
+        <a href="index.html#media">
+          Media
+        </a>
 
-        <a href="index.html#shop">SHOP</a>
+        <a href="index.html#updates">
+          Updates
+        </a>
+
+        <a href="index.html#shop">
+          Shop
+        </a>
 
       </div>
 
     </nav>
 
-    <!-- BREADCRUMB -->
+
+    <!-- =========================================
+         BREADCRUMB
+    ========================================== -->
 
     <div class="breadcrumb">
 
-      HOME > OOM
+      <a href="index.html">
+        Home
+      </a>
+
+      <span aria-hidden="true">
+        ›
+      </span>
+
+      <span>
+        Oom
+      </span>
 
     </div>
 
-    <!-- PHOTO -->
 
-    <div class="hero-section">
+    <!-- =========================================
+         PROFILE HERO
+    ========================================== -->
 
-      <img src="assets/images/oom-profile.jpg"
-           class="hero-image">
+    <section
+      class="hero-section"
+      aria-labelledby="oom-profile-title"
+    >
 
-    </div>
+      <img
+        src="assets/images/oom-profile.jpg"
+        alt="Oom Eisaya"
+        class="hero-image"
+      >
 
-    <!-- NAME -->
+    </section>
 
-    <h1 class="name-script">
 
-      Oom Eisaya
+    <!-- =========================================
+         NAME / INTRODUCTION
+    ========================================== -->
 
-    </h1>
+    <section class="profile-intro">
 
-    <p class="role">
+      <h1
+        class="name-script"
+        id="oom-profile-title"
+      >
+        Oom Eisaya
+      </h1>
 
-      Actress • Model • Dreamer
 
-    </p>
+      <p class="role">
+        Actress • Model • Artist
+      </p>
 
-    <p class="quote">
 
-      "Grateful for every step,
+      <p class="quote">
+        “Grateful for every step, every moment,
+        and every person who believes in me.”
+      </p>
 
-      every moment,
+    </section>
 
-      and every person
 
-      who believes in me."
+    <!-- =========================================
+         SOCIAL MEDIA
+    ========================================== -->
 
-    </p>
+    <section
+      aria-labelledby="oom-social-title"
+    >
 
-    <!-- SOCIALS -->
+      <p
+        class="social-title"
+        id="oom-social-title"
+      >
+        Social Media
+      </p>
 
-    <div class="social-title">
 
-      SOCIAL MEDIA
+      <div
+        class="socials"
+        aria-label="Oom Eisaya social media links"
+      >
 
-    </div>
 
-    <div class="socials">
+        <!-- Instagram -->
 
-      <a href="#">📷<span>Instagram</span></a>
+        <a
+          href="https://www.instagram.com/oomeisaya/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Oom Eisaya on Instagram"
+          title="Instagram"
+        >
 
-      <a href="#">✕<span>X</span></a>
+          <span aria-hidden="true">
+            ◎
+          </span>
 
-      <a href="#">🎵<span>TikTok</span></a>
+          <span>
+            Instagram
+          </span>
 
-      <a href="#">🌐<span>Weibo</span></a>
+        </a>
 
-    </div>
 
-    <!-- MENU -->
+        <!-- X -->
 
-    <div class="menu-list">
+        <a
+          href="https://x.com/OomeisayaH"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Oom Eisaya on X"
+          title="X"
+        >
 
-      <a href="#about">
+          <span aria-hidden="true">
+            𝕏
+          </span>
 
-        ABOUT OOM
+          <span>
+            X
+          </span>
 
-        <span>›</span>
+        </a>
+
+
+        <!-- TikTok -->
+
+        <a
+          href="https://www.tiktok.com/@oomeisayah?lang=en"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Oom Eisaya on TikTok"
+          title="TikTok"
+        >
+
+          <span aria-hidden="true">
+            ♪
+          </span>
+
+          <span>
+            TikTok
+          </span>
+
+        </a>
+
+
+        <!-- Threads -->
+
+        <a
+          href="https://www.threads.com/@oomeisaya"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Oom Eisaya on Threads"
+          title="Threads"
+        >
+
+          <span aria-hidden="true">
+            @
+          </span>
+
+          <span>
+            Threads
+          </span>
+
+        </a>
+
+
+        <!-- Weibo
+             Link will be added once confirmed.
+        -->
+
+        <a
+          class="social-disabled"
+          aria-label="Oom Eisaya Weibo link coming soon"
+          aria-disabled="true"
+          tabindex="-1"
+          title="Weibo link coming soon"
+        >
+
+          <span aria-hidden="true">
+            ◉
+          </span>
+
+          <span>
+            Weibo
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PROFILE NAVIGATION
+    ========================================== -->
+
+    <nav
+      class="menu-list"
+      aria-label="Oom profile sections"
+    >
+
+      <a href="#about-oom">
+
+        <span>
+          About Oom
+        </span>
+
+        <span aria-hidden="true">
+          ›
+        </span>
 
       </a>
 
-      <a href="#projects">
 
-        PROJECTS
+      <a href="#oom-projects">
 
-        <span>›</span>
+        <span>
+          Projects
+        </span>
 
-      </a>
-
-      <a href="#gallery">
-
-        GALLERY
-
-        <span>›</span>
+        <span aria-hidden="true">
+          ›
+        </span>
 
       </a>
 
-      <a href="#updates">
 
-        UPDATES
+      <a href="#oom-gallery">
 
-        <span>›</span>
+        <span>
+          Gallery
+        </span>
+
+        <span aria-hidden="true">
+          ›
+        </span>
 
       </a>
 
-    </div>
 
-  </div>
+      <a href="#oom-updates">
+
+        <span>
+          Updates
+        </span>
+
+        <span aria-hidden="true">
+          ›
+        </span>
+
+      </a>
+
+    </nav>
+
+
+    <!-- =========================================
+         ABOUT OOM
+    ========================================== -->
+
+    <section
+      id="about-oom"
+      class="profile-content-section"
+    >
+
+      <div class="section-heading">
+
+        <p class="section-eyebrow">
+          About Oom
+        </p>
+
+        <h2>
+          A heart that shines beyond the screen.
+        </h2>
+
+      </div>
+
+
+      <div class="about-content">
+
+        <p>
+          This section is dedicated to Oom Eisaya —
+          her journey, personality, work, and memorable
+          moments along the way.
+        </p>
+
+        <p>
+          More detailed profile information can be added
+          here as the Oom archive continues to grow.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
+
+    <section
+      id="oom-projects"
+      class="profile-content-section"
+    >
+
+      <div class="section-heading">
+
+        <p class="section-eyebrow">
+          Selected Projects
+        </p>
+
+        <h2>
+          On Screen & Beyond
+        </h2>
+
+      </div>
+
+
+      <div class="content-placeholder">
+
+        <p>
+          Oom's selected projects will be added here.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         GALLERY
+    ========================================== -->
+
+    <section
+      id="oom-gallery"
+      class="profile-content-section"
+    >
+
+      <div class="section-heading">
+
+        <p class="section-eyebrow">
+          Oom Gallery
+        </p>
+
+        <h2>
+          Through the Lens
+        </h2>
+
+      </div>
+
+
+      <div class="content-placeholder">
+
+        <p>
+          Oom's gallery collection will be added here.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         UPDATES
+    ========================================== -->
+
+    <section
+      id="oom-updates"
+      class="profile-content-section"
+    >
+
+      <div class="section-heading">
+
+        <p class="section-eyebrow">
+          Latest Updates
+        </p>
+
+        <h2>
+          What's New with Oom
+        </h2>
+
+      </div>
+
+
+      <div class="content-placeholder">
+
+        <p>
+          Oom's latest appearances, events, photos,
+          interviews, and updates will appear here.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         RETURN TO HOME
+    ========================================== -->
+
+    <section class="profile-return">
+
+      <div>
+
+        <p class="return-label">
+          Forever Together
+        </p>
+
+        <p>
+          Thank you for supporting Oom every step of the way.
+        </p>
+
+      </div>
+
+
+      <a
+        href="index.html"
+        class="return-home"
+      >
+        Back to OomBam
+        <span aria-hidden="true">
+          ♡
+        </span>
+      </a>
+
+    </section>
+
+
+  </main>
 
 </body>
 
