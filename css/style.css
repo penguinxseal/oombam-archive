@@ -1307,47 +1307,6 @@ button {
   object-position: center top;
 }
 
-.upcoming-photo-wrap::before {
-  position: absolute;
-
-  top: 0;
-  right: 0;
-  left: 0;
-
-  z-index: 2;
-
-  height: 24px;
-
-  content: "";
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(120, 169, 200, 0.18),
-      transparent
-    );
-}
-
-.upcoming-photo-wrap::after {
-  position: absolute;
-  inset: 0;
-
-  z-index: 2;
-
-  content: "";
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(93, 146, 179, 0),
-      rgba(69, 111, 139, 0.03)
-    );
-}
-
 
 /* =========================================================
    EDITORIAL MOMENTS
@@ -1357,9 +1316,9 @@ button {
   position: relative;
 
   padding:
-    92px
-    clamp(44px, 5vw, 80px)
-    88px;
+    76px
+    clamp(28px, 3.5vw, 54px)
+    72px;
 
   background:
     linear-gradient(
@@ -1372,30 +1331,8 @@ button {
     1px solid rgba(44, 38, 40, 0.07);
 }
 
-.moments-section::before {
-  position: absolute;
-
-  top: 0;
-  left: 50%;
-
-  width: min(1400px, calc(100% - 80px));
-  height: 1px;
-
-  content: "";
-
-  transform: translateX(-50%);
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(117, 146, 163, 0.34),
-      transparent
-    );
-}
-
 .moments-inner {
-  width: min(1380px, 100%);
+  width: min(1500px, 100%);
 
   margin: 0 auto;
 }
@@ -1412,11 +1349,11 @@ button {
 
   gap: 32px;
 
-  margin-bottom: 42px;
+  margin-bottom: 34px;
 }
 
 .moments-eyebrow {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 
   color: #7aa0b5;
 
@@ -1455,14 +1392,14 @@ button {
 
   font-size:
     clamp(
-      3rem,
-      4vw,
-      4.7rem
+      2.8rem,
+      3.7vw,
+      4.15rem
     );
 
   font-weight: 500;
 
-  line-height: 0.98;
+  line-height: 0.96;
 
   letter-spacing: -0.025em;
 }
@@ -1473,14 +1410,14 @@ button {
 
   gap: 8px;
 
-  padding-bottom: 6px;
+  padding-bottom: 5px;
 
   color: #d9899c;
 
   border-bottom:
     1px solid rgba(217, 137, 156, 0.42);
 
-  font-size: 0.68rem;
+  font-size: 0.67rem;
   font-weight: 600;
 
   letter-spacing: 0.08em;
@@ -1513,9 +1450,9 @@ button {
 
   gap:
     clamp(
-      18px,
+      20px,
       2vw,
-      28px
+      30px
     );
 }
 
@@ -1549,7 +1486,7 @@ button {
   border-radius: 8px;
 
   box-shadow:
-    0 12px 30px rgba(45, 38, 40, 0.08);
+    0 10px 26px rgba(45, 38, 40, 0.07);
 
   transition:
     transform var(--transition),
@@ -1569,49 +1506,25 @@ button {
     filter 450ms ease;
 }
 
+.moment-image-sunset {
+  object-position: center 48%;
+}
+
+.moment-image-studio {
+  object-position: center 45%;
+}
+
 .moment-card:hover .moment-image-wrap {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 
   box-shadow:
-    0 18px 38px rgba(45, 38, 40, 0.13);
+    0 16px 34px rgba(45, 38, 40, 0.12);
 }
 
 .moment-card:hover .moment-image {
-  transform: scale(1.045);
+  transform: scale(1.035);
 
   filter: brightness(1.02);
-}
-
-
-/* =========================
-   PLACEHOLDER MOMENT CARDS
-========================= */
-
-.moment-placeholder {
-  display: grid;
-  place-items: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f9ecef,
-      #eaf4fb
-    );
-
-  border:
-    1px solid rgba(218, 171, 182, 0.25);
-}
-
-.moment-placeholder span {
-  color: #d592a3;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 2.3rem;
-
-  opacity: 0.8;
 }
 
 
@@ -1621,13 +1534,13 @@ button {
 
 .moment-meta {
   padding:
-    16px
+    14px
     2px
     0;
 }
 
 .moment-meta h3 {
-  margin: 0 0 6px;
+  margin: 0 0 5px;
 
   color: #292327;
 
@@ -1637,30 +1550,32 @@ button {
 
   font-size:
     clamp(
-      1.35rem,
-      1.65vw,
-      1.75rem
+      1.3rem,
+      1.5vw,
+      1.62rem
     );
 
   font-weight: 600;
 
-  line-height: 1.08;
+  line-height: 1.06;
+
+  letter-spacing: -0.01em;
 }
 
 .moment-meta p {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 
   color: #797072;
 
-  font-size: 0.77rem;
+  font-size: 0.75rem;
 
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .moment-meta time {
   color: #9a9193;
 
-  font-size: 0.63rem;
+  font-size: 0.62rem;
 
   letter-spacing: 0.03em;
 }
@@ -1675,17 +1590,17 @@ button {
   align-items: center;
   justify-content: flex-end;
 
-  gap: 12px;
+  gap: 11px;
 
-  margin-top: 30px;
+  margin-top: 24px;
 }
 
 .moments-arrow {
   display: grid;
   place-items: center;
 
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
 
   color: #c9788c;
 
@@ -1718,7 +1633,7 @@ button {
 .moments-page {
   color: #9c9294;
 
-  font-size: 0.63rem;
+  font-size: 0.62rem;
 
   letter-spacing: 0.08em;
 }
@@ -1805,18 +1720,6 @@ body.dark-theme .moment-image-wrap {
 
   box-shadow:
     0 12px 30px rgba(0, 0, 0, 0.16);
-}
-
-body.dark-theme .moment-placeholder {
-  background:
-    linear-gradient(
-      135deg,
-      #2b262c,
-      #232a31
-    );
-
-  border-color:
-    rgba(255, 255, 255, 0.08);
 }
 
 body.dark-theme .moment-meta time,
@@ -1931,7 +1834,7 @@ body.dark-theme
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
 
-    row-gap: 38px;
+    row-gap: 34px;
   }
 }
 
@@ -2108,9 +2011,9 @@ body.dark-theme
 
   .moments-section {
     padding:
-      72px
-      24px
-      68px;
+      62px
+      22px
+      60px;
   }
 
   .moments-intro {
@@ -2118,7 +2021,7 @@ body.dark-theme
 
     flex-direction: column;
 
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 
   .moments-view-all {
@@ -2128,7 +2031,7 @@ body.dark-theme
   .moments-grid {
     grid-template-columns: 1fr;
 
-    gap: 34px;
+    gap: 30px;
   }
 
   .moment-image-wrap {
@@ -2245,20 +2148,20 @@ body.dark-theme
 
   .moments-section {
     padding:
-      62px
+      54px
       20px
-      58px;
+      54px;
   }
 
   .moments-heading {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 
   .moment-meta h3 {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
   }
 
   .moment-meta p {
-    font-size: 0.74rem;
+    font-size: 0.73rem;
   }
 }
