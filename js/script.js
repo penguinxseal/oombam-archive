@@ -229,7 +229,7 @@ window.addEventListener(
   "resize",
   () => {
 
-    if (window.innerWidth > 1050) {
+    if (window.innerWidth > 1100) {
       closeMenu();
     }
 
