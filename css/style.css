@@ -1946,8 +1946,8 @@ body.dark-theme
   }
 
   .hero-background {
-    background-position:
-      35% center;
+    background-position: center center;
+    background-size: cover;
   }
 
   .hero-overlay {
@@ -2205,8 +2205,8 @@ body.dark-theme
   }
 
   .hero-background {
-    background-position:
-   30% center;
+    background-position: center center;
+    background-size: cover;
   }
 
   .hero-content {
