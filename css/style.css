@@ -682,7 +682,7 @@ button {
 
 
 /* =========================
-   STORY / UPCOMING SECTION
+   STORY / UPCOMING
 ========================= */
 
 .story-section {
@@ -702,7 +702,7 @@ button {
 
   grid-template-columns:
     minmax(0, 2fr)
-    minmax(360px, 0.95fr);
+    minmax(380px, 0.95fr);
 
   width: min(1500px, 100%);
 
@@ -726,7 +726,7 @@ button {
 
   align-items: center;
 
-  min-height: 560px;
+  min-height: 620px;
 
   gap:
     clamp(45px, 4vw, 70px);
@@ -1003,7 +1003,7 @@ button {
   display: flex;
   flex-direction: column;
 
-  min-height: 620px;
+  min-height: 700px;
 
   overflow: hidden;
 
@@ -1026,8 +1026,10 @@ button {
 
   z-index: 2;
 
+  flex: 0 0 auto;
+
   padding:
-    36px
+    34px
     34px
     22px;
 }
@@ -1276,16 +1278,18 @@ button {
 
 
 /* =========================
-   UPCOMING PHOTO
+   WHAT'S NEXT PHOTO
 ========================= */
 
 .upcoming-photo-wrap {
   position: relative;
 
-  width: 100%;
-  height: 330px;
+  flex: 1 1 auto;
 
-  margin-top: auto;
+  width: 100%;
+  min-height: 300px;
+
+  margin-top: 0;
 
   overflow: hidden;
 
@@ -1296,13 +1300,15 @@ button {
   width: 100%;
   height: 100%;
 
+  min-height: 300px;
+
   object-fit: cover;
 
   /*
-    Higher focal point so
-    both faces stay visible.
+    New v2 image is already cropped
+    to preserve their heads.
   */
-  object-position: center 15%;
+  object-position: center top;
 }
 
 .upcoming-photo-wrap::before {
@@ -1314,7 +1320,7 @@ button {
 
   z-index: 2;
 
-  height: 38px;
+  height: 24px;
 
   content: "";
 
@@ -1323,7 +1329,7 @@ button {
   background:
     linear-gradient(
       to bottom,
-      rgba(120, 169, 200, 0.24),
+      rgba(120, 169, 200, 0.18),
       transparent
     );
 }
@@ -1341,8 +1347,8 @@ button {
   background:
     linear-gradient(
       to bottom,
-      rgba(93, 146, 179, 0.01),
-      rgba(69, 111, 139, 0.05)
+      rgba(93, 146, 179, 0),
+      rgba(69, 111, 139, 0.03)
     );
 }
 
@@ -1452,8 +1458,13 @@ body.dark-theme
     max-width: 360px;
   }
 
-  .upcoming-photo-wrap {
-    height: 310px;
+  .upcoming-panel {
+    min-height: 660px;
+  }
+
+  .upcoming-photo-wrap,
+  .upcoming-photo {
+    min-height: 285px;
   }
 }
 
@@ -1490,11 +1501,15 @@ body.dark-theme
   }
 
   .upcoming-photo-wrap {
-    height: 360px;
+    flex: none;
+    height: 380px;
+    min-height: 380px;
   }
 
   .upcoming-photo {
-    object-position: center 14%;
+    min-height: 380px;
+
+    object-position: center top;
   }
 }
 
@@ -1659,11 +1674,14 @@ body.dark-theme
   }
 
   .upcoming-photo-wrap {
-    height: 300px;
+    height: 320px;
+    min-height: 320px;
   }
 
   .upcoming-photo {
-    object-position: center 12%;
+    min-height: 320px;
+
+    object-position: center top;
   }
 }
 
@@ -1760,10 +1778,13 @@ body.dark-theme
   }
 
   .upcoming-photo-wrap {
-    height: 255px;
+    height: 265px;
+    min-height: 265px;
   }
 
   .upcoming-photo {
-    object-position: center 10%;
+    min-height: 265px;
+
+    object-position: center top;
   }
 }
