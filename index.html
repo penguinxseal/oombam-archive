@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
 
@@ -8,27 +9,42 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>OomBam | Forever Together</title>
-
   <meta
     name="description"
-    content="An unofficial fan site celebrating Oom Eisaya and Bam Saralee."
+    content="An unofficial OomBam fan site celebrating Oom Eisaya and Bam Saralee."
   >
 
+  <title>OomBam | Forever Together</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="css/style.css">
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
 </head>
 
 <body>
 
-  <header class="site-header" id="siteHeader">
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header
+    class="site-header"
+    id="siteHeader"
+  >
 
     <a
       href="#home"
@@ -37,12 +53,15 @@
     >
       <img
         src="assets/images/logo-icon.png"
-        alt="Forever Together"
+        alt="OomBam Forever Together"
         class="brand-logo"
       >
     </a>
 
-    <nav class="desktop-nav" aria-label="Main navigation">
+    <nav
+      class="desktop-nav"
+      aria-label="Main navigation"
+    >
       <a href="#home" class="nav-link active">Home</a>
       <a href="#about" class="nav-link">About</a>
       <a href="oom.html" class="nav-link">Oom</a>
@@ -57,7 +76,7 @@
     <div class="header-actions">
 
       <button
-        class="icon-button"
+        class="header-icon"
         type="button"
         aria-label="Search"
       >
@@ -68,15 +87,15 @@
       </button>
 
       <button
-        class="icon-button"
+        class="header-icon"
         id="themeToggle"
         type="button"
         aria-label="Switch theme"
       >
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
-            d="M20 15a8 8 0 0 1-11-11
-               8.5 8.5 0 1 0 11 11Z"
+            d="M20 15A8.5 8.5 0 0 1 9 4
+               8.5 8.5 0 1 0 20 15Z"
           ></path>
         </svg>
       </button>
@@ -85,8 +104,9 @@
         class="menu-toggle"
         id="menuToggle"
         type="button"
-        aria-label="Open menu"
+        aria-label="Open navigation menu"
         aria-expanded="false"
+        aria-controls="mobileMenu"
       >
         <span></span>
         <span></span>
@@ -97,12 +117,21 @@
 
   </header>
 
+
+  <!-- =========================
+       MOBILE MENU
+  ========================== -->
+
   <div
     class="mobile-menu"
     id="mobileMenu"
     aria-hidden="true"
   >
-    <nav class="mobile-menu-panel">
+
+    <nav
+      class="mobile-menu-panel"
+      aria-label="Mobile navigation"
+    >
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="oom.html">Oom</a>
@@ -113,70 +142,119 @@
       <a href="#updates">Updates</a>
       <a href="#shop">Shop</a>
     </nav>
+
   </div>
+
 
   <main>
 
-    <section class="hero" id="home">
+    <!-- =========================
+         HERO
+    ========================== -->
 
-      <div class="hero-image" aria-hidden="true"></div>
-      <div class="hero-shade" aria-hidden="true"></div>
+    <section
+      class="hero"
+      id="home"
+    >
 
-      <aside class="social-links" aria-label="Social links">
-        <a href="#">𝕏</a>
-        <a href="#">◎</a>
-        <a href="#">▶</a>
-        <a href="#">♪</a>
+      <div
+        class="hero-background"
+        aria-hidden="true"
+      ></div>
 
-        <span></span>
+      <div
+        class="hero-overlay"
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- SOCIAL LINKS -->
+
+      <aside
+        class="hero-socials"
+        aria-label="Social media links"
+      >
+        <a href="#" aria-label="X">𝕏</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="YouTube">▶</a>
+        <a href="#" aria-label="TikTok">♪</a>
+
+        <span
+          class="social-line"
+          aria-hidden="true"
+        ></span>
       </aside>
 
-      <div class="hero-copy">
 
-        <p class="hero-kicker">
+      <!-- HERO COPY -->
+
+      <div class="hero-content">
+
+        <p class="hero-eyebrow">
           Forever Together
         </p>
 
-        <h1>
+        <h1 class="hero-title">
           OomBam
         </h1>
 
-        <p class="heart">
+        <div
+          class="hero-heart"
+          aria-hidden="true"
+        >
           ♡
-        </p>
+        </div>
 
-        <p class="hero-text">
+        <p class="hero-description">
           Two souls. One bond.<br>
           A million reasons to support.
         </p>
 
-        <p class="hero-tags">
+        <p class="hero-hashtags">
           #OomBam &nbsp;&nbsp; #อุ้มแบม
         </p>
 
-        <a href="#about" class="hero-button">
-          Explore Our Story
-          <span>✿</span>
+        <a
+          href="#about"
+          class="primary-button"
+        >
+          <span>Explore Our Story</span>
+          <span aria-hidden="true">✿</span>
         </a>
 
       </div>
 
+
+      <!-- SCROLL -->
+
       <a
         href="#about"
-        class="scroll-cue"
-        aria-label="Scroll to story"
+        class="scroll-indicator"
+        aria-label="Scroll to our story"
       >
         <span>Scroll</span>
-        <span class="arrow">↓</span>
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 4V19"></path>
+          <path d="M7 14L12 19L17 14"></path>
+        </svg>
       </a>
 
     </section>
 
-    <section class="story-section" id="about">
+
+    <!-- =========================
+         OUR STORY
+    ========================== -->
+
+    <section
+      class="story-section"
+      id="about"
+    >
 
       <div class="story-inner">
 
-        <p class="section-kicker">
+        <p class="section-label">
           Our Story
         </p>
 
@@ -185,13 +263,16 @@
           Our Memories
         </h2>
 
-        <p>
+        <p class="story-copy">
           From the first moments to the beautiful memories shared
           along the way, this is a quiet space created to celebrate
-          Oom, Bam and the journey cherished by their supporters.
+          Oom, Bam, and the journey cherished by their supporters.
         </p>
 
-        <a href="#" class="secondary-button">
+        <a
+          href="#"
+          class="secondary-button"
+        >
           Read More
         </a>
 
@@ -199,27 +280,33 @@
 
     </section>
 
-    <section class="placeholder" id="moments">
+
+    <!-- =========================
+         PLACEHOLDERS
+    ========================== -->
+
+    <section class="placeholder-section" id="moments">
       <span>Moments</span>
     </section>
 
-    <section class="placeholder" id="gallery">
+    <section class="placeholder-section" id="gallery">
       <span>Gallery</span>
     </section>
 
-    <section class="placeholder" id="media">
+    <section class="placeholder-section" id="media">
       <span>Media</span>
     </section>
 
-    <section class="placeholder" id="updates">
+    <section class="placeholder-section" id="updates">
       <span>Updates</span>
     </section>
 
-    <section class="placeholder" id="shop">
+    <section class="placeholder-section" id="shop">
       <span>Shop</span>
     </section>
 
   </main>
+
 
   <script src="js/script.js"></script>
 
