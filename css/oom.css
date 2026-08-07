@@ -1,41 +1,34 @@
 /* =========================================================
-   OOM EISAYA PROFILE
-   SUN & SKY THEME
-========================================================= */
-
-
-/* =========================================================
-   VARIABLES
+   OOM EISAYA SOLO PROFILE
+   SUN & SKY
 ========================================================= */
 
 :root {
-  --oom-yellow: #f4cf55;
-  --oom-yellow-deep: #d2a600;
-  --oom-yellow-soft: #fff4bd;
+  --pink: #f4cf55;
+  --pink-deep: #d2a600;
+  --pink-soft: #fff4bd;
 
-  --oom-blue: #a9d5f2;
-  --oom-blue-deep: #75b2db;
-  --oom-blue-soft: #e6f4fd;
+  --green: #a9d5f2;
+  --green-deep: #75add1;
+  --green-soft: #e6f4fd;
 
-  --oom-white: #ffffff;
-  --oom-ivory: #fffdf8;
+  --cream: #fffdf8;
+  --white: #ffffff;
 
-  --oom-ink: #36373b;
-  --oom-text: #6c6e73;
-  --oom-muted: #999ba0;
+  --ink: #393638;
+  --text: #706a6d;
+  --muted: #999397;
 
-  --oom-border: rgba(79, 87, 98, 0.1);
+  --border: rgba(83, 72, 77, 0.1);
 
-  --oom-shadow:
-    0 26px 80px rgba(64, 68, 76, 0.1);
+  --shadow:
+    0 28px 80px rgba(64, 83, 96, 0.10);
 
-  --transition: 220ms ease;
+  --ease: 220ms ease;
 }
 
 
-/* =========================================================
-   RESET
-========================================================= */
+/* RESET */
 
 *,
 *::before,
@@ -58,27 +51,26 @@ body {
 
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-
-  color: var(--oom-ink);
 
   background:
     radial-gradient(
-      circle at 8% 8%,
-      rgba(250, 220, 96, 0.31),
+      circle at 10% 8%,
+      rgba(244, 207, 85, 0.32),
       transparent 30%
     ),
     radial-gradient(
-      circle at 93% 10%,
-      rgba(155, 213, 247, 0.31),
+      circle at 92% 12%,
+      rgba(169, 213, 242, 0.32),
       transparent 31%
     ),
     linear-gradient(
       135deg,
-      #fff6ca 0%,
-      #fffdf7 48%,
-      #e4f4fd 100%
+      #fff4bd 0%,
+      #fffdf8 48%,
+      #e6f4fd 100%
     );
+
+  color: var(--ink);
 
   font-family:
     "Poppins",
@@ -87,12 +79,10 @@ body {
   line-height: 1.6;
 }
 
-
 img {
   display: block;
   max-width: 100%;
 }
-
 
 a {
   color: inherit;
@@ -100,9 +90,7 @@ a {
 }
 
 
-/* =========================================================
-   PROFILE CARD
-========================================================= */
+/* PROFILE CARD */
 
 .profile-card {
   position: relative;
@@ -117,14 +105,14 @@ a {
     52px;
 
   background:
-    rgba(255, 255, 255, 0.9);
+    rgba(255, 255, 255, 0.91);
 
   border:
     1px solid rgba(255, 255, 255, 0.94);
 
   border-radius: 36px;
 
-  box-shadow: var(--oom-shadow);
+  box-shadow: var(--shadow);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -149,7 +137,7 @@ a {
   background:
     radial-gradient(
       circle,
-      rgba(244, 207, 85, 0.22),
+      rgba(244, 207, 85, 0.23),
       transparent 70%
     );
 }
@@ -158,8 +146,8 @@ a {
 .profile-card::after {
   position: absolute;
 
-  top: 220px;
   right: -180px;
+  top: 220px;
 
   width: 470px;
   height: 470px;
@@ -179,9 +167,7 @@ a {
 }
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* NAVIGATION */
 
 .top-nav {
   position: relative;
@@ -198,7 +184,7 @@ a {
   padding-bottom: 18px;
 
   border-bottom:
-    1px solid var(--oom-border);
+    1px solid var(--border);
 }
 
 
@@ -209,13 +195,10 @@ a {
 
 .logo {
   width: 94px;
-  height: auto;
-
-  object-fit: contain;
 
   filter:
     drop-shadow(
-      0 6px 14px rgba(52, 58, 67, 0.08)
+      0 6px 14px rgba(54, 48, 51, 0.08)
     );
 }
 
@@ -243,7 +226,7 @@ a {
 
   padding: 9px 2px;
 
-  color: #595b60;
+  color: #5c5759;
 
   font-size: 0.71rem;
   font-weight: 600;
@@ -252,7 +235,7 @@ a {
   text-transform: uppercase;
 
   transition:
-    color var(--transition);
+    color var(--ease);
 }
 
 
@@ -270,20 +253,19 @@ a {
   background:
     linear-gradient(
       90deg,
-      var(--oom-yellow-deep),
-      var(--oom-blue-deep)
+      var(--pink-deep),
+      var(--green-deep)
     );
 
   transform: scaleX(0);
-  transform-origin: center;
 
   transition:
-    transform var(--transition);
+    transform var(--ease);
 }
 
 
 .nav-links a:hover {
-  color: var(--oom-yellow-deep);
+  color: var(--pink-deep);
 }
 
 
@@ -297,7 +279,7 @@ a {
     9px
     17px;
 
-  color: var(--oom-yellow-deep);
+  color: var(--pink-deep);
 
   border:
     1px solid rgba(210, 166, 0, 0.65);
@@ -311,9 +293,7 @@ a {
 }
 
 
-/* =========================================================
-   BREADCRUMB
-========================================================= */
+/* BREADCRUMB */
 
 .breadcrumb {
   position: relative;
@@ -330,7 +310,7 @@ a {
     4px
     16px;
 
-  color: var(--oom-muted);
+  color: var(--muted);
 
   font-size: 0.7rem;
   font-weight: 500;
@@ -341,14 +321,7 @@ a {
 }
 
 
-.breadcrumb a:hover {
-  color: var(--oom-blue-deep);
-}
-
-
-/* =========================================================
-   HERO PHOTO
-========================================================= */
+/* HERO */
 
 .hero-section {
   position: relative;
@@ -356,7 +329,6 @@ a {
   z-index: 3;
 
   display: flex;
-  align-items: center;
   justify-content: center;
 
   width: 100%;
@@ -370,20 +342,20 @@ a {
 
   background:
     radial-gradient(
-      circle at 15% 50%,
-      rgba(245, 211, 87, 0.2),
-      transparent 45%
+      circle at 14% 50%,
+      rgba(244, 207, 85, 0.22),
+      transparent 44%
     ),
     radial-gradient(
-      circle at 85% 45%,
-      rgba(156, 211, 245, 0.21),
+      circle at 86% 45%,
+      rgba(169, 213, 242, 0.23),
       transparent 46%
     ),
     linear-gradient(
       90deg,
-      rgba(255, 247, 204, 0.45),
-      rgba(255, 255, 255, 0.4),
-      rgba(224, 243, 255, 0.45)
+      rgba(255, 244, 189, 0.48),
+      rgba(255, 255, 255, 0.43),
+      rgba(230, 244, 253, 0.48)
     );
 
   border-radius: 28px;
@@ -399,9 +371,9 @@ a {
 }
 
 
-.hero-decoration-yellow {
-  left: 8%;
-  bottom: 8%;
+.hero-decoration-pink {
+  left: 7%;
+  bottom: 7%;
 
   width: 190px;
   height: 190px;
@@ -409,13 +381,13 @@ a {
   background:
     radial-gradient(
       circle,
-      rgba(244, 207, 85, 0.17),
+      rgba(244, 207, 85, 0.18),
       transparent 72%
     );
 }
 
 
-.hero-decoration-blue {
+.hero-decoration-green {
   top: 8%;
   right: 8%;
 
@@ -425,7 +397,7 @@ a {
   background:
     radial-gradient(
       circle,
-      rgba(139, 200, 238, 0.18),
+      rgba(117, 173, 209, 0.19),
       transparent 72%
     );
 }
@@ -445,10 +417,10 @@ a {
   aspect-ratio: 4 / 5;
 
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
 
   border:
-    1px solid rgba(255, 255, 255, 0.72);
+    1px solid rgba(255, 255, 255, 0.76);
 
   border-radius:
     230px
@@ -457,18 +429,16 @@ a {
     28px;
 
   box-shadow:
-    0 24px 60px rgba(89, 76, 45, 0.16);
+    0 24px 60px rgba(82, 96, 105, 0.15);
 }
 
 
-/* =========================================================
-   INTRO
-========================================================= */
+/* INTRO */
 
 .profile-intro {
   position: relative;
 
-  z-index: 3;
+  z-index: 4;
 
   padding-top: 8px;
 
@@ -482,7 +452,7 @@ a {
     0
     0;
 
-  color: var(--oom-yellow-deep);
+  color: var(--pink-deep);
 
   font-family:
     "Great Vibes",
@@ -513,8 +483,8 @@ a {
   background:
     linear-gradient(
       90deg,
-      var(--oom-yellow-deep),
-      var(--oom-blue-deep)
+      var(--pink-deep),
+      var(--green-deep)
     );
 
   border-radius: 999px;
@@ -575,9 +545,7 @@ a {
 }
 
 
-/* =========================================================
-   SOCIAL SECTION
-========================================================= */
+/* SOCIALS */
 
 .social-section {
   position: relative;
@@ -591,7 +559,7 @@ a {
 .social-title {
   margin: 0;
 
-  color: var(--oom-blue-deep);
+  color: var(--green-deep);
 
   font-size: 0.72rem;
   font-weight: 700;
@@ -624,8 +592,6 @@ a {
 }
 
 
-/* individual social */
-
 .social-link {
   display: flex;
   flex-direction: column;
@@ -638,8 +604,7 @@ a {
   cursor: pointer;
 
   transition:
-    transform var(--transition),
-    opacity var(--transition);
+    transform var(--ease);
 }
 
 
@@ -651,7 +616,7 @@ a {
   height: 64px;
 
   background:
-    rgba(255, 255, 255, 0.9);
+    rgba(255, 255, 255, 0.93);
 
   border:
     1px solid rgba(103, 128, 145, 0.13);
@@ -662,9 +627,9 @@ a {
     0 10px 28px rgba(65, 83, 96, 0.08);
 
   transition:
-    background var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
+    background var(--ease),
+    transform var(--ease),
+    box-shadow var(--ease);
 }
 
 
@@ -674,17 +639,13 @@ a {
 }
 
 
-/* yellow icons */
-
-.social-yellow .social-icon {
-  color: var(--oom-yellow-deep);
+.social-pink .social-icon {
+  color: var(--pink-deep);
 }
 
 
-/* blue icons */
-
-.social-blue .social-icon {
-  color: var(--oom-blue-deep);
+.social-green .social-icon {
+  color: var(--green-deep);
 }
 
 
@@ -696,26 +657,24 @@ a {
 }
 
 
-/* hover */
-
 .social-link:hover {
   transform: translateY(-5px);
 }
 
 
-.social-yellow:hover .social-icon {
-  background: var(--oom-yellow-soft);
+.social-pink:hover .social-icon {
+  background: var(--pink-soft);
 
   box-shadow:
-    0 14px 32px rgba(202, 164, 35, 0.17);
+    0 14px 32px rgba(202, 164, 35, 0.15);
 }
 
 
-.social-blue:hover .social-icon {
-  background: var(--oom-blue-soft);
+.social-green:hover .social-icon {
+  background: var(--green-soft);
 
   box-shadow:
-    0 14px 32px rgba(102, 168, 211, 0.17);
+    0 14px 32px rgba(102, 168, 211, 0.15);
 }
 
 
@@ -724,11 +683,8 @@ a {
 }
 
 
-/* disabled Weibo */
-
 .social-disabled {
   opacity: 0.4;
-
   cursor: default;
 }
 
@@ -740,18 +696,11 @@ a {
 
 .social-disabled:hover .social-icon {
   transform: none;
-
-  background:
-    rgba(255, 255, 255, 0.9);
-
-  box-shadow:
-    0 10px 28px rgba(65, 83, 96, 0.08);
+  background: rgba(255, 255, 255, 0.93);
 }
 
 
-/* =========================================================
-   PROFILE MENU
-========================================================= */
+/* PROFILE MENU */
 
 .menu-list {
   position: relative;
@@ -769,7 +718,7 @@ a {
     auto;
 
   border-top:
-    1px solid var(--oom-border);
+    1px solid var(--border);
 }
 
 
@@ -787,7 +736,7 @@ a {
   color: #52545a;
 
   border-bottom:
-    1px solid var(--oom-border);
+    1px solid var(--border);
 
   font-size: 0.76rem;
   font-weight: 600;
@@ -797,14 +746,14 @@ a {
   text-transform: uppercase;
 
   transition:
-    color var(--transition),
-    padding var(--transition),
-    background var(--transition);
+    color var(--ease),
+    padding var(--ease),
+    background var(--ease);
 }
 
 
 .menu-arrow {
-  color: var(--oom-blue-deep);
+  color: var(--green-deep);
 
   font-size: 1.7rem;
   font-weight: 300;
@@ -814,20 +763,18 @@ a {
 .menu-list a:hover {
   padding-left: 23px;
 
-  color: var(--oom-yellow-deep);
+  color: var(--pink-deep);
 
   background:
     linear-gradient(
       90deg,
-      rgba(255, 241, 173, 0.23),
-      rgba(224, 244, 255, 0.19)
+      rgba(255, 241, 173, 0.28),
+      rgba(224, 244, 255, 0.22)
     );
 }
 
 
-/* =========================================================
-   CONTENT SECTIONS
-========================================================= */
+/* CONTENT */
 
 .content-section {
   position: relative;
@@ -852,13 +799,13 @@ a {
   background:
     linear-gradient(
       135deg,
-      rgba(255, 249, 220, 0.72),
-      rgba(255, 255, 255, 0.86) 46%,
-      rgba(230, 245, 253, 0.72)
+      rgba(255, 244, 189, 0.74),
+      rgba(255, 255, 255, 0.89) 46%,
+      rgba(230, 244, 253, 0.74)
     );
 
   border:
-    1px solid rgba(102, 123, 137, 0.1);
+    1px solid rgba(103, 128, 145, 0.10);
 
   border-radius: 24px;
 
@@ -873,7 +820,7 @@ a {
     0
     10px;
 
-  color: var(--oom-yellow-deep);
+  color: var(--pink-deep);
 
   font-size: 0.68rem;
   font-weight: 700;
@@ -889,8 +836,6 @@ a {
     0
     0
     22px;
-
-  color: var(--oom-ink);
 
   font-family:
     "Cormorant Garamond",
@@ -912,7 +857,7 @@ a {
 .content-section > p:last-child {
   margin: 0;
 
-  color: var(--oom-text);
+  color: var(--text);
 
   font-size: 0.9rem;
 
@@ -928,13 +873,13 @@ a {
 
   margin-top: 20px;
 
-  color: var(--oom-muted);
+  color: var(--muted);
 
   background:
-    rgba(255, 255, 255, 0.6);
+    rgba(255, 255, 255, 0.63);
 
   border:
-    1px dashed rgba(105, 143, 168, 0.25);
+    1px dashed rgba(117, 173, 209, 0.28);
 
   border-radius: 16px;
 
@@ -942,9 +887,7 @@ a {
 }
 
 
-/* =========================================================
-   RETURN SECTION
-========================================================= */
+/* RETURN */
 
 .return-section {
   position: relative;
@@ -975,9 +918,9 @@ a {
   background:
     linear-gradient(
       90deg,
-      var(--oom-yellow-soft),
-      #fffdf8 52%,
-      var(--oom-blue-soft)
+      var(--pink-soft),
+      var(--cream) 52%,
+      var(--green-soft)
     );
 
   border-radius: 22px;
@@ -987,7 +930,7 @@ a {
 .return-section p {
   margin: 0;
 
-  color: var(--oom-text);
+  color: var(--text);
 
   font-size: 0.78rem;
 }
@@ -996,7 +939,7 @@ a {
 .return-kicker {
   margin-bottom: 3px !important;
 
-  color: var(--oom-yellow-deep) !important;
+  color: var(--pink-deep) !important;
 
   font-size: 0.66rem !important;
   font-weight: 700;
@@ -1027,7 +970,7 @@ a {
   background:
     linear-gradient(
       135deg,
-      var(--oom-yellow),
+      var(--pink),
       #f8e49c
     );
 
@@ -1044,7 +987,7 @@ a {
     0 10px 26px rgba(180, 142, 31, 0.16);
 
   transition:
-    transform var(--transition);
+    transform var(--ease);
 }
 
 
@@ -1053,18 +996,12 @@ a {
 }
 
 
-/* =========================================================
-   LAPTOP
-========================================================= */
+/* LAPTOP */
 
 @media (max-width: 1100px) {
 
   .profile-card {
-    width:
-      min(
-        950px,
-        94vw
-      );
+    width: min(950px, 94vw);
 
     padding:
       28px
@@ -1072,36 +1009,26 @@ a {
       46px;
   }
 
-
   .nav-links {
     gap: 14px;
   }
-
 
   .nav-links a {
     font-size: 0.64rem;
   }
 
-
   .logo {
     width: 80px;
   }
 
-
   .hero-image {
-    width:
-      min(
-        480px,
-        70%
-      );
+    width: min(480px, 70%);
   }
 
 }
 
 
-/* =========================================================
-   TABLET
-========================================================= */
+/* TABLET */
 
 @media (max-width: 850px) {
 
@@ -1110,7 +1037,6 @@ a {
       22px
       14px;
   }
-
 
   .profile-card {
     width: 100%;
@@ -1123,13 +1049,11 @@ a {
     border-radius: 26px;
   }
 
-
   .top-nav {
     flex-direction: column;
 
     gap: 16px;
   }
-
 
   .nav-links {
     justify-content: center;
@@ -1141,11 +1065,9 @@ a {
       16px;
   }
 
-
   .breadcrumb {
     justify-content: center;
   }
-
 
   .hero-section {
     padding:
@@ -1154,22 +1076,15 @@ a {
       18px;
   }
 
-
   .hero-image {
-    width:
-      min(
-        430px,
-        82%
-      );
+    width: min(430px, 82%);
   }
-
 
   .socials {
     gap:
       22px
       32px;
   }
-
 
   .return-section {
     align-items: flex-start;
@@ -1180,9 +1095,7 @@ a {
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
@@ -1192,12 +1105,11 @@ a {
     background:
       linear-gradient(
         145deg,
-        #fff7d0,
+        #fff4bd,
         #fffdf8 50%,
-        #e4f4fe
+        #e6f4fd
       );
   }
-
 
   .profile-card {
     width: 100%;
@@ -1216,11 +1128,9 @@ a {
     box-shadow: none;
   }
 
-
   .logo {
     width: 72px;
   }
-
 
   .nav-links {
     gap:
@@ -1228,18 +1138,15 @@ a {
       12px;
   }
 
-
   .nav-links a {
     font-size: 0.56rem;
   }
-
 
   .nav-links a.active {
     padding:
       6px
       11px;
   }
-
 
   .breadcrumb {
     padding:
@@ -1250,7 +1157,6 @@ a {
     font-size: 0.6rem;
   }
 
-
   .hero-section {
     padding:
       25px
@@ -1260,13 +1166,8 @@ a {
     border-radius: 20px;
   }
 
-
   .hero-image {
-    width:
-      min(
-        350px,
-        94%
-      );
+    width: min(350px, 94%);
 
     border-radius:
       175px
@@ -1274,7 +1175,6 @@ a {
       20px
       20px;
   }
-
 
   .name-script {
     font-size:
@@ -1285,20 +1185,17 @@ a {
       );
   }
 
-
   .name-accent {
     width: 90px;
 
     margin-top: 14px;
   }
 
-
   .role {
     margin-top: 22px;
 
     font-size: 1.05rem;
   }
-
 
   .quote {
     max-width: 350px;
@@ -1308,11 +1205,9 @@ a {
     font-size: 1.08rem;
   }
 
-
   .social-section {
     margin-top: 46px;
   }
-
 
   .socials {
     gap:
@@ -1322,28 +1217,23 @@ a {
     margin-bottom: 38px;
   }
 
-
   .social-link {
     min-width: 62px;
   }
-
 
   .social-icon {
     width: 54px;
     height: 54px;
   }
 
-
   .social-icon svg {
     width: 24px;
     height: 24px;
   }
 
-
   .social-label {
     font-size: 0.61rem;
   }
-
 
   .menu-list a {
     min-height: 58px;
@@ -1355,7 +1245,6 @@ a {
     font-size: 0.66rem;
   }
 
-
   .content-section {
     margin-top: 58px;
 
@@ -1363,7 +1252,6 @@ a {
       30px
       24px;
   }
-
 
   .content-section h2 {
     font-size:
@@ -1374,7 +1262,6 @@ a {
       );
   }
 
-
   .return-section {
     margin-top: 54px;
 
@@ -1383,7 +1270,6 @@ a {
       22px;
   }
 
-
   .return-button {
     width: 100%;
   }
@@ -1391,9 +1277,7 @@ a {
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/* SMALL MOBILE */
 
 @media (max-width: 390px) {
 
@@ -1402,23 +1286,19 @@ a {
     padding-left: 13px;
   }
 
-
   .nav-links {
     gap:
       7px
       9px;
   }
 
-
   .hero-image {
     width: 96%;
   }
 
-
   .name-script {
     font-size: 3.7rem;
   }
-
 
   .socials {
     gap:
@@ -1426,12 +1306,10 @@ a {
       16px;
   }
 
-
   .social-icon {
     width: 50px;
     height: 50px;
   }
-
 
   .social-icon svg {
     width: 22px;
