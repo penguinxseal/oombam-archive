@@ -721,23 +721,23 @@ button {
   display: grid;
 
   grid-template-columns:
-    minmax(280px, 0.9fr)
-    minmax(340px, 1.1fr);
+    minmax(390px, 1fr)
+    minmax(360px, 1.05fr);
 
   align-items: center;
 
   min-height: 540px;
 
   gap:
-    clamp(40px, 4vw, 70px);
+    clamp(45px, 4vw, 70px);
 
   padding:
     72px
-    clamp(46px, 5vw, 86px);
+    clamp(55px, 6vw, 95px);
 }
 
 .story-copy-block {
-  max-width: 430px;
+  max-width: 470px;
 }
 
 .section-label {
@@ -780,13 +780,16 @@ button {
 
   font-size:
     clamp(
-      3rem,
-      4.4vw,
-      4.8rem
+      3.2rem,
+      3.7vw,
+      4.25rem
     );
 
   font-weight: 500;
-  line-height: 0.98;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.025em;
 }
 
 .story-copy {
@@ -1073,12 +1076,13 @@ button {
     );
 
   font-weight: 500;
+
   line-height: 1;
 }
 
 
 /* =========================
-   WEIBO EVENT DETAILS
+   WEIBO GALA EVENT
 ========================= */
 
 .upcoming-event {
@@ -1131,7 +1135,19 @@ button {
   color: rgba(255, 255, 255, 0.78);
 
   font-size: 0.72rem;
+
   line-height: 1.5;
+}
+
+.event-time {
+  margin: 8px 0 0;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  letter-spacing: 0.045em;
 }
 
 
@@ -1199,9 +1215,11 @@ button {
 .countdown-status {
   margin: 0 0 22px;
 
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.74);
 
   font-size: 0.64rem;
+
+  line-height: 1.5;
 
   letter-spacing: 0.03em;
 }
@@ -1254,7 +1272,7 @@ button {
 .upcoming-photo-wrap {
   position: relative;
 
-  height: 180px;
+  height: 205px;
 
   margin-top: auto;
 
@@ -1306,7 +1324,7 @@ button {
 
   object-fit: cover;
 
-  object-position: center 38%;
+  object-position: center 18%;
 }
 
 
@@ -1404,6 +1422,12 @@ body.dark-theme
   .header-actions {
     margin-left: 10px;
   }
+
+  .story-panel {
+    grid-template-columns:
+      minmax(330px, 1fr)
+      minmax(330px, 1fr);
+  }
 }
 
 
@@ -1419,8 +1443,8 @@ body.dark-theme
 
   .story-panel {
     grid-template-columns:
-      minmax(260px, 0.9fr)
-      minmax(320px, 1.1fr);
+      minmax(300px, 0.95fr)
+      minmax(320px, 1fr);
   }
 
   .upcoming-panel {
@@ -1566,6 +1590,15 @@ body.dark-theme
     max-width: none;
   }
 
+  .story-copy-block h2 {
+    font-size:
+      clamp(
+        3rem,
+        12vw,
+        4rem
+      );
+  }
+
   .story-photo-wrap {
     min-height: 0;
   }
@@ -1645,7 +1678,7 @@ body.dark-theme
   }
 
   .story-copy-block h2 {
-    font-size: 3.25rem;
+    font-size: 3.1rem;
   }
 
   .story-badge {
@@ -1663,6 +1696,14 @@ body.dark-theme
     font-size: 1.5rem;
   }
 
+  .event-subtitle {
+    font-size: 0.68rem;
+  }
+
+  .event-time {
+    font-size: 0.66rem;
+  }
+
   .countdown-box {
     min-height: 68px;
   }
@@ -1675,4 +1716,3 @@ body.dark-theme
     font-size: 0.5rem;
   }
 }
-
