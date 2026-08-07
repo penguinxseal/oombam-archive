@@ -1,10 +1,12 @@
 "use strict";
 
-/* =========================
-   ELEMENTS
-========================= */
 
-const body = document.body;
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const body =
+  document.body;
 
 const siteHeader =
   document.getElementById("siteHeader");
@@ -19,9 +21,9 @@ const themeToggle =
   document.getElementById("themeToggle");
 
 
-/* =========================
+/* =========================================================
    STICKY HEADER
-========================= */
+========================================================= */
 
 function updateHeader() {
 
@@ -33,78 +35,139 @@ function updateHeader() {
     "is-scrolled",
     window.scrollY > 40
   );
+
 }
+
 
 window.addEventListener(
   "scroll",
   updateHeader,
-  { passive: true }
+  {
+    passive: true
+  }
 );
+
 
 updateHeader();
 
 
-/* =========================
+/* =========================================================
    MOBILE MENU
-========================= */
+========================================================= */
 
 function openMenu() {
 
-  if (!mobileMenu || !menuToggle) {
+  if (
+    !mobileMenu ||
+    !menuToggle
+  ) {
     return;
   }
+
 
   mobileMenu.classList.add(
     "is-open"
   );
 
+
   menuToggle.classList.add(
     "is-active"
   );
+
 
   mobileMenu.setAttribute(
     "aria-hidden",
     "false"
   );
 
+
   menuToggle.setAttribute(
     "aria-expanded",
     "true"
   );
 
+
+  menuToggle.setAttribute(
+    "aria-label",
+    "Close navigation menu"
+  );
+
+
   body.classList.add(
     "menu-open"
   );
+
 }
 
 
 function closeMenu() {
 
-  if (!mobileMenu || !menuToggle) {
+  if (
+    !mobileMenu ||
+    !menuToggle
+  ) {
     return;
   }
+
 
   mobileMenu.classList.remove(
     "is-open"
   );
 
+
   menuToggle.classList.remove(
     "is-active"
   );
+
 
   mobileMenu.setAttribute(
     "aria-hidden",
     "true"
   );
 
+
   menuToggle.setAttribute(
     "aria-expanded",
     "false"
   );
 
+
+  menuToggle.setAttribute(
+    "aria-label",
+    "Open navigation menu"
+  );
+
+
   body.classList.remove(
     "menu-open"
   );
+
+}
+
+
+function toggleMenu() {
+
+  if (!mobileMenu) {
+    return;
+  }
+
+
+  const menuIsOpen =
+    mobileMenu.classList.contains(
+      "is-open"
+    );
+
+
+  if (menuIsOpen) {
+
+    closeMenu();
+
+  } else {
+
+    openMenu();
+
+  }
+
 }
 
 
@@ -112,29 +175,22 @@ if (menuToggle) {
 
   menuToggle.addEventListener(
     "click",
-    () => {
-
-      const isOpen =
-        mobileMenu.classList.contains(
-          "is-open"
-        );
-
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-
-    }
+    toggleMenu
   );
+
 }
 
 
-/* =========================
-   CLOSE MENU
-========================= */
+/* =========================================================
+   CLOSE MOBILE MENU
+========================================================= */
 
 if (mobileMenu) {
+
+  /*
+    Close when clicking outside
+    the navigation panel.
+  */
 
   mobileMenu.addEventListener(
     "click",
@@ -143,11 +199,19 @@ if (mobileMenu) {
       if (
         event.target === mobileMenu
       ) {
+
         closeMenu();
+
       }
 
     }
   );
+
+
+  /*
+    Close when a navigation
+    link is selected.
+  */
 
   mobileMenu
     .querySelectorAll("a")
@@ -159,12 +223,13 @@ if (mobileMenu) {
       );
 
     });
+
 }
 
 
-/* =========================
-   ESC TO CLOSE MENU
-========================= */
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
 
 document.addEventListener(
   "keydown",
@@ -173,16 +238,18 @@ document.addEventListener(
     if (
       event.key === "Escape"
     ) {
+
       closeMenu();
+
     }
 
   }
 );
 
 
-/* =========================
+/* =========================================================
    SMOOTH SCROLL
-========================= */
+========================================================= */
 
 document
   .querySelectorAll(
@@ -199,6 +266,11 @@ document
             "href"
           );
 
+
+        /*
+          Ignore empty links.
+        */
+
         if (
           !targetId ||
           targetId === "#"
@@ -206,53 +278,181 @@ document
           return;
         }
 
-        const target =
+
+        const targetSection =
           document.querySelector(
             targetId
           );
 
-        if (!target) {
+
+        if (!targetSection) {
           return;
         }
 
+
         event.preventDefault();
 
-        target.scrollIntoView({
 
-          behavior: "smooth",
+        /*
+          Compensate for the
+          fixed navigation header.
+        */
 
-          block: "start"
+        const headerHeight =
+          siteHeader
+            ? siteHeader.offsetHeight
+            : 0;
+
+
+        const targetPosition =
+          targetSection
+            .getBoundingClientRect()
+            .top
+          +
+          window.scrollY
+          -
+          headerHeight;
+
+
+        window.scrollTo({
+
+          top:
+            targetPosition,
+
+          behavior:
+            "smooth"
 
         });
 
+
+        closeMenu();
+
       }
+
     );
 
   });
 
 
-/* =========================
+/* =========================================================
    DARK MODE
-========================= */
+========================================================= */
+
+const themeStorageKey =
+  "oombam-theme";
+
+
+function updateThemeButton() {
+
+  if (!themeToggle) {
+    return;
+  }
+
+
+  const darkMode =
+    body.classList.contains(
+      "dark-theme"
+    );
+
+
+  themeToggle.setAttribute(
+    "aria-label",
+    darkMode
+      ? "Switch to light theme"
+      : "Switch to dark theme"
+  );
+
+}
+
+
+function loadTheme() {
+
+  try {
+
+    const savedTheme =
+      localStorage.getItem(
+        themeStorageKey
+      );
+
+
+    if (
+      savedTheme === "dark"
+    ) {
+
+      body.classList.add(
+        "dark-theme"
+      );
+
+    }
+
+  } catch (error) {
+
+    console.warn(
+      "Unable to load theme preference.",
+      error
+    );
+
+  }
+
+
+  updateThemeButton();
+
+}
+
+
+function toggleTheme() {
+
+  body.classList.toggle(
+    "dark-theme"
+  );
+
+
+  const darkMode =
+    body.classList.contains(
+      "dark-theme"
+    );
+
+
+  try {
+
+    localStorage.setItem(
+      themeStorageKey,
+      darkMode
+        ? "dark"
+        : "light"
+    );
+
+  } catch (error) {
+
+    console.warn(
+      "Unable to save theme preference.",
+      error
+    );
+
+  }
+
+
+  updateThemeButton();
+
+}
+
 
 if (themeToggle) {
 
   themeToggle.addEventListener(
     "click",
-    () => {
-
-      body.classList.toggle(
-        "dark-theme"
-      );
-
-    }
+    toggleTheme
   );
+
 }
 
 
-/* =========================
-   CLOSE MENU ON RESIZE
-========================= */
+loadTheme();
+
+
+/* =========================================================
+   RESPONSIVE MENU RESET
+========================================================= */
 
 window.addEventListener(
   "resize",
@@ -261,41 +461,64 @@ window.addEventListener(
     if (
       window.innerWidth > 1100
     ) {
+
       closeMenu();
+
     }
 
   }
 );
 
 
-/* =========================
-   WEIBO GALA COUNTDOWN
-========================= */
+/* =========================================================
+   WEIBO GALA 2026
+   LIVE EVENT COUNTDOWN
+========================================================= */
+
+/*
+  EVENT
+
+  OOMBAM
+  Weibo Gala 2026
+  Weibo Cultural Communication Night
+
+  Saturday, August 8, 2026
+  Main Show: 6:00 PM Thailand Time
+
+  Thailand timezone:
+  UTC +07:00
+*/
+
 
 const eventCountdown =
   document.getElementById(
     "eventCountdown"
   );
 
+
 const countdownDays =
   document.getElementById(
     "countdownDays"
   );
+
 
 const countdownHours =
   document.getElementById(
     "countdownHours"
   );
 
+
 const countdownMinutes =
   document.getElementById(
     "countdownMinutes"
   );
 
+
 const countdownSeconds =
   document.getElementById(
     "countdownSeconds"
   );
+
 
 const countdownStatus =
   document.getElementById(
@@ -303,9 +526,20 @@ const countdownStatus =
   );
 
 
-function padNumber(number) {
+let countdownInterval = null;
 
-  return String(number).padStart(
+
+/* =========================================================
+   NUMBER FORMAT
+========================================================= */
+
+function formatCountdownNumber(
+  number
+) {
+
+  return String(
+    number
+  ).padStart(
     2,
     "0"
   );
@@ -313,108 +547,310 @@ function padNumber(number) {
 }
 
 
-function updateCountdown() {
+/* =========================================================
+   DISPLAY VALUES
+========================================================= */
+
+function displayCountdown(
+  days,
+  hours,
+  minutes,
+  seconds
+) {
+
+  if (countdownDays) {
+
+    countdownDays.textContent =
+      formatCountdownNumber(
+        days
+      );
+
+  }
+
+
+  if (countdownHours) {
+
+    countdownHours.textContent =
+      formatCountdownNumber(
+        hours
+      );
+
+  }
+
+
+  if (countdownMinutes) {
+
+    countdownMinutes.textContent =
+      formatCountdownNumber(
+        minutes
+      );
+
+  }
+
+
+  if (countdownSeconds) {
+
+    countdownSeconds.textContent =
+      formatCountdownNumber(
+        seconds
+      );
+
+  }
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+function updateEventCountdown() {
 
   if (!eventCountdown) {
     return;
   }
 
-  const targetDate =
-    new Date(
-      eventCountdown.dataset.eventDate
-    ).getTime();
 
-  const now =
-    new Date().getTime();
+  /*
+    Read target date from HTML.
 
-  const difference =
-    targetDate - now;
+    Required value:
+
+    2026-08-08T18:00:00+07:00
+  */
+
+  const eventDateString =
+    eventCountdown.getAttribute(
+      "data-event-date"
+    );
 
 
-  /* Event started */
+  if (!eventDateString) {
 
-  if (difference <= 0) {
+    displayCountdown(
+      0,
+      0,
+      0,
+      0
+    );
 
-    countdownDays.textContent =
-      "00";
 
-    countdownHours.textContent =
-      "00";
+    if (countdownStatus) {
 
-    countdownMinutes.textContent =
-      "00";
+      countdownStatus.textContent =
+        "Event date unavailable";
 
-    countdownSeconds.textContent =
-      "00";
+    }
 
-    countdownStatus.textContent =
-      "OOMBAM is now at Weibo Gala 2026 ✨";
 
     return;
+
   }
 
 
+  const eventTime =
+    new Date(
+      eventDateString
+    ).getTime();
+
+
+  /*
+    Validate date.
+  */
+
+  if (
+    Number.isNaN(
+      eventTime
+    )
+  ) {
+
+    displayCountdown(
+      0,
+      0,
+      0,
+      0
+    );
+
+
+    if (countdownStatus) {
+
+      countdownStatus.textContent =
+        "Event date unavailable";
+
+    }
+
+
+    return;
+
+  }
+
+
+  const currentTime =
+    Date.now();
+
+
+  const remainingTime =
+    eventTime -
+    currentTime;
+
+
+  /* =======================================================
+     EVENT HAS STARTED
+  ======================================================= */
+
+  if (
+    remainingTime <= 0
+  ) {
+
+    displayCountdown(
+      0,
+      0,
+      0,
+      0
+    );
+
+
+    if (countdownStatus) {
+
+      countdownStatus.textContent =
+        "OOMBAM • Weibo Gala 2026 is happening now ✨";
+
+    }
+
+
+    if (
+      countdownInterval
+    ) {
+
+      clearInterval(
+        countdownInterval
+      );
+
+
+      countdownInterval =
+        null;
+
+    }
+
+
+    return;
+
+  }
+
+
+  /* =======================================================
+     TIME UNITS
+  ======================================================= */
+
+  const second =
+    1000;
+
+
+  const minute =
+    second * 60;
+
+
+  const hour =
+    minute * 60;
+
+
+  const day =
+    hour * 24;
+
+
+  /* =======================================================
+     CALCULATE REMAINING TIME
+  ======================================================= */
+
   const days =
     Math.floor(
-      difference /
-      (1000 * 60 * 60 * 24)
+      remainingTime /
+      day
     );
+
 
   const hours =
     Math.floor(
       (
-        difference %
-        (1000 * 60 * 60 * 24)
-      ) /
-      (1000 * 60 * 60)
+        remainingTime %
+        day
+      )
+      /
+      hour
     );
+
 
   const minutes =
     Math.floor(
       (
-        difference %
-        (1000 * 60 * 60)
-      ) /
-      (1000 * 60)
+        remainingTime %
+        hour
+      )
+      /
+      minute
     );
+
 
   const seconds =
     Math.floor(
       (
-        difference %
-        (1000 * 60)
-      ) /
-      1000
+        remainingTime %
+        minute
+      )
+      /
+      second
     );
 
 
-  countdownDays.textContent =
-    padNumber(days);
+  /* =======================================================
+     UPDATE PAGE
+  ======================================================= */
 
-  countdownHours.textContent =
-    padNumber(hours);
-
-  countdownMinutes.textContent =
-    padNumber(minutes);
-
-  countdownSeconds.textContent =
-    padNumber(seconds);
+  displayCountdown(
+    days,
+    hours,
+    minutes,
+    seconds
+  );
 
 
-  countdownStatus.textContent =
-    "Counting down to Weibo Cultural Communication Night";
+  if (countdownStatus) {
+
+    countdownStatus.textContent =
+      "Main show • August 8, 2026 • 6:00 PM Thailand Time";
+
+  }
 
 }
 
 
-/* Initial render */
+/* =========================================================
+   START COUNTDOWN
+========================================================= */
 
-updateCountdown();
+if (eventCountdown) {
+
+  /*
+    Render immediately so the
+    user does not briefly see
+    00 00 00 00.
+  */
+
+  updateEventCountdown();
 
 
-/* Update every second */
+  /*
+    Then update once every
+    second.
+  */
 
-setInterval(
-  updateCountdown,
-  1000
-);
+  countdownInterval =
+    window.setInterval(
+
+      updateEventCountdown,
+
+      1000
+
+    );
+
+}
