@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -17,11 +16,7 @@
 
   <title>Oom Eisaya | OomBam Fansite</title>
 
-
-  <!-- =========================================
-       GOOGLE FONTS
-  ========================================== -->
-
+  <!-- Google Fonts -->
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -38,52 +33,41 @@
     rel="stylesheet"
   >
 
-
-  <!-- =========================================
-       OOM PROFILE STYLESHEET
-  ========================================== -->
-
+  <!-- Oom Page Styles -->
   <link
     rel="stylesheet"
-    href="./css/oom.css?v=5"
+    href="./css/oom.css?v=7"
   >
-
 </head>
 
 
 <body>
 
-  <!-- =========================================
-       MAIN PROFILE CARD
-  ========================================== -->
-
   <main class="profile-card">
 
+    <!-- =====================================================
+         TOP NAVIGATION
+    ====================================================== -->
 
-    <!-- =========================================
-         NAVIGATION
-    ========================================== -->
-
-    <nav
-      class="top-nav"
-      aria-label="Main navigation"
-    >
+    <header class="top-nav">
 
       <a
         href="index.html"
+        class="brand-link"
         aria-label="Return to OomBam homepage"
       >
-
         <img
           src="assets/images/logo-icon-v2.png"
           alt="OomBam Forever Together"
           class="logo"
         >
-
       </a>
 
 
-      <div class="nav-links">
+      <nav
+        class="nav-links"
+        aria-label="Main navigation"
+      >
 
         <a href="index.html">
           Home
@@ -125,14 +109,14 @@
           Shop
         </a>
 
-      </div>
+      </nav>
 
-    </nav>
+    </header>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          BREADCRUMB
-    ========================================== -->
+    ====================================================== -->
 
     <div class="breadcrumb">
 
@@ -151,14 +135,25 @@
     </div>
 
 
-    <!-- =========================================
-         PROFILE HERO
-    ========================================== -->
+    <!-- =====================================================
+         HERO PHOTO
+    ====================================================== -->
 
     <section
       class="hero-section"
-      aria-labelledby="oom-profile-title"
+      aria-labelledby="oom-name"
     >
+
+      <div
+        class="hero-decoration hero-decoration-yellow"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="hero-decoration hero-decoration-blue"
+        aria-hidden="true"
+      ></div>
+
 
       <img
         src="assets/images/oom-profile.jpg"
@@ -169,22 +164,32 @@
     </section>
 
 
-    <!-- =========================================
-         NAME / INTRODUCTION
-    ========================================== -->
+    <!-- =====================================================
+         PROFILE INTRO
+    ====================================================== -->
 
     <section class="profile-intro">
 
       <h1
         class="name-script"
-        id="oom-profile-title"
+        id="oom-name"
       >
         Oom Eisaya
       </h1>
 
 
+      <div
+        class="name-accent"
+        aria-hidden="true"
+      ></div>
+
+
       <p class="role">
-        Actress • Model • Artist
+        Actress
+        <span>•</span>
+        Model
+        <span>•</span>
+        Dreamer
       </p>
 
 
@@ -196,43 +201,75 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          SOCIAL MEDIA
-    ========================================== -->
+    ====================================================== -->
 
     <section
-      aria-labelledby="oom-social-title"
+      class="social-section"
+      aria-labelledby="social-title"
     >
 
       <p
         class="social-title"
-        id="oom-social-title"
+        id="social-title"
       >
         Social Media
       </p>
 
 
-      <div
-        class="socials"
-        aria-label="Oom Eisaya social media links"
-      >
+      <div class="socials">
 
 
-        <!-- Instagram -->
+        <!-- INSTAGRAM -->
 
         <a
           href="https://www.instagram.com/oomeisaya/?hl=en"
           target="_blank"
           rel="noopener noreferrer"
+          class="social-link social-yellow"
           aria-label="Oom Eisaya on Instagram"
-          title="Instagram"
         >
 
-          <span aria-hidden="true">
-            ◎
+          <span class="social-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              />
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              />
+
+              <circle
+                cx="17.3"
+                cy="6.7"
+                r="1.1"
+                fill="currentColor"
+              />
+
+            </svg>
+
           </span>
 
-          <span>
+          <span class="social-label">
             Instagram
           </span>
 
@@ -245,93 +282,152 @@
           href="https://x.com/OomeisayaH"
           target="_blank"
           rel="noopener noreferrer"
+          class="social-link social-blue"
           aria-label="Oom Eisaya on X"
-          title="X"
         >
 
-          <span aria-hidden="true">
-            𝕏
+          <span class="social-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.5 22H3.4l7.3-8.4L1 2h6.3l4.3 5.8L18.9 2Z"
+                fill="currentColor"
+              />
+
+            </svg>
+
           </span>
 
-          <span>
+          <span class="social-label">
             X
           </span>
 
         </a>
 
 
-        <!-- TikTok -->
+        <!-- TIKTOK -->
 
         <a
           href="https://www.tiktok.com/@oomeisayah?lang=en"
           target="_blank"
           rel="noopener noreferrer"
+          class="social-link social-yellow"
           aria-label="Oom Eisaya on TikTok"
-          title="TikTok"
         >
 
-          <span aria-hidden="true">
-            ♪
+          <span class="social-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                d="M14.4 3v10.1a3.25 3.25 0 1 1-2.7-3.2V7.2a6.5 6.5 0 1 0 5.8 6.45V8.2A6.7 6.7 0 0 0 21 9.35V6.6A4.45 4.45 0 0 1 17.35 3Z"
+                fill="currentColor"
+              />
+
+            </svg>
+
           </span>
 
-          <span>
+          <span class="social-label">
             TikTok
           </span>
 
         </a>
 
 
-        <!-- Threads -->
+        <!-- THREADS -->
 
         <a
           href="https://www.threads.com/@oomeisaya"
           target="_blank"
           rel="noopener noreferrer"
+          class="social-link social-blue"
           aria-label="Oom Eisaya on Threads"
-          title="Threads"
         >
 
-          <span aria-hidden="true">
-            @
+          <span class="social-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                d="M12.2 2.5c-5.2 0-9.1 3.6-9.1 9.3 0 5.8 3.8 9.7 9.3 9.7 4.4 0 7.8-2.4 8.5-6.2.6-3.2-.9-5.6-3.7-6.8-.5-3-2.4-4.8-5.2-4.8-2.6 0-4.6 1.4-5.4 3.8l2.2.8c.5-1.5 1.6-2.3 3.2-2.3 1.5 0 2.5.7 2.9 2.1-.7-.1-1.5-.2-2.3-.2-3.5 0-5.8 1.8-5.8 4.6 0 2.7 2.2 4.5 5.2 4.5 2.9 0 5-1.5 5.4-4.1 1.2.8 1.7 2 1.4 3.6-.5 2.5-2.8 4.2-6 4.2-4.2 0-6.9-3-6.9-7.6 0-4.3 2.8-7 6.8-7 3.4 0 5.8 1.9 6.4 5.1l2.3-.5C20.5 5.7 17 2.5 12.2 2.5Zm-.1 12.1c-1.8 0-2.9-.8-2.9-2.1 0-1.4 1.2-2.3 3.4-2.3.9 0 1.7.1 2.5.3v.6c0 2.2-1.1 3.5-3 3.5Z"
+                fill="currentColor"
+              />
+
+            </svg>
+
           </span>
 
-          <span>
+          <span class="social-label">
             Threads
           </span>
 
         </a>
 
 
-        <!-- Weibo
-             Link will be added once confirmed.
-        -->
+        <!-- WEIBO - DISABLED UNTIL LINK IS CONFIRMED -->
 
-        <a
-          class="social-disabled"
+        <div
+          class="social-link social-yellow social-disabled"
           aria-label="Oom Eisaya Weibo link coming soon"
-          aria-disabled="true"
-          tabindex="-1"
-          title="Weibo link coming soon"
         >
 
-          <span aria-hidden="true">
-            ◉
+          <span class="social-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                d="M9.7 17.4c-3.2 0-5.7-1.6-5.7-3.8 0-1.7 1.5-3.5 4.1-4.7 3.5-1.6 6.9-1.5 8.1.3.6.9.1 2.1-.9 2.6-.3.1-.5.2-.4.4 0 .2.5.2.8.3 1.3.4 2.2 1.4 2.2 2.6 0 2.2-2.8 4.1-6.3 4.1Zm-.3-2.2c1.5.4 3-.2 3.4-1.3.4-1.1-.5-2.3-2-2.7-1.5-.4-3 .2-3.4 1.3-.4 1.1.5 2.3 2 2.7Zm.8-2.8c.6.2 1.2-.1 1.4-.6.2-.5-.2-1.1-.8-1.2-.6-.2-1.2.1-1.4.6-.2.5.2 1.1.8 1.2Z"
+                fill="currentColor"
+              />
+
+              <path
+                d="M15.3 5.2c2.7-.7 5.4 1 6.1 3.7"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M16 7.6c1.4-.4 2.8.5 3.2 1.9"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+              />
+
+            </svg>
+
           </span>
 
-          <span>
+          <span class="social-label">
             Weibo
           </span>
 
-        </a>
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- =========================================
-         PROFILE NAVIGATION
-    ========================================== -->
+    <!-- =====================================================
+         PROFILE MENU
+    ====================================================== -->
 
     <nav
       class="menu-list"
@@ -344,7 +440,10 @@
           About Oom
         </span>
 
-        <span aria-hidden="true">
+        <span
+          class="menu-arrow"
+          aria-hidden="true"
+        >
           ›
         </span>
 
@@ -357,7 +456,10 @@
           Projects
         </span>
 
-        <span aria-hidden="true">
+        <span
+          class="menu-arrow"
+          aria-hidden="true"
+        >
           ›
         </span>
 
@@ -370,7 +472,10 @@
           Gallery
         </span>
 
-        <span aria-hidden="true">
+        <span
+          class="menu-arrow"
+          aria-hidden="true"
+        >
           ›
         </span>
 
@@ -383,7 +488,10 @@
           Updates
         </span>
 
-        <span aria-hidden="true">
+        <span
+          class="menu-arrow"
+          aria-hidden="true"
+        >
           ›
         </span>
 
@@ -392,168 +500,125 @@
     </nav>
 
 
-    <!-- =========================================
-         ABOUT OOM
-    ========================================== -->
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
 
     <section
+      class="content-section"
       id="about-oom"
-      class="profile-content-section"
     >
 
-      <div class="section-heading">
+      <p class="content-eyebrow">
+        About Oom
+      </p>
 
-        <p class="section-eyebrow">
-          About Oom
-        </p>
+      <h2>
+        A heart that shines beyond the screen.
+      </h2>
 
-        <h2>
-          A heart that shines beyond the screen.
-        </h2>
-
-      </div>
-
-
-      <div class="about-content">
-
-        <p>
-          This section is dedicated to Oom Eisaya —
-          her journey, personality, work, and memorable
-          moments along the way.
-        </p>
-
-        <p>
-          More detailed profile information can be added
-          here as the Oom archive continues to grow.
-        </p>
-
-      </div>
+      <p>
+        A space dedicated to Oom Eisaya —
+        her journey, work, personality,
+        and the moments supporters continue to cherish.
+      </p>
 
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          PROJECTS
-    ========================================== -->
+    ====================================================== -->
 
     <section
+      class="content-section"
       id="oom-projects"
-      class="profile-content-section"
     >
 
-      <div class="section-heading">
+      <p class="content-eyebrow">
+        Selected Projects
+      </p>
 
-        <p class="section-eyebrow">
-          Selected Projects
-        </p>
+      <h2>
+        On Screen & Beyond
+      </h2>
 
-        <h2>
-          On Screen & Beyond
-        </h2>
-
-      </div>
-
-
-      <div class="content-placeholder">
-
-        <p>
-          Oom's selected projects will be added here.
-        </p>
-
+      <div class="section-placeholder">
+        Projects will be added here.
       </div>
 
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          GALLERY
-    ========================================== -->
+    ====================================================== -->
 
     <section
+      class="content-section"
       id="oom-gallery"
-      class="profile-content-section"
     >
 
-      <div class="section-heading">
+      <p class="content-eyebrow">
+        Oom Gallery
+      </p>
 
-        <p class="section-eyebrow">
-          Oom Gallery
-        </p>
+      <h2>
+        Through the Lens
+      </h2>
 
-        <h2>
-          Through the Lens
-        </h2>
-
-      </div>
-
-
-      <div class="content-placeholder">
-
-        <p>
-          Oom's gallery collection will be added here.
-        </p>
-
+      <div class="section-placeholder">
+        Gallery photos will be added here.
       </div>
 
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          UPDATES
-    ========================================== -->
+    ====================================================== -->
 
     <section
+      class="content-section"
       id="oom-updates"
-      class="profile-content-section"
     >
 
-      <div class="section-heading">
+      <p class="content-eyebrow">
+        Latest Updates
+      </p>
 
-        <p class="section-eyebrow">
-          Latest Updates
-        </p>
+      <h2>
+        What's New with Oom
+      </h2>
 
-        <h2>
-          What's New with Oom
-        </h2>
-
-      </div>
-
-
-      <div class="content-placeholder">
-
-        <p>
-          Oom's latest appearances, events, photos,
-          interviews, and updates will appear here.
-        </p>
-
+      <div class="section-placeholder">
+        Latest Oom updates will appear here.
       </div>
 
     </section>
 
 
-    <!-- =========================================
-         RETURN TO HOME
-    ========================================== -->
+    <!-- =====================================================
+         RETURN HOME
+    ====================================================== -->
 
-    <section class="profile-return">
+    <section class="return-section">
 
       <div>
 
-        <p class="return-label">
+        <p class="return-kicker">
           Forever Together
         </p>
 
         <p>
-          Thank you for supporting Oom every step of the way.
+          Supporting Oom every step of the way.
         </p>
 
       </div>
 
-
       <a
         href="index.html"
-        class="return-home"
+        class="return-button"
       >
         Back to OomBam
         <span aria-hidden="true">
@@ -562,7 +627,6 @@
       </a>
 
     </section>
-
 
   </main>
 
