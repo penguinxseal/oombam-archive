@@ -2205,7 +2205,7 @@ body.dark-theme
   }
 
   .hero-background {
-    background-position: center center;
+    background-position: 50% center;
     background-size: cover;
   }
 
