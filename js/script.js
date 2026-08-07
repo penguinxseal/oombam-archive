@@ -4,8 +4,7 @@
    ELEMENTS
 ========================= */
 
-const body =
-  document.body;
+const body = document.body;
 
 const siteHeader =
   document.getElementById("siteHeader");
@@ -21,7 +20,7 @@ const themeToggle =
 
 
 /* =========================
-   HEADER
+   STICKY HEADER
 ========================= */
 
 function updateHeader() {
@@ -55,21 +54,27 @@ function openMenu() {
     return;
   }
 
-  mobileMenu.classList.add("is-open");
+  mobileMenu.classList.add(
+    "is-open"
+  );
+
+  menuToggle.classList.add(
+    "is-active"
+  );
 
   mobileMenu.setAttribute(
     "aria-hidden",
     "false"
   );
 
-  menuToggle.classList.add("is-active");
-
   menuToggle.setAttribute(
     "aria-expanded",
     "true"
   );
 
-  body.classList.add("menu-open");
+  body.classList.add(
+    "menu-open"
+  );
 }
 
 
@@ -79,21 +84,27 @@ function closeMenu() {
     return;
   }
 
-  mobileMenu.classList.remove("is-open");
+  mobileMenu.classList.remove(
+    "is-open"
+  );
+
+  menuToggle.classList.remove(
+    "is-active"
+  );
 
   mobileMenu.setAttribute(
     "aria-hidden",
     "true"
   );
 
-  menuToggle.classList.remove("is-active");
-
   menuToggle.setAttribute(
     "aria-expanded",
     "false"
   );
 
-  body.classList.remove("menu-open");
+  body.classList.remove(
+    "menu-open"
+  );
 }
 
 
@@ -119,13 +130,19 @@ if (menuToggle) {
 }
 
 
+/* =========================
+   CLOSE MENU
+========================= */
+
 if (mobileMenu) {
 
   mobileMenu.addEventListener(
     "click",
     (event) => {
 
-      if (event.target === mobileMenu) {
+      if (
+        event.target === mobileMenu
+      ) {
         closeMenu();
       }
 
@@ -145,11 +162,17 @@ if (mobileMenu) {
 }
 
 
+/* =========================
+   ESC TO CLOSE MENU
+========================= */
+
 document.addEventListener(
   "keydown",
   (event) => {
 
-    if (event.key === "Escape") {
+    if (
+      event.key === "Escape"
+    ) {
       closeMenu();
     }
 
@@ -162,7 +185,9 @@ document.addEventListener(
 ========================= */
 
 document
-  .querySelectorAll('a[href^="#"]')
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
   .forEach((link) => {
 
     link.addEventListener(
@@ -170,7 +195,9 @@ document
       (event) => {
 
         const targetId =
-          link.getAttribute("href");
+          link.getAttribute(
+            "href"
+          );
 
         if (
           !targetId ||
@@ -191,8 +218,11 @@ document
         event.preventDefault();
 
         target.scrollIntoView({
+
           behavior: "smooth",
+
           block: "start"
+
         });
 
       }
@@ -217,21 +247,174 @@ if (themeToggle) {
 
     }
   );
-
 }
 
 
 /* =========================
-   RESIZE
+   CLOSE MENU ON RESIZE
 ========================= */
 
 window.addEventListener(
   "resize",
   () => {
 
-    if (window.innerWidth > 1100) {
+    if (
+      window.innerWidth > 1100
+    ) {
       closeMenu();
     }
 
   }
+);
+
+
+/* =========================
+   WEIBO GALA COUNTDOWN
+========================= */
+
+const eventCountdown =
+  document.getElementById(
+    "eventCountdown"
+  );
+
+const countdownDays =
+  document.getElementById(
+    "countdownDays"
+  );
+
+const countdownHours =
+  document.getElementById(
+    "countdownHours"
+  );
+
+const countdownMinutes =
+  document.getElementById(
+    "countdownMinutes"
+  );
+
+const countdownSeconds =
+  document.getElementById(
+    "countdownSeconds"
+  );
+
+const countdownStatus =
+  document.getElementById(
+    "countdownStatus"
+  );
+
+
+function padNumber(number) {
+
+  return String(number).padStart(
+    2,
+    "0"
+  );
+
+}
+
+
+function updateCountdown() {
+
+  if (!eventCountdown) {
+    return;
+  }
+
+  const targetDate =
+    new Date(
+      eventCountdown.dataset.eventDate
+    ).getTime();
+
+  const now =
+    new Date().getTime();
+
+  const difference =
+    targetDate - now;
+
+
+  /* Event started */
+
+  if (difference <= 0) {
+
+    countdownDays.textContent =
+      "00";
+
+    countdownHours.textContent =
+      "00";
+
+    countdownMinutes.textContent =
+      "00";
+
+    countdownSeconds.textContent =
+      "00";
+
+    countdownStatus.textContent =
+      "OOMBAM is now at Weibo Gala 2026 ✨";
+
+    return;
+  }
+
+
+  const days =
+    Math.floor(
+      difference /
+      (1000 * 60 * 60 * 24)
+    );
+
+  const hours =
+    Math.floor(
+      (
+        difference %
+        (1000 * 60 * 60 * 24)
+      ) /
+      (1000 * 60 * 60)
+    );
+
+  const minutes =
+    Math.floor(
+      (
+        difference %
+        (1000 * 60 * 60)
+      ) /
+      (1000 * 60)
+    );
+
+  const seconds =
+    Math.floor(
+      (
+        difference %
+        (1000 * 60)
+      ) /
+      1000
+    );
+
+
+  countdownDays.textContent =
+    padNumber(days);
+
+  countdownHours.textContent =
+    padNumber(hours);
+
+  countdownMinutes.textContent =
+    padNumber(minutes);
+
+  countdownSeconds.textContent =
+    padNumber(seconds);
+
+
+  countdownStatus.textContent =
+    "Counting down to Weibo Cultural Communication Night";
+
+}
+
+
+/* Initial render */
+
+updateCountdown();
+
+
+/* Update every second */
+
+setInterval(
+  updateCountdown,
+  1000
 );
