@@ -1,8 +1,13 @@
 "use strict";
 
-const body = document.body;
+/* =========================
+   ELEMENTS
+========================= */
 
-const header =
+const body =
+  document.body;
+
+const siteHeader =
   document.getElementById("siteHeader");
 
 const menuToggle =
@@ -15,16 +20,18 @@ const themeToggle =
   document.getElementById("themeToggle");
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 function updateHeader() {
 
-  if (!header) {
+  if (!siteHeader) {
     return;
   }
 
-  header.classList.toggle(
-    "scrolled",
+  siteHeader.classList.toggle(
+    "is-scrolled",
     window.scrollY > 40
   );
 }
@@ -38,7 +45,9 @@ window.addEventListener(
 updateHeader();
 
 
-/* MOBILE MENU */
+/* =========================
+   MOBILE MENU
+========================= */
 
 function openMenu() {
 
@@ -46,12 +55,14 @@ function openMenu() {
     return;
   }
 
-  mobileMenu.classList.add("open");
+  mobileMenu.classList.add("is-open");
 
   mobileMenu.setAttribute(
     "aria-hidden",
     "false"
   );
+
+  menuToggle.classList.add("is-active");
 
   menuToggle.setAttribute(
     "aria-expanded",
@@ -68,12 +79,14 @@ function closeMenu() {
     return;
   }
 
-  mobileMenu.classList.remove("open");
+  mobileMenu.classList.remove("is-open");
 
   mobileMenu.setAttribute(
     "aria-hidden",
     "true"
   );
+
+  menuToggle.classList.remove("is-active");
 
   menuToggle.setAttribute(
     "aria-expanded",
@@ -90,16 +103,17 @@ if (menuToggle) {
     "click",
     () => {
 
-      const open =
+      const isOpen =
         mobileMenu.classList.contains(
-          "open"
+          "is-open"
         );
 
-      if (open) {
+      if (isOpen) {
         closeMenu();
       } else {
         openMenu();
       }
+
     }
   );
 }
@@ -114,6 +128,7 @@ if (mobileMenu) {
       if (event.target === mobileMenu) {
         closeMenu();
       }
+
     }
   );
 
@@ -125,6 +140,7 @@ if (mobileMenu) {
         "click",
         closeMenu
       );
+
     });
 }
 
@@ -136,11 +152,14 @@ document.addEventListener(
     if (event.key === "Escape") {
       closeMenu();
     }
+
   }
 );
 
 
-/* SMOOTH SCROLL */
+/* =========================
+   SMOOTH SCROLL
+========================= */
 
 document
   .querySelectorAll('a[href^="#"]')
@@ -175,12 +194,16 @@ document
           behavior: "smooth",
           block: "start"
         });
+
       }
     );
+
   });
 
 
-/* DARK MODE */
+/* =========================
+   DARK MODE
+========================= */
 
 if (themeToggle) {
 
@@ -191,12 +214,16 @@ if (themeToggle) {
       body.classList.toggle(
         "dark-theme"
       );
+
     }
   );
+
 }
 
 
-/* RESIZE */
+/* =========================
+   RESIZE
+========================= */
 
 window.addEventListener(
   "resize",
@@ -205,5 +232,6 @@ window.addEventListener(
     if (window.innerWidth > 1050) {
       closeMenu();
     }
+
   }
 );
