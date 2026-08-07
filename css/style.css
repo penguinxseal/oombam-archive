@@ -2349,7 +2349,7 @@ body.dark-theme
     background-repeat: no-repeat !important;
 
     /* Original balanced mobile framing */
-    background-position: 61% center !important;
+    background-position: 71% center !important;
   }
 
 }
@@ -2364,6 +2364,6 @@ body.dark-theme
     background-repeat: no-repeat !important;
 
     /* This matches the earlier composition more closely */
-    background-position: 63% center !important;
+    background-position: 73% center !important;
   }
 } 
