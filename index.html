@@ -1,342 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
 
-    <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <title>OomBam | Forever Together</title>
 
-    <title>OomBam | Forever Together</title>
+  <meta
+    name="description"
+    content="An unofficial fan site celebrating Oom Eisaya and Bam Saralee."
+  >
 
-    <meta name="description"
-        content="OomBam fan site dedicated to Oom Eisaya and Bam Saralee.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  >
 
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
-
-    <link rel="stylesheet"
-        href="css/style.css">
-
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+  <header class="site-header" id="siteHeader">
 
-    <header class="site-header" id="siteHeader">
+    <a
+      href="#home"
+      class="brand"
+      aria-label="OomBam home"
+    >
+      <img
+        src="assets/images/logo-icon.png"
+        alt="Forever Together"
+        class="brand-logo"
+      >
+    </a>
 
-        <!-- LOGO -->
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="oom.html" class="nav-link">Oom</a>
+      <a href="bam.html" class="nav-link">Bam</a>
+      <a href="#moments" class="nav-link">Moments</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#media" class="nav-link">Media</a>
+      <a href="#updates" class="nav-link">Updates</a>
+      <a href="#shop" class="nav-link">Shop</a>
+    </nav>
 
-        <a href="#home" class="brand">
+    <div class="header-actions">
 
-            <img
-                src="assets/images/logo-icon.png"
-                alt="OomBam Forever Together"
-                class="brand-logo">
+      <button
+        class="icon-button"
+        type="button"
+        aria-label="Search"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M20 20L16.6 16.6"></path>
+        </svg>
+      </button>
 
-        </a>
+      <button
+        class="icon-button"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch theme"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20 15a8 8 0 0 1-11-11
+               8.5 8.5 0 1 0 11 11Z"
+          ></path>
+        </svg>
+      </button>
 
-        <!-- NAVIGATION -->
-
-        <nav class="desktop-nav">
-
-            <a href="#home"
-                class="nav-link active">Home</a>
-
-            <a href="#about"
-                class="nav-link">About</a>
-
-            <a href="oom.html"
-                class="nav-link">Oom</a>
-
-            <a href="bam.html"
-                class="nav-link">Bam</a>
-
-            <a href="#moments"
-                class="nav-link">Moments</a>
-
-            <a href="#gallery"
-                class="nav-link">Gallery</a>
-
-            <a href="#media"
-                class="nav-link">Media</a>
-
-            <a href="#updates"
-                class="nav-link">Updates</a>
-
-            <a href="#shop"
-                class="nav-link">Shop</a>
-
-        </nav>
-
-        <!-- ACTIONS -->
-
-        <div class="header-actions">
-
-            <button
-                class="header-icon"
-                aria-label="Search">
-
-                🔍
-
-            </button>
-
-            <button
-                class="header-icon"
-                id="themeToggle"
-                aria-label="Theme">
-
-                ☾
-
-            </button>
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Menu">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-        </div>
-
-    </header>
-
-    <!-- =========================
-         MOBILE MENU
-    ========================= -->
-
-    <div class="mobile-navigation"
-        id="mobileNavigation">
-
-        <nav class="mobile-nav-panel">
-
-            <a href="#home"
-                class="mobile-nav-link">Home</a>
-
-            <a href="#about"
-                class="mobile-nav-link">About</a>
-
-            <a href="oom.html"
-                class="mobile-nav-link">Oom</a>
-
-            <a href="bam.html"
-                class="mobile-nav-link">Bam</a>
-
-            <a href="#moments"
-                class="mobile-nav-link">Moments</a>
-
-            <a href="#gallery"
-                class="mobile-nav-link">Gallery</a>
-
-            <a href="#media"
-                class="mobile-nav-link">Media</a>
-
-            <a href="#updates"
-                class="mobile-nav-link">Updates</a>
-
-            <a href="#shop"
-                class="mobile-nav-link">Shop</a>
-
-        </nav>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
 
-    <!-- =========================
-         HERO
-    ========================= -->
+  </header>
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+    aria-hidden="true"
+  >
+    <nav class="mobile-menu-panel">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="oom.html">Oom</a>
+      <a href="bam.html">Bam</a>
+      <a href="#moments">Moments</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#media">Media</a>
+      <a href="#updates">Updates</a>
+      <a href="#shop">Shop</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <aside class="social-links" aria-label="Social links">
+        <a href="#">𝕏</a>
+        <a href="#">◎</a>
+        <a href="#">▶</a>
+        <a href="#">♪</a>
+
+        <span></span>
+      </aside>
+
+      <div class="hero-copy">
+
+        <p class="hero-kicker">
+          Forever Together
+        </p>
+
+        <h1>
+          OomBam
+        </h1>
+
+        <p class="heart">
+          ♡
+        </p>
+
+        <p class="hero-text">
+          Two souls. One bond.<br>
+          A million reasons to support.
+        </p>
+
+        <p class="hero-tags">
+          #OomBam &nbsp;&nbsp; #อุ้มแบม
+        </p>
+
+        <a href="#about" class="hero-button">
+          Explore Our Story
+          <span>✿</span>
+        </a>
+
+      </div>
+
+      <a
+        href="#about"
+        class="scroll-cue"
+        aria-label="Scroll to story"
+      >
+        <span>Scroll</span>
+        <span class="arrow">↓</span>
+      </a>
+
+    </section>
+
+    <section class="story-section" id="about">
+
+      <div class="story-inner">
+
+        <p class="section-kicker">
+          Our Story
+        </p>
+
+        <h2>
+          Our Journey,<br>
+          Our Memories
+        </h2>
+
+        <p>
+          From the first moments to the beautiful memories shared
+          along the way, this is a quiet space created to celebrate
+          Oom, Bam and the journey cherished by their supporters.
+        </p>
+
+        <a href="#" class="secondary-button">
+          Read More
+        </a>
+
+      </div>
 
-    <main>
+    </section>
 
-        <section class="hero"
-            id="home">
+    <section class="placeholder" id="moments">
+      <span>Moments</span>
+    </section>
 
-            <div class="hero-background"></div>
+    <section class="placeholder" id="gallery">
+      <span>Gallery</span>
+    </section>
 
-            <div class="hero-overlay"></div>
+    <section class="placeholder" id="media">
+      <span>Media</span>
+    </section>
 
-            <!-- SOCIALS -->
+    <section class="placeholder" id="updates">
+      <span>Updates</span>
+    </section>
 
-            <aside class="hero-socials">
+    <section class="placeholder" id="shop">
+      <span>Shop</span>
+    </section>
 
-                <a href="#">𝕏</a>
+  </main>
 
-                <a href="#">◎</a>
-
-                <a href="#">▶</a>
-
-                <a href="#">♪</a>
-
-                <span class="social-line"></span>
-
-            </aside>
-
-            <!-- CONTENT -->
-
-            <div class="hero-content">
-
-                <p class="hero-eyebrow">
-
-                    FOREVER TOGETHER
-
-                </p>
-
-                <h1 class="hero-title">
-
-                    OomBam
-
-                </h1>
-
-                <div class="hero-heart">
-
-                    ♡
-
-                </div>
-
-                <p class="hero-description">
-
-                    Two souls. One bond.
-
-                    <br>
-
-                    A million reasons to support.
-
-                </p>
-
-                <p class="hero-hashtags">
-
-                    #OomBam &nbsp; #อุ้มแบม
-
-                </p>
-
-                <a href="#about"
-                    class="primary-button">
-
-                    EXPLORE OUR STORY ✿
-
-                </a>
-
-            </div>
-
-            <!-- SCROLL -->
-
-            <a href="#about"
-                class="scroll-indicator">
-
-                <span>Scroll</span>
-
-            </a>
-
-        </section>
-
-        <!-- =========================
-             ABOUT
-        ========================= -->
-
-        <section class="intro-section"
-            id="about">
-
-            <div class="section-container">
-
-                <p class="section-label">
-
-                    OUR STORY
-
-                </p>
-
-                <h2>
-
-                    Our Journey,
-
-                    <br>
-
-                    Our Memories
-
-                </h2>
-
-                <p class="section-description">
-
-                    From the first moment to all the
-                    beautiful memories we share today.
-
-                    This is our story, and you are
-                    part of it.
-
-                </p>
-
-                <a href="#"
-                    class="secondary-button">
-
-                    READ MORE
-
-                </a>
-
-            </div>
-
-        </section>
-
-        <!-- PLACEHOLDER -->
-
-        <section class="placeholder-section"
-            id="moments">
-
-            <span>Moments</span>
-
-        </section>
-
-        <section class="placeholder-section"
-            id="gallery">
-
-            <span>Gallery</span>
-
-        </section>
-
-        <section class="placeholder-section"
-            id="media">
-
-            <span>Media</span>
-
-        </section>
-
-        <section class="placeholder-section"
-            id="updates">
-
-            <span>Updates</span>
-
-        </section>
-
-        <section class="placeholder-section"
-            id="shop">
-
-            <span>Shop</span>
-
-        </section>
-
-    </main>
-
-    <!-- JS -->
-
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 
 </body>
-
 </html>
