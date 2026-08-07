@@ -1,1767 +1,251 @@
-html,
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-* {
-  box-sizing: border-box;
-}
+body {
 
-img {
-  display: block;
-  max-width: 100%;
-}
+  font-family: "Poppins", sans-serif;
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-/* =========================================================
-   OOM EISAYA PROFILE PAGE
-   Theme: Sun & Sky
-   File: css/oom.css
-========================================================= */
+  background: linear-gradient(
+    135deg,
+    #fff8d9 0%,
+    #fffdf8 45%,
+    #e5f3ff 100%
+  );
 
+  min-height: 100vh;
 
-/* =========================
-   PAGE VARIABLES
-========================= */
-
-.oom-page {
-  --oom-yellow: #f3d46f;
-  --oom-yellow-deep: #e7b949;
-  --oom-yellow-soft: #fff4c8;
-
-  --oom-blue: #b9ddf4;
-  --oom-blue-deep: #83b8dc;
-  --oom-blue-soft: #e9f5fc;
-
-  --oom-ivory: #fffdf7;
-  --oom-cream: #fff9ec;
-
-  --oom-ink: #303136;
-  --oom-text: #68676d;
-  --oom-muted: #96949a;
-
-  --oom-line: rgba(84, 91, 104, 0.12);
-
-  --oom-radius-lg: 28px;
-  --oom-radius-md: 18px;
-  --oom-radius-sm: 10px;
-
-  --oom-shadow:
-    0 20px 50px rgba(91, 86, 65, 0.09);
-
-  --oom-transition: 220ms ease;
-
-  margin: 0;
-
-  background: var(--oom-ivory);
-  color: var(--oom-ink);
-
-  font-family: "DM Sans", sans-serif;
-}
-
-
-/* =========================
-   GLOBAL OOM PAGE
-========================= */
-
-.oom-page *,
-.oom-page *::before,
-.oom-page *::after {
-  box-sizing: border-box;
-}
-
-.oom-page img {
-  display: block;
-  max-width: 100%;
-}
-
-.oom-page a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.oom-page button {
-  font: inherit;
-}
-
-.oom-section-inner {
-  width: min(1380px, calc(100% - 48px));
-
-  margin: 0 auto;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.oom-header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-
-  z-index: 100;
+  padding: 40px 20px;
 
   display: flex;
-  align-items: center;
-
-  min-height: 92px;
-
-  padding:
-    18px
-    clamp(28px, 5vw, 76px);
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255, 253, 247, 0.9),
-      rgba(255, 253, 247, 0.42),
-      transparent
-    );
-}
-
-.oom-brand {
-  display: flex;
-  align-items: center;
-
-  flex-shrink: 0;
-}
-
-.oom-brand-logo {
-  width: 155px;
-  height: auto;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(
-      0 6px 14px rgba(93, 83, 60, 0.13)
-    );
-}
-
-.oom-nav {
-  display: flex;
-  align-items: center;
-
-  gap: clamp(20px, 2vw, 34px);
-
-  margin-left: auto;
-}
-
-.oom-nav a {
-  position: relative;
-
-  padding: 8px 0;
-
-  color: #45464a;
-
-  font-size: 0.72rem;
-  font-weight: 600;
-
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.oom-nav a::after {
-  position: absolute;
-
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  height: 2px;
-
-  content: "";
-
-  background: var(--oom-yellow-deep);
-
-  transform: scaleX(0);
-  transform-origin: center;
-
-  transition: transform var(--oom-transition);
-}
-
-.oom-nav a:hover::after,
-.oom-nav a.active::after {
-  transform: scaleX(1);
-}
-
-
-/* =========================
-   MOBILE MENU BUTTON
-========================= */
-
-.oom-menu-toggle {
-  display: none;
-
-  width: 34px;
-  height: 34px;
-
-  margin-left: auto;
-
-  flex-direction: column;
   justify-content: center;
-
-  gap: 5px;
-
-  background: transparent;
-  border: 0;
-
-  cursor: pointer;
 }
 
-.oom-menu-toggle span {
-  display: block;
-
-  width: 23px;
-  height: 1.5px;
-
-  background: var(--oom-ink);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.oom-hero {
-  position: relative;
-  isolation: isolate;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(430px, 0.95fr)
-    minmax(420px, 1.05fr);
-
-  align-items: center;
-
-  min-height: 820px;
-
-  overflow: hidden;
-
-  padding:
-    130px
-    clamp(48px, 7vw, 110px)
-    70px;
-
-  background:
-    linear-gradient(
-      120deg,
-      #fff0af 0%,
-      #fff9de 28%,
-      #fffdf8 51%,
-      #eaf6fd 73%,
-      #cfeafa 100%
-    );
-}
-
-.oom-hero::before {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: -4;
-
-  content: "";
-
-  pointer-events: none;
-
-  opacity: 0.6;
-
-  background:
-    radial-gradient(
-      circle at 13% 25%,
-      rgba(255, 255, 255, 0.95),
-      transparent 21%
-    ),
-    radial-gradient(
-      circle at 87% 24%,
-      rgba(255, 255, 255, 0.75),
-      transparent 25%
-    );
-}
-
-.oom-hero::after {
-  position: absolute;
-
-  right: -4%;
-  bottom: -13%;
-
-  z-index: -3;
-
-  width: 47vw;
-  height: 47vw;
-
-  content: "";
-
-  border-radius: 50%;
-
-  opacity: 0.38;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.9),
-      rgba(185, 221, 244, 0.22) 42%,
-      transparent 70%
-    );
-}
-
-
-/* =========================
-   HERO DECORATIVE GLOWS
-========================= */
-
-.oom-hero-glow {
-  position: absolute;
-
-  z-index: -2;
-
-  border-radius: 50%;
-
-  filter: blur(14px);
-
-  pointer-events: none;
-}
-
-.oom-glow-yellow {
-  top: 12%;
-  left: -7%;
-
-  width: 360px;
-  height: 360px;
-
-  background:
-    rgba(255, 218, 102, 0.3);
-}
-
-.oom-glow-blue {
-  right: -4%;
-  bottom: 6%;
+.profile-card {
 
   width: 420px;
-  height: 420px;
 
-  background:
-    rgba(153, 208, 242, 0.29);
-}
+  background: rgba(255,255,255,0.85);
 
-
-/* =========================
-   HERO PHOTO
-========================= */
-
-.oom-hero-photo {
-  position: relative;
-
-  align-self: end;
-
-  width: min(560px, 100%);
-
-  margin: 0 auto;
+  border-radius: 28px;
 
   overflow: hidden;
 
-  border-radius:
-    260px
-    260px
-    32px
-    32px;
+  backdrop-filter: blur(14px);
 
-  box-shadow:
-    0 30px 70px rgba(112, 84, 39, 0.18);
+  box-shadow: 0 20px 60px rgba(0,0,0,.08);
+
+  border: 1px solid rgba(255,255,255,.7);
 }
 
-.oom-hero-photo::after {
-  position: absolute;
-  inset: 0;
+/* NAV */
 
-  content: "";
+.top-nav {
 
-  pointer-events: none;
+  padding: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.logo {
+
+  width: 60px;
+}
+
+.nav-links {
+
+  display: flex;
+
+  gap: 12px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.nav-links a {
+
+  text-decoration: none;
+
+  color: #666;
+}
+
+.active {
+
+  color: #c9a600 !important;
+
+  border: 1px solid #d4c44e;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+}
+
+/* breadcrumb */
+
+.breadcrumb {
+
+  padding: 0 24px;
+
+  font-size: 11px;
+
+  color: #9e9e9e;
+}
+
+/* HERO */
+
+.hero-section {
+
+  padding: 30px 40px 10px;
 
   background:
-    linear-gradient(
-      to top,
-      rgba(255, 249, 230, 0.12),
-      transparent 45%
+
+    radial-gradient(
+      circle at left,
+      rgba(255, 229, 80, .15),
+      transparent 60%
+    ),
+
+    radial-gradient(
+      circle at right,
+      rgba(126, 194, 255, .18),
+      transparent 60%
     );
 }
 
-.oom-hero-photo img {
+.hero-image {
+
   width: 100%;
-  height: 100%;
 
-  aspect-ratio: 4 / 5;
-
-  object-fit: cover;
-  object-position: center top;
+  border-radius: 0 0 120px 120px;
 }
 
+/* name */
 
-/* =========================
-   HERO COPY
-========================= */
-
-.oom-hero-copy {
-  max-width: 560px;
-
-  margin-left:
-    clamp(20px, 4vw, 70px);
+.name-script {
 
   text-align: center;
-}
-
-.oom-kicker {
-  margin: 0 0 15px;
-
-  color: var(--oom-blue-deep);
-
-  font-size: 0.68rem;
-  font-weight: 700;
-
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.oom-name {
-  margin: 0;
-
-  line-height: 0.85;
-}
-
-.oom-name-main {
-  display: block;
-
-  color: var(--oom-yellow-deep);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    clamp(
-      6rem,
-      9vw,
-      9rem
-    );
-
-  font-weight: 500;
-
-  letter-spacing: -0.045em;
-}
-
-.oom-name-script {
-  position: relative;
-
-  display: block;
-
-  margin-top: -18px;
-  margin-left: 80px;
-
-  color: var(--oom-blue-deep);
 
   font-family: "Great Vibes", cursive;
-  font-size:
-    clamp(
-      3.2rem,
-      5vw,
-      5rem
-    );
 
-  font-weight: 400;
+  font-size: 58px;
+
+  color: #d2a800;
+
+  margin-top: 10px;
 }
 
-.oom-role {
-  margin: 28px 0 20px;
+.role {
 
-  color: #4f5054;
+  text-align: center;
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  color: #5d5d5d;
 
-  font-size: 1.15rem;
+  font-size: 13px;
 
-  letter-spacing: 0.04em;
+  margin-top: 10px;
 }
 
-.oom-role span {
-  margin: 0 8px;
+.quote {
 
-  color: var(--oom-yellow-deep);
+  text-align: center;
+
+  max-width: 280px;
+
+  margin: 16px auto;
+
+  color: #777;
+
+  font-size: 13px;
+
+  line-height: 1.8;
 }
 
-.oom-divider {
-  width: 230px;
-  height: 1px;
+/* social */
 
-  margin: 0 auto 22px;
+.social-title {
 
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(93, 101, 114, 0.25),
-      transparent
-    );
+  text-align: center;
+
+  margin-top: 30px;
+
+  color: #7aaed9;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
 }
 
-.oom-quote {
-  max-width: 420px;
+.socials {
 
-  margin: 0 auto 33px;
-
-  color: #5c5b60;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 1.22rem;
-  font-style: italic;
-
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   SOCIAL LINKS
-========================================================= */
-
-.oom-socials {
   display: flex;
-  align-items: flex-start;
+
   justify-content: center;
 
-  gap:
-    clamp(
-      18px,
-      3vw,
-      38px
-    );
+  gap: 18px;
+
+  margin: 24px 0;
 }
 
-.oom-social-button {
+.socials a {
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 
   gap: 8px;
 
-  min-width: 60px;
+  color: #666;
 
-  color: #57585c;
+  text-decoration: none;
 
-  font-size: 0.62rem;
-
-  transition:
-    color var(--oom-transition),
-    transform var(--oom-transition);
+  font-size: 12px;
 }
 
-.oom-social-button svg {
-  width: 42px;
-  height: 42px;
+.socials span {
 
-  padding: 10px;
-
-  color: #ffffff;
-
-  background:
-    linear-gradient(
-      145deg,
-      var(--oom-yellow),
-      #f7e3a3
-    );
-
-  border-radius: 50%;
-
-  box-shadow:
-    0 8px 20px rgba(190, 157, 67, 0.16);
-
-  transition:
-    transform var(--oom-transition),
-    box-shadow var(--oom-transition);
+  font-size: 10px;
 }
 
-.oom-social-button:nth-child(even) svg {
-  background:
-    linear-gradient(
-      145deg,
-      #afd7ef,
-      #cdeafa
-    );
+/* menu */
+
+.menu-list {
+
+  padding: 0 24px 30px;
 }
 
-.oom-social-button:hover {
-  color: var(--oom-blue-deep);
+.menu-list a {
 
-  transform: translateY(-3px);
-}
-
-.oom-social-button:hover svg {
-  transform: scale(1.08);
-
-  box-shadow:
-    0 12px 28px rgba(111, 159, 190, 0.2);
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.oom-about {
-  position: relative;
-
-  padding:
-    92px
-    0;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      180deg,
-      #fffefa 0%,
-      #fffaf0 100%
-    );
-}
-
-.oom-about::before {
-  position: absolute;
-
-  right: -120px;
-  top: 35px;
-
-  width: 360px;
-  height: 360px;
-
-  content: "";
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(186, 221, 243, 0.22),
-      transparent 70%
-    );
-}
-
-.oom-section-heading {
-  max-width: 680px;
-
-  margin-bottom: 42px;
-}
-
-.oom-section-heading > p,
-.oom-section-label {
-  margin: 0 0 10px;
-
-  color: var(--oom-yellow-deep);
-
-  font-size: 0.67rem;
-  font-weight: 700;
-
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
-}
-
-.oom-section-heading h2,
-.oom-section-top h2 {
-  margin: 0;
-
-  color: var(--oom-ink);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    clamp(
-      2.8rem,
-      4vw,
-      4.5rem
-    );
-
-  font-weight: 500;
-
-  line-height: 1;
-}
-
-.oom-about-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(250px, 0.72fr)
-    minmax(320px, 1fr)
-    minmax(280px, 0.9fr);
-
-  align-items: center;
-
-  gap:
-    clamp(
-      35px,
-      5vw,
-      72px
-    );
-}
-
-
-/* =========================
-   ABOUT PHOTO
-========================= */
-
-.oom-about-photo {
-  position: relative;
-
-  overflow: hidden;
-
-  border:
-    2px solid rgba(240, 197, 78, 0.55);
-
-  border-radius:
-    150px
-    150px
-    16px
-    16px;
-
-  box-shadow:
-    var(--oom-shadow);
-}
-
-.oom-about-photo img {
-  width: 100%;
-
-  aspect-ratio: 4 / 5;
-
-  object-fit: cover;
-  object-position: center top;
-}
-
-
-/* =========================
-   ABOUT COPY
-========================= */
-
-.oom-about-copy p {
-  margin: 0 0 18px;
-
-  color: var(--oom-text);
-
-  font-size: 0.9rem;
-
-  line-height: 1.85;
-}
-
-.oom-outline-button {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 12px;
-
-  min-height: 46px;
-
-  margin-top: 12px;
-
-  padding: 0 22px;
-
-  color: #a77823;
-
-  background:
-    rgba(255, 255, 255, 0.54);
-
-  border:
-    1px solid rgba(224, 180, 67, 0.55);
-
-  border-radius: 999px;
-
-  font-size: 0.67rem;
-  font-weight: 700;
-
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-
-  transition:
-    background var(--oom-transition),
-    transform var(--oom-transition);
-}
-
-.oom-outline-button:hover {
-  background: var(--oom-yellow-soft);
-
-  transform: translateY(-2px);
-}
-
-
-/* =========================
-   DETAILS CARD
-========================= */
-
-.oom-details-card {
-  padding:
-    28px
-    30px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(234, 246, 253, 0.8),
-      rgba(255, 255, 255, 0.76)
-    );
-
-  border:
-    1px solid rgba(133, 183, 215, 0.2);
-
-  border-radius: var(--oom-radius-md);
-
-  box-shadow:
-    0 18px 42px rgba(89, 132, 160, 0.08);
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.oom-detail {
   display: flex;
-  flex-direction: column;
 
-  gap: 3px;
-
-  padding:
-    14px
-    0;
-
-  border-bottom:
-    1px solid rgba(73, 90, 103, 0.09);
-}
-
-.oom-detail:last-child {
-  border-bottom: 0;
-}
-
-.oom-detail-label {
-  color: var(--oom-blue-deep);
-
-  font-size: 0.62rem;
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.oom-detail strong {
-  color: #484a4e;
-
-  font-size: 0.86rem;
-  font-weight: 500;
-}
-
-
-/* =========================================================
-   SHARED SECTION TOP
-========================================================= */
-
-.oom-section-top {
-  display: flex;
-  align-items: flex-end;
   justify-content: space-between;
 
-  gap: 30px;
-
-  margin-bottom: 34px;
-}
-
-.oom-section-top > a {
-  color: var(--oom-blue-deep);
-
-  font-size: 0.66rem;
-  font-weight: 700;
-
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-
-  transition:
-    color var(--oom-transition),
-    transform var(--oom-transition);
-}
-
-.oom-section-top > a:hover {
-  color: var(--oom-yellow-deep);
-
-  transform: translateX(3px);
-}
-
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.oom-projects {
-  padding:
-    86px
-    0;
-
-  background:
-    linear-gradient(
-      180deg,
-      #fff9e8 0%,
-      #fffdf8 100%
-    );
-
-  border-top:
-    1px solid var(--oom-line);
-}
-
-.oom-project-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap:
-    clamp(
-      20px,
-      2.5vw,
-      32px
-    );
-}
-
-.oom-project-card {
-  overflow: hidden;
-
-  background:
-    rgba(255, 255, 255, 0.85);
-
-  border:
-    1px solid rgba(117, 125, 137, 0.08);
-
-  border-radius: var(--oom-radius-md);
-
-  box-shadow:
-    0 16px 40px rgba(105, 91, 55, 0.07);
-
-  transition:
-    transform var(--oom-transition),
-    box-shadow var(--oom-transition);
-}
-
-.oom-project-card:hover {
-  transform: translateY(-5px);
-
-  box-shadow:
-    0 22px 48px rgba(105, 91, 55, 0.12);
-}
-
-.oom-project-placeholder {
-  display: grid;
-  place-items: center;
-
-  aspect-ratio: 16 / 10;
-
-  color: rgba(96, 96, 100, 0.62);
-
-  background:
-    linear-gradient(
-      145deg,
-      #fff0ad,
-      #e2f1fb
-    );
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 1.25rem;
-}
-
-.oom-project-content {
-  padding:
-    23px
-    24px
-    26px;
-}
-
-.oom-project-year {
-  display: inline-block;
-
-  margin-bottom: 7px;
-
-  color: var(--oom-yellow-deep);
-
-  font-size: 0.61rem;
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.oom-project-content h3 {
-  margin: 0 0 9px;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 1.8rem;
-  font-weight: 600;
-
-  line-height: 1.05;
-}
-
-.oom-project-content p {
-  margin: 0;
-
-  color: var(--oom-text);
-
-  font-size: 0.79rem;
-
-  line-height: 1.65;
-}
-
-
-/* =========================================================
-   GALLERY
-========================================================= */
-
-.oom-gallery {
-  padding:
-    86px
-    0;
-
-  background:
-    #fffefa;
-
-  border-top:
-    1px solid var(--oom-line);
-}
-
-.oom-gallery-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-
-  gap:
-    clamp(
-      14px,
-      2vw,
-      24px
-    );
-}
-
-.oom-gallery-card {
-  position: relative;
-
-  margin: 0;
-
-  overflow: hidden;
-
-  aspect-ratio: 4 / 5;
-
-  background: #f3f1e9;
-
-  border-radius: var(--oom-radius-sm);
-
-  box-shadow:
-    0 12px 30px rgba(68, 66, 61, 0.07);
-}
-
-.oom-gallery-card img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: center top;
-
-  transition:
-    transform 450ms ease;
-}
-
-.oom-gallery-card:hover img {
-  transform: scale(1.045);
-}
-
-.oom-gallery-placeholder {
-  display: grid;
-  place-items: center;
-
-  color: #8e8c8a;
-
-  background:
-    linear-gradient(
-      145deg,
-      #fff2bb,
-      #e5f4fd
-    );
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 1.2rem;
-}
-
-
-/* =========================================================
-   UPDATES
-========================================================= */
-
-.oom-updates {
-  padding:
-    86px
-    0;
-
-  background:
-    linear-gradient(
-      180deg,
-      #f5fbff 0%,
-      #fffefa 100%
-    );
-
-  border-top:
-    1px solid var(--oom-line);
-}
-
-.oom-update-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap:
-    clamp(
-      20px,
-      2.5vw,
-      30px
-    );
-}
-
-.oom-update-card {
-  position: relative;
-
-  padding:
-    28px
-    28px
-    30px;
-
-  background:
-    rgba(255, 255, 255, 0.82);
-
-  border:
-    1px solid rgba(112, 137, 151, 0.1);
-
-  border-radius: var(--oom-radius-md);
-
-  box-shadow:
-    0 14px 36px rgba(91, 123, 142, 0.07);
-}
-
-.oom-update-type {
-  display: inline-block;
-
-  margin-bottom: 12px;
-
-  color: var(--oom-yellow-deep);
-
-  font-size: 0.61rem;
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.oom-update-card h3 {
-  margin: 0 0 10px;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-.oom-update-card p {
-  margin: 0 0 20px;
-
-  color: var(--oom-text);
-
-  font-size: 0.78rem;
-
-  line-height: 1.7;
-}
-
-.oom-update-card a {
-  color: var(--oom-blue-deep);
-
-  font-size: 0.66rem;
-  font-weight: 700;
-
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-
-/* =========================================================
-   SUPPORT BANNER
-========================================================= */
-
-.oom-support {
-  padding:
-    34px
-    24px
-    48px;
-
-  background: #fffefa;
-}
-
-.oom-support-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 30px;
-
-  width: min(1380px, 100%);
-
-  margin: 0 auto;
-
-  padding:
-    26px
-    34px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #fff4c8,
-      #fffdf7 52%,
-      #dff0fb
-    );
-
-  border:
-    1px solid rgba(223, 192, 104, 0.16);
-
-  border-radius: var(--oom-radius-md);
-}
-
-.oom-support-label {
-  margin: 0 0 3px;
-
-  color: var(--oom-yellow-deep);
-
-  font-size: 0.65rem;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.oom-support-inner p:last-child {
-  margin: 0;
-
-  color: var(--oom-text);
-
-  font-size: 0.79rem;
-}
-
-.oom-home-button {
-  display: inline-flex;
   align-items: center;
 
-  gap: 10px;
+  padding: 18px 0;
 
-  flex-shrink: 0;
+  border-top: 1px solid #ececec;
 
-  min-height: 44px;
+  text-decoration: none;
 
-  padding: 0 23px;
+  color: #555;
 
-  color: #604c22;
+  font-size: 12px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #f2cf65,
-      #f6df92
-    );
-
-  border-radius: 999px;
-
-  font-size: 0.67rem;
-  font-weight: 700;
-
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-
-  box-shadow:
-    0 10px 24px rgba(184, 146, 45, 0.16);
-
-  transition:
-    transform var(--oom-transition);
+  letter-spacing: 1px;
 }
 
-.oom-home-button:hover {
-  transform: translateY(-2px);
-}
+.menu-list a span {
 
+  color: #8bbfe6;
 
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.oom-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 26px;
-
-  min-height: 100px;
-
-  padding:
-    24px
-    40px;
-
-  color: #526573;
-
-  background:
-    linear-gradient(
-      90deg,
-      #d8effc,
-      #eef8fd,
-      #cce9fa
-    );
-
-  border-top:
-    1px solid rgba(104, 159, 191, 0.13);
-}
-
-.oom-footer-logo {
-  width: 90px;
-  height: auto;
-}
-
-.oom-footer p {
-  margin: 0;
-
-  font-size: 0.72rem;
-}
-
-.oom-footer a {
-  color: var(--oom-blue-deep);
-
-  font-size: 0.67rem;
-  font-weight: 700;
-
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-
-/* =========================================================
-   RESPONSIVE - LARGE TABLET
-========================================================= */
-
-@media (max-width: 1180px) {
-
-  .oom-nav {
-    gap: 17px;
-  }
-
-  .oom-nav a {
-    font-size: 0.65rem;
-  }
-
-  .oom-hero {
-    grid-template-columns:
-      minmax(360px, 0.9fr)
-      minmax(360px, 1fr);
-
-    min-height: 740px;
-  }
-
-  .oom-name-script {
-    margin-left: 45px;
-  }
-
-  .oom-about-grid {
-    grid-template-columns:
-      minmax(230px, 0.7fr)
-      1fr;
-
-    align-items: start;
-  }
-
-  .oom-details-card {
-    grid-column: 1 / -1;
-
-    display: grid;
-
-    grid-template-columns:
-      repeat(4, minmax(0, 1fr));
-
-    gap: 15px;
-  }
-
-  .oom-detail {
-    border-bottom: 0;
-
-    border-right:
-      1px solid rgba(73, 90, 103, 0.09);
-  }
-
-  .oom-detail:last-child {
-    border-right: 0;
-  }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE - TABLET / MOBILE NAV
-========================================================= */
-
-@media (max-width: 960px) {
-
-  .oom-nav {
-    display: none;
-  }
-
-  .oom-menu-toggle {
-    display: flex;
-  }
-
-  .oom-hero {
-    grid-template-columns: 1fr;
-
-    gap: 40px;
-
-    padding:
-      125px
-      40px
-      65px;
-
-    text-align: center;
-  }
-
-  .oom-hero-photo {
-    width: min(440px, 85vw);
-
-    order: 1;
-  }
-
-  .oom-hero-copy {
-    margin: 0 auto;
-
-    order: 2;
-  }
-
-  .oom-name-script {
-    margin-left: 0;
-  }
-
-  .oom-about-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .oom-details-card {
-    grid-column: 1 / -1;
-  }
-
-  .oom-project-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-  .oom-project-card:last-child {
-    grid-column:
-      span 2;
-  }
-
-  .oom-gallery-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-  .oom-update-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-  .oom-update-card:last-child {
-    grid-column:
-      span 2;
-  }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE - MOBILE
-========================================================= */
-
-@media (max-width: 680px) {
-
-  .oom-section-inner {
-    width:
-      min(
-        100% - 36px,
-        1380px
-      );
-  }
-
-  .oom-header {
-    min-height: 76px;
-
-    padding:
-      12px
-      18px;
-  }
-
-  .oom-brand-logo {
-    width: 112px;
-  }
-
-  .oom-hero {
-    min-height: auto;
-
-    padding:
-      105px
-      20px
-      58px;
-
-    gap: 30px;
-  }
-
-  .oom-hero-photo {
-    width:
-      min(
-        360px,
-        90vw
-      );
-
-    border-radius:
-      170px
-      170px
-      22px
-      22px;
-  }
-
-  .oom-name-main {
-    font-size:
-      clamp(
-        5rem,
-        24vw,
-        6.2rem
-      );
-  }
-
-  .oom-name-script {
-    margin-top: -8px;
-
-    font-size:
-      clamp(
-        3rem,
-        16vw,
-        4rem
-      );
-  }
-
-  .oom-role {
-    margin-top: 20px;
-
-    font-size: 1rem;
-  }
-
-  .oom-quote {
-    font-size: 1.08rem;
-  }
-
-  .oom-socials {
-    gap: 12px;
-  }
-
-  .oom-social-button {
-    min-width: 56px;
-
-    font-size: 0.58rem;
-  }
-
-  .oom-social-button svg {
-    width: 38px;
-    height: 38px;
-
-    padding: 9px;
-  }
-
-  .oom-about,
-  .oom-projects,
-  .oom-gallery,
-  .oom-updates {
-    padding:
-      66px
-      0;
-  }
-
-  .oom-section-heading {
-    margin-bottom: 30px;
-  }
-
-  .oom-section-heading h2,
-  .oom-section-top h2 {
-    font-size:
-      clamp(
-        2.5rem,
-        12vw,
-        3.2rem
-      );
-  }
-
-  .oom-about-grid {
-    grid-template-columns: 1fr;
-
-    gap: 28px;
-  }
-
-  .oom-about-photo {
-    width:
-      min(
-        350px,
-        90vw
-      );
-
-    margin:
-      0
-      auto;
-  }
-
-  .oom-details-card {
-    grid-template-columns: 1fr;
-
-    padding:
-      22px
-      24px;
-  }
-
-  .oom-detail {
-    border-right: 0;
-
-    border-bottom:
-      1px solid rgba(73, 90, 103, 0.09);
-  }
-
-  .oom-detail:last-child {
-    border-bottom: 0;
-  }
-
-  .oom-section-top {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    margin-bottom: 28px;
-  }
-
-  .oom-project-grid,
-  .oom-update-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .oom-project-card:last-child,
-  .oom-update-card:last-child {
-    grid-column: auto;
-  }
-
-  .oom-gallery-grid {
-    grid-template-columns: 1fr 1fr;
-
-    gap: 12px;
-  }
-
-  .oom-support-inner {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    padding:
-      24px
-      24px;
-  }
-
-  .oom-home-button {
-    align-self: stretch;
-
-    justify-content: center;
-  }
-
-  .oom-footer {
-    flex-direction: column;
-
-    gap: 12px;
-
-    padding:
-      30px
-      20px;
-
-    text-align: center;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 430px) {
-
-  .oom-section-inner {
-    width:
-      calc(100% - 28px);
-  }
-
-  .oom-hero {
-    padding-right: 14px;
-    padding-left: 14px;
-  }
-
-  .oom-name-main {
-    font-size: 4.8rem;
-  }
-
-  .oom-name-script {
-    font-size: 3.2rem;
-  }
-
-  .oom-role {
-    font-size: 0.92rem;
-  }
-
-  .oom-role span {
-    margin:
-      0
-      5px;
-  }
-
-  .oom-socials {
-    gap: 8px;
-  }
-
-  .oom-social-button {
-    min-width: 52px;
-  }
-
-  .oom-gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
+  font-size: 20px;
 }
