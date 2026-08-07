@@ -80,7 +80,7 @@ button {
   background:
     linear-gradient(
       to bottom,
-      rgba(12, 14, 18, 0.45),
+      rgba(12, 14, 18, 0.48),
       rgba(12, 14, 18, 0.08),
       transparent
     );
@@ -90,8 +90,7 @@ button {
   transition:
     min-height var(--transition),
     background var(--transition),
-    box-shadow var(--transition),
-    backdrop-filter var(--transition);
+    box-shadow var(--transition);
 }
 
 .site-header.is-scrolled {
@@ -101,10 +100,10 @@ button {
   left: 0;
 
   min-height: 78px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 11px;
+  padding-bottom: 11px;
 
-  background: rgba(17, 18, 22, 0.9);
+  background: rgba(17, 18, 22, 0.91);
   border-radius: 0;
 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
@@ -113,23 +112,42 @@ button {
   -webkit-backdrop-filter: blur(14px);
 }
 
+/* =========================
+   LOGO
+========================= */
+
 .brand {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+
+  padding: 8px 15px 8px 10px;
+
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 16px;
+
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .brand-logo {
-  width: clamp(235px, 18vw, 320px);
+  width: clamp(235px, 18vw, 315px);
   height: auto;
   object-fit: contain;
 }
+
+/* =========================
+   DESKTOP NAVIGATION
+========================= */
 
 .desktop-nav {
   display: flex;
   align-items: center;
 
-  gap: clamp(18px, 1.65vw, 32px);
+  gap: clamp(18px, 1.55vw, 31px);
   margin-left: auto;
 }
 
@@ -138,9 +156,9 @@ button {
 
   padding: 12px 0;
 
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.94);
 
-  font-size: 0.74rem;
+  font-size: 0.73rem;
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -157,7 +175,6 @@ button {
   height: 1px;
 
   content: "";
-
   background: var(--soft-pink);
 
   transform: scaleX(0);
@@ -185,7 +202,7 @@ button {
   align-items: center;
 
   gap: 14px;
-  margin-left: 26px;
+  margin-left: 25px;
 }
 
 .header-icon,
@@ -222,7 +239,6 @@ button {
 
   width: 30px;
   height: 30px;
-
   gap: 5px;
 }
 
@@ -255,7 +271,16 @@ button {
    MOBILE NAVIGATION
 ========================= */
 
+/*
+  Hidden completely by default.
+  This prevents the plain duplicate links from appearing.
+*/
+
 .mobile-navigation {
+  display: none;
+}
+
+.mobile-navigation.is-open {
   position: fixed;
   inset: 0;
   z-index: 950;
@@ -263,29 +288,20 @@ button {
   display: flex;
   justify-content: flex-end;
 
-  visibility: hidden;
-  opacity: 0;
+  width: 100%;
+  height: 100%;
 
-  background: rgba(7, 9, 13, 0.62);
-
-  transition:
-    visibility var(--transition),
-    opacity var(--transition);
+  background: rgba(7, 9, 13, 0.66);
 }
 
-.mobile-navigation.is-open {
-  visibility: visible;
-  opacity: 1;
-}
-
-.mobile-nav-inner {
+.mobile-nav-panel {
   display: flex;
   flex-direction: column;
 
   width: min(82vw, 370px);
   height: 100%;
 
-  padding: 120px 34px 40px;
+  padding: 118px 34px 40px;
 
   background:
     linear-gradient(
@@ -294,24 +310,32 @@ button {
       rgba(45, 38, 43, 0.99)
     );
 
-  transform: translateX(100%);
+  box-shadow: -16px 0 45px rgba(0, 0, 0, 0.22);
 
-  transition: transform 300ms ease;
+  animation: mobileMenuSlide 260ms ease forwards;
 }
 
-.mobile-navigation.is-open .mobile-nav-inner {
-  transform: translateX(0);
+@keyframes mobileMenuSlide {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .mobile-nav-link {
+  display: block;
+
   padding: 13px 0;
 
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
 
   font-family: "Cormorant Garamond", serif;
   font-size: 1.55rem;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobile-nav-link:hover,
@@ -362,10 +386,10 @@ button {
   background:
     linear-gradient(
       90deg,
-      rgba(12, 14, 18, 0.62) 0%,
-      rgba(12, 14, 18, 0.35) 31%,
+      rgba(12, 14, 18, 0.64) 0%,
+      rgba(12, 14, 18, 0.36) 31%,
       rgba(12, 14, 18, 0.09) 65%,
-      rgba(12, 14, 18, 0.08) 100%
+      rgba(12, 14, 18, 0.07) 100%
     ),
     linear-gradient(
       to top,
@@ -411,7 +435,6 @@ button {
 
 .hero-heart {
   width: fit-content;
-
   margin: 8px 0 18px;
 
   color: var(--soft-pink-light);
@@ -474,7 +497,6 @@ button {
 
 .primary-button:hover {
   transform: translateY(-2px);
-
   box-shadow: 0 16px 36px rgba(192, 111, 130, 0.34);
 }
 
@@ -484,7 +506,7 @@ button {
 
 .hero-socials {
   position: absolute;
-  top: 56%;
+  top: 58%;
   left: clamp(28px, 3vw, 55px);
 
   display: flex;
@@ -710,7 +732,6 @@ body.dark-theme .intro-section {
 
 body.dark-theme .placeholder-section {
   background: #1b1c21;
-
   border-color: rgba(255, 255, 255, 0.07);
 }
 
@@ -722,17 +743,21 @@ body.dark-theme .placeholder-section:nth-of-type(even) {
    RESPONSIVE
 ========================= */
 
-@media (max-width: 1300px) {
+@media (max-width: 1360px) {
   .brand-logo {
-    width: 235px;
+    width: 225px;
   }
 
   .desktop-nav {
-    gap: 18px;
+    gap: 17px;
   }
 
   .nav-link {
-    font-size: 0.68rem;
+    font-size: 0.67rem;
+  }
+
+  .header-actions {
+    margin-left: 18px;
   }
 }
 
@@ -765,7 +790,7 @@ body.dark-theme .placeholder-section:nth-of-type(even) {
     left: 6px;
 
     min-height: var(--header-height);
-    padding: 14px 18px;
+    padding: 12px 18px;
   }
 
   .site-header.is-scrolled {
@@ -776,8 +801,13 @@ body.dark-theme .placeholder-section:nth-of-type(even) {
     min-height: 68px;
   }
 
+  .brand {
+    padding: 6px 10px 6px 7px;
+    border-radius: 12px;
+  }
+
   .brand-logo {
-    width: 185px;
+    width: 175px;
   }
 
   .search-button {
@@ -819,10 +849,6 @@ body.dark-theme .placeholder-section:nth-of-type(even) {
     text-align: center;
   }
 
-  .hero-eyebrow {
-    margin-bottom: 2px;
-  }
-
   .hero-title {
     font-size: clamp(5.2rem, 23vw, 7.6rem);
   }
@@ -845,11 +871,6 @@ body.dark-theme .placeholder-section:nth-of-type(even) {
     display: none;
   }
 
-  .primary-button {
-    min-height: 47px;
-    padding: 0 22px;
-  }
-
   .intro-section {
     padding: 82px 24px;
   }
@@ -861,7 +882,7 @@ body.dark-theme .placeholder-section:nth-of-type(even) {
 
 @media (max-width: 430px) {
   .brand-logo {
-    width: 160px;
+    width: 148px;
   }
 
   .header-actions {
@@ -889,7 +910,7 @@ body.dark-theme .placeholder-section:nth-of-type(even) {
     display: none;
   }
 
-  .mobile-nav-inner {
+  .mobile-nav-panel {
     width: 86vw;
     padding-right: 28px;
     padding-left: 28px;
