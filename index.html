@@ -29,12 +29,22 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="css/style.css">
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
 </head>
 
 <body>
 
-  <header class="site-header" id="siteHeader">
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header
+    class="site-header"
+    id="siteHeader"
+  >
 
     <a
       href="#home"
@@ -48,7 +58,10 @@
       >
     </a>
 
-    <nav class="desktop-nav" aria-label="Main navigation">
+    <nav
+      class="desktop-nav"
+      aria-label="Main navigation"
+    >
       <a href="#home" class="nav-link active">Home</a>
       <a href="#about" class="nav-link">About</a>
       <a href="oom.html" class="nav-link">Oom</a>
@@ -104,13 +117,21 @@
 
   </header>
 
+
+  <!-- =========================
+       MOBILE MENU
+  ========================== -->
+
   <div
     class="mobile-menu"
     id="mobileMenu"
     aria-hidden="true"
   >
 
-    <nav class="mobile-menu-panel" aria-label="Mobile navigation">
+    <nav
+      class="mobile-menu-panel"
+      aria-label="Mobile navigation"
+    >
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="oom.html">Oom</a>
@@ -124,21 +145,44 @@
 
   </div>
 
+
   <main>
 
-    <section class="hero" id="home">
+    <!-- =========================
+         HERO
+    ========================== -->
 
-      <div class="hero-background" aria-hidden="true"></div>
-      <div class="hero-overlay" aria-hidden="true"></div>
+    <section
+      class="hero"
+      id="home"
+    >
 
-      <aside class="hero-socials" aria-label="Social media links">
+      <div
+        class="hero-background"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="hero-overlay"
+        aria-hidden="true"
+      ></div>
+
+
+      <aside
+        class="hero-socials"
+        aria-label="Social media links"
+      >
         <a href="#" aria-label="X">𝕏</a>
         <a href="#" aria-label="Instagram">◎</a>
         <a href="#" aria-label="YouTube">▶</a>
         <a href="#" aria-label="TikTok">♪</a>
 
-        <span class="social-line" aria-hidden="true"></span>
+        <span
+          class="social-line"
+          aria-hidden="true"
+        ></span>
       </aside>
+
 
       <div class="hero-content">
 
@@ -146,7 +190,10 @@
           OomBam
         </h1>
 
-        <div class="hero-heart" aria-hidden="true">
+        <div
+          class="hero-heart"
+          aria-hidden="true"
+        >
           ♡
         </div>
 
@@ -159,12 +206,16 @@
           #OomBam &nbsp;&nbsp; #อุ้มแบม
         </p>
 
-        <a href="#about" class="primary-button">
+        <a
+          href="#about"
+          class="primary-button"
+        >
           <span>Explore Our Story</span>
           <span aria-hidden="true">✿</span>
         </a>
 
       </div>
+
 
       <a
         href="#about"
@@ -181,56 +232,211 @@
 
     </section>
 
-    <section class="story-section" id="about">
 
-      <div class="story-inner">
+    <!-- =========================
+         OUR JOURNEY + WHAT'S NEXT
+    ========================== -->
 
-        <p class="section-label">
-          Our Story
-        </p>
+    <section
+      class="story-section"
+      id="about"
+    >
 
-        <h2>
-          Our Journey,<br>
-          Our Memories
-        </h2>
+      <div class="story-grid">
 
-        <p class="story-copy">
-          From the first moments to the beautiful memories shared
-          along the way, this is a quiet space created to celebrate
-          Oom, Bam, and the journey cherished by their supporters.
-        </p>
 
-        <a href="#" class="secondary-button">
-          Read More
-        </a>
+        <!-- LEFT: OUR STORY -->
+
+        <article class="story-panel">
+
+          <div class="story-copy-block">
+
+            <p class="section-label">
+              Our Story
+            </p>
+
+            <h2>
+              Our Journey,<br>
+              Our Memories
+            </h2>
+
+            <p class="story-copy">
+              From the very first moment to all the beautiful memories
+              shared along the way, this is a space to celebrate the
+              journey, the stories, and everything cherished by
+              OomBam supporters.
+            </p>
+
+            <a
+              href="#"
+              class="secondary-button"
+            >
+              Read More
+            </a>
+
+          </div>
+
+
+          <div class="story-photo-wrap">
+
+            <div class="story-photo-frame">
+
+              <img
+                src="assets/images/story-photo.jpg"
+                alt="Oom and Bam"
+                class="story-photo"
+              >
+
+            </div>
+
+            <span class="story-badge">
+              OOM<br>& BAM
+            </span>
+
+            <span
+              class="story-flower story-flower-left"
+              aria-hidden="true"
+            >
+              🌸
+            </span>
+
+            <span
+              class="story-flower story-flower-right"
+              aria-hidden="true"
+            >
+              🌸
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- RIGHT: WHAT'S NEXT -->
+
+        <aside class="upcoming-panel">
+
+          <div class="upcoming-content">
+
+            <p class="upcoming-label">
+              Upcoming
+            </p>
+
+            <h3>
+              What’s Next?
+            </h3>
+
+            <p class="upcoming-text">
+              Stay tuned for more OomBam moments!
+            </p>
+
+
+            <div class="countdown-grid">
+
+              <div class="countdown-box">
+                <strong>07</strong>
+                <span>Days</span>
+              </div>
+
+              <div class="countdown-box">
+                <strong>12</strong>
+                <span>Hrs</span>
+              </div>
+
+              <div class="countdown-box">
+                <strong>34</strong>
+                <span>Mins</span>
+              </div>
+
+              <div class="countdown-box">
+                <strong>56</strong>
+                <span>Secs</span>
+              </div>
+
+            </div>
+
+
+            <a
+              href="#"
+              class="schedule-button"
+            >
+              View Schedule
+            </a>
+
+          </div>
+
+
+          <div class="upcoming-photo-wrap">
+
+            <img
+              src="assets/images/upcoming-photo.jpg"
+              alt="Oom and Bam at an event"
+              class="upcoming-photo"
+            >
+
+          </div>
+
+        </aside>
+
 
       </div>
 
     </section>
 
-    <section class="placeholder-section" id="moments">
+
+    <!-- =========================
+         NEXT SECTIONS
+         TEMPORARY PLACEHOLDERS
+    ========================== -->
+
+    <section
+      class="placeholder-section"
+      id="moments"
+    >
       <span>Moments</span>
     </section>
 
-    <section class="placeholder-section" id="gallery">
+
+    <section
+      class="placeholder-section"
+      id="gallery"
+    >
       <span>Gallery</span>
     </section>
 
-    <section class="placeholder-section" id="media">
+
+    <section
+      class="placeholder-section"
+      id="media"
+    >
       <span>Media</span>
     </section>
 
-    <section class="placeholder-section" id="updates">
+
+    <section
+      class="placeholder-section"
+      id="updates"
+    >
       <span>Updates</span>
     </section>
 
-    <section class="placeholder-section" id="shop">
+
+    <section
+      class="placeholder-section"
+      id="shop"
+    >
       <span>Shop</span>
     </section>
 
   </main>
 
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script src="js/script.js"></script>
 
 </body>
+
 </html>
