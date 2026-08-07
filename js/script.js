@@ -645,4 +645,4 @@ if (eventCountdown) {
       1000
     );
 
-}
+} 
