@@ -1917,34 +1917,453 @@ body.dark-theme
 ========================= */
 
 @media (max-width: 768px) {
-  :root { --header-height: 76px; }
+
+  :root {
+    --header-height: 76px;
+  }
+
+  .site-header {
+    padding:
+      12px
+      18px;
+  }
+
+  .site-header.is-scrolled {
+    min-height: 66px;
+  }
+
+  .brand-logo {
+    width: 118px;
+  }
+
+  .site-header.is-scrolled
+  .brand-logo {
+    width: 105px;
+  }
+
+  .hero {
+    align-items: flex-end;
+  }
+
   .hero-background {
-    background-image: url("../assets/images/hero-banner.jpg");
-    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
-    background-position: 61% center;
   }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        to top,
+        rgba(8, 10, 14, 0.92) 0%,
+        rgba(8, 10, 14, 0.56) 43%,
+        rgba(8, 10, 14, 0.1) 78%
+      );
+  }
+
   .hero-content {
-    width: 100%;
-    margin-left: 0;
-    padding: calc(var(--header-height) + 200px) 24px 115px;
-    text-align: center;
-  }
+  width: 100%;
+
+  margin-left: 0;
+
+  padding:
+    calc(var(--header-height) + 320px)
+    24px
+    115px;
+
+  text-align: center;
+}
+   .hero-title {
+  margin-top: 40px;
+
+  font-size:
+    clamp(
+      4.6rem,
+      20vw,
+      6.4rem
+    );
+
+  line-height: 0.95;
+}
+   .hero-content {
+
+  width: 100%;
+
+  margin-left: 0;
+
+  padding:
+    calc(
+      var(--header-height)
+      + 200px
+    )
+    24px
+    115px;
+
+  text-align: center;
+}
+
   .hero-title {
-    margin: 0 0 18px;
-    font-size: clamp(5rem, 22vw, 7.2rem);
+    font-size:
+      clamp(
+        5rem,
+        22vw,
+        7.2rem
+      );
   }
-  .hero-socials {
-    left: 50%;
-    bottom: 18px;
-    top: auto;
-    flex-direction: row;
-    transform: translateX(-50%);
+
+  .hero-heart {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  /* Hide only the scroll indicator on mobile */
+
+.scroll-indicator {
+  display: none;
+}
+
+
+/* Mobile social links */
+
+.hero-socials {
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+  top: auto;
+
+  z-index: 20;
+
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  transform: translateX(-50%);
+}
+
+
+/* Hide vertical line */
+
+.hero-socials .social-line {
+  display: none;
+}
+
+
+/* Social icon wrapper */
+
+.hero-socials .social-icon {
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* SVG size */
+
+.hero-socials .social-icon svg {
+
+  width: 24px;
+  height: 24px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+/* Hover effect */
+
+.hero-socials .social-icon:hover svg {
+
+  transform: scale(1.15);
+}
+
+  .story-panel {
+    grid-template-columns: 1fr;
+
+    gap: 46px;
+
+    padding:
+      74px
+      24px;
+  }
+
+  .story-copy-block {
+    max-width: none;
+  }
+
+  .story-copy-block h2 {
+    font-size:
+      clamp(
+        3rem,
+        12vw,
+        4rem
+      );
+  }
+
+  .story-photo-wrap {
+    min-height: 0;
+  }
+
+  .story-photo-frame {
+    width:
+      min(
+        360px,
+        90vw
+      );
+  }
+
+  .story-badge {
+    top: 16px;
+    right: 7%;
+  }
+
+  .upcoming-content {
+    padding:
+      44px
+      24px
+      26px;
+  }
+
+  .countdown-grid {
+    max-width: none;
+  }
+
+  .upcoming-photo-wrap {
+    height: 320px;
+    min-height: 320px;
+  }
+
+  .upcoming-photo {
+    min-height: 320px;
+
+    object-position: center top;
+  }
+
+  .moments-section {
+    padding:
+      62px
+      22px
+      60px;
+  }
+
+  .moments-intro {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    margin-bottom: 28px;
+  }
+
+  .moments-view-all {
+    align-self: flex-start;
+  }
+
+  .moments-grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .moment-image-wrap {
+    aspect-ratio: 16 / 10;
+  }
+
+  .moments-controls {
+    justify-content: flex-start;
   }
 }
 
+
+/* =========================
+   RESPONSIVE - SMALL MOBILE
+========================= */
+
 @media (max-width: 430px) {
-  .hero-background { background-position: 63% center; }
-  .hero-content { padding: calc(var(--header-height) + 200px) 20px 112px; }
-  .hero-title { font-size: 5rem; }
+
+  .brand-logo {
+    width: 100px;
+  }
+
+  .site-header.is-scrolled
+  .brand-logo {
+    width: 90px;
+  }
+
+  .theme-toggle {
+    display: none;
+  }
+
+  .hero-background {
+    background-position: 50% center;
+    background-size: cover;
+  }
+
+  .hero-content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  .hero-description br {
+    display: none;
+  }
+
+  .mobile-menu-panel {
+    width: 86vw;
+
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .story-copy-block h2 {
+    font-size: 3.1rem;
+  }
+
+  .story-badge {
+    width: 62px;
+    height: 62px;
+
+    font-size: 0.56rem;
+  }
+
+  .upcoming-panel h3 {
+    font-size: 3rem;
+  }
+
+  .event-title {
+    font-size: 1.5rem;
+  }
+
+  .event-subtitle {
+    font-size: 0.68rem;
+  }
+
+  .event-time {
+    font-size: 0.66rem;
+  }
+
+  .countdown-grid {
+    gap: 5px;
+  }
+
+  .countdown-box {
+    min-height: 68px;
+
+    padding:
+      9px
+      3px;
+  }
+
+  .countdown-box strong {
+    font-size: 1.5rem;
+  }
+
+  .countdown-box span {
+    font-size: 0.48rem;
+  }
+
+  .upcoming-photo-wrap {
+    height: 265px;
+    min-height: 265px;
+  }
+
+  .upcoming-photo {
+    min-height: 265px;
+
+    object-position: center top;
+  }
+
+  .moments-section {
+    padding:
+      54px
+      20px
+      54px;
+  }
+
+  .moments-heading {
+    font-size: 2.75rem;
+  }
+
+  .moment-meta h3 {
+    font-size: 1.4rem;
+  }
+
+  .moment-meta p {
+    font-size: 0.73rem;
+  }.hero-socials {
+
+  bottom: 16px;
+
+  gap: 14px;
 }
+
+
+.hero-socials .social-icon {
+
+  width: 36px;
+  height: 36px;
+}
+
+
+.hero-socials .social-icon svg {
+
+  width: 21px;
+  height: 21px;
+}
+   .hero-content {
+  padding-top:
+    calc(var(--header-height) + 350px);
+}
+
+.hero-title {
+  margin-top: 25px;
+
+  font-size: 4.8rem;
+}
+   
+   /* =========================================================
+   FINAL MOBILE HERO FIX
+   Restore original balanced OomBam composition
+========================================================= */
+
+/* Tablets + phones */
+@media (max-width: 768px) {
+
+  .hero-background {
+    background-image: url("../assets/images/hero-banner.jpg") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+
+    /* Original balanced mobile framing */
+    background-position: 71% center !important;
+  }
+
+}
+
+
+/* iPhone / small mobile */
+@media (max-width: 430px) {
+
+  .hero-background {
+    background-image: url("../assets/images/hero-banner.jpg") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+
+    /* This matches the earlier composition more closely */
+    background-position: 73% center !important;
+  }
+} 
