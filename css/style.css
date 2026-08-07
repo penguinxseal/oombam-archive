@@ -2342,7 +2342,7 @@ body.dark-theme
 @media (max-width: 768px) {
 
   .hero-background {
-    background-position: 32% center !important;
+    background-position: 65% center !important;
   }
 
 }
@@ -2350,7 +2350,7 @@ body.dark-theme
 @media (max-width: 430px) {
 
   .hero-background {
-    background-position: 26% center !important;
+    background-position: 60% center !important;
   }
 
 }
